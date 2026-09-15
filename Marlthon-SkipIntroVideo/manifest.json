@@ -1,0 +1,9 @@
+{
+  "name": "SkipIntroVideo",
+  "version_number": "0.0.1",
+  "website_url": "https://marlthon.com",
+  "description": "Adds a native Gameplay setting to show or skip Valheim's startup video.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2350"
+  ]
+}

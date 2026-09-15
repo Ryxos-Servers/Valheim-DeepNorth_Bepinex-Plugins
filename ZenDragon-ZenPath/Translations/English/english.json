@@ -1,0 +1,8 @@
+{
+  "se_path_dirt_name": "Path",
+  "se_path_dirt_tooltip": "A simple path makes your travels easier",
+  "se_path_paved_name": "Paved Road",
+  "se_path_paved_tooltip": "The nice paved road removes all burdens",
+  "se_path_snow_name": "Snow",
+  "se_path_snow_tooltip": "The thick snow makes it difficult to move"
+}

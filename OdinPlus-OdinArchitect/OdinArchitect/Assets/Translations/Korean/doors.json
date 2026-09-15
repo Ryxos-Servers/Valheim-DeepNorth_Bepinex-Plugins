@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "큰 문",
+	"wooden_gate_1_desc": "크고 무거운 나무 문",
+	"wooden_drawbridge_1": "서틀링 도개교",
+	"wooden_drawbridge_1_desc": "서틀링 코어로 제어되는 도개교",
+	"wooden_drawbridge_2": "IG 서틀링 도개교",
+	"wooden_drawbridge_2_desc": "서틀링 코어로 제어되는 도개교, IG88V1 제작",
+
+	"iron_gate_small": "작은 철제 문",
+	"iron_gate_small_desc": "중앙 기둥이 없는 작은 철제 문",
+	"iron_gate_big": "큰 철제 문",
+	"iron_gate_big_desc": "중앙 기둥이 없는 큰 철제 문",
+
+	"rae_elevator_small": "작은 심플 엘리베이터",
+	"rae_elevator_small_desc": "한 번에 한 층씩 이동합니다",
+	"rae_elevator": "심플 엘리베이터",
+	"rae_elevator_desc": "한 번에 한 층씩 이동합니다",
+	"rae_elevator_big": "화물용 엘리베이터",
+	"rae_elevator_big_desc": "한 번에 한 층씩 이동합니다",
+
+	"piece_woodgate_iron": "철제 장식 나무 문",
+	"piece_woodgate_iron_desc": "철제 장식이 있는 나무 문",
+	"piece_woodgate_darkwood": "다크우드 장식 나무 문",
+	"piece_woodgate_darkwood_desc": "다크우드 장식이 있는 나무 문",
+	"piece_woodgate_crystal": "창문이 있는 나무 문",
+	"piece_woodgate_crystal_desc": "크리스탈 창문이 있는 나무 문",
+	"rae_hidden_door": "숨겨진 문",
+	"rae_hidden_door_desc": "숨겨진 나무 뚜껑문",
+
+	"piece_dvergr_wood_custom": "드베르그 철제 문",
+	"piece_dvergr_wood_custom_desc": "드베르그 스타일 부품"
+}

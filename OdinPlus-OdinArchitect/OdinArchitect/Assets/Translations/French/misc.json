@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "Marteau d'Odin",
+	"odin_hammer_desc": "Manche parfaitement ajusté, tête incroyablement équilibrée, tout cela pour que vous puissiez accomplir davantage. Selon la légende, l'Architecte d'Odin lui-même construisait avec de ses propres mains.",
+
+	"food_smelter": "Station de cuisson avancée",
+	"food_smelter_desc": "Station de cuisson automatisée",
+	"food_smelter_additem": "Ajouter de la nourriture",
+	"food_smelter_empty": "Est vide",
+	"rae_bird_house": "Nichoir",
+	"rae_bird_house_desc": "Ce nichoir vous donnera quelques plumes",
+	"piece_rae_bird_name": "Nichoir",
+	"piece_rae_bird_add": "Donner des vers",
+	"piece_rae_bird_empty": "Les oiseaux ont faim",
+	"rae_fish_trap": "Piège à poissons",
+	"rae_fish_trap_desc": "Piège à poissons simple",
+	"rae_fish_trap_name": "Piège à poissons",
+	"rae_fish_trap_add": "Donner des vers",
+	"rae_fish_trap_empty": "Aucun ver à l'intérieur",
+	"rae_compost": "Composteur primitif",
+	"rae_compost_desc": "Remplissez-le de queues de Necks et de viande crue pour obtenir des vers",
+	"rae_compost_name": "Composteur primitif",
+	"rae_compost_add": "Ajouter des déchets",
+	"rae_compost_empty": "Aucun déchet"
+}

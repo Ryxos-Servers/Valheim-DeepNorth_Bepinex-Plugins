@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "Odins Hammer",
+	"odin_hammer_desc": "Perfekt sitzender Griff, unglaublich ausbalancierter Kopf - alles, damit du mehr erreichen kannst. Der Legende nach soll Odins Architekt selbst mit eigenen Händen damit gebaut haben.",
+
+	"food_smelter": "Fortschrittliche Kochstation",
+	"food_smelter_desc": "Automatisierte Kochstation",
+	"food_smelter_additem": "Essen hinzufügen",
+	"food_smelter_empty": "Ist leer",
+	"rae_bird_house": "Vogelhaus",
+	"rae_bird_house_desc": "Dieses Vogelhaus gibt dir ein paar Federn",
+	"piece_rae_bird_name": "Vogelhaus",
+	"piece_rae_bird_add": "Würmer geben",
+	"piece_rae_bird_empty": "Die Vögel sind hungrig",
+	"rae_fish_trap": "Fischfalle",
+	"rae_fish_trap_desc": "Einfache Fischfalle",
+	"rae_fish_trap_name": "Fischfalle",
+	"rae_fish_trap_add": "Würmer geben",
+	"rae_fish_trap_empty": "Keine Würmer drin",
+	"rae_compost": "Primitiver Komposthaufen",
+	"rae_compost_desc": "Fülle ihn mit Necktails und rohem Fleisch, um Würmer zu erhalten",
+	"rae_compost_name": "Primitiver Komposthaufen",
+	"rae_compost_add": "Abfall einfüllen",
+	"rae_compost_empty": "Kein Abfall"
+}

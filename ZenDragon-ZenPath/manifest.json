@@ -1,0 +1,9 @@
+﻿{
+  "name": "ZenPath",
+  "description": "Run on paths using less stamina. Half on dirt paths. None on paved roads. Snow reduces movement speed",
+  "version_number": "1.1.0",
+  "website_url": "https://github.com/ZenDragonX/ZenMods_Valheim/wiki",
+  "dependencies": [
+    "ZenDragon-Zen_ModLib-1.14.0"
+  ]
+}

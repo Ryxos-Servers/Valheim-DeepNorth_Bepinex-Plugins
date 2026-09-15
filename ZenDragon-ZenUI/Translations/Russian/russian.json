@@ -1,0 +1,16 @@
+{
+  "CraftGroup_Everything": "Всё",
+  "CraftGroup_Weapons": "Оружие",
+  "CraftGroup_Magic": "Магия",
+  "CraftGroup_Ammo": "Снаряды",
+  "CraftGroup_Armor": "Броня",
+  "CraftGroup_Shields": "Щиты",
+  "CraftGroup_Tools": "Инструменты",
+  "CraftGroup_Equipment": "Снаряжение",
+  "CraftGroup_Resources": "Ресурсы",
+  "CraftGroup_Food": "Еда",
+  "CraftGroup_Misc": "Разное",
+  "CraftGroup_Trophy": "Трофеи",
+  "inventory_take_stacks": "Взять стопки",
+  "inventory_take_weight": "Взять вес"
+}

@@ -1,0 +1,5 @@
+{
+  "inventory_search": "Znajdź",
+  "msg_sign_search_result": "W $1 jest $2",
+  "msg_sign_search_fail": "$1: Nie znaleziono w pobliżu"
+}

@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "Martello di Odino",
+	"odin_hammer_desc": "Manico perfettamente aderente, testa incredibilmente bilanciata, tutto perché tu possa fare di più. Secondo la leggenda, l'Architetto di Odino stesso era solito costruire con esso con le proprie mani.",
+
+	"food_smelter": "Stazione di cottura avanzata",
+	"food_smelter_desc": "Stazione di cottura automatizzata",
+	"food_smelter_additem": "Aggiungi cibo",
+	"food_smelter_empty": "È vuoto",
+	"rae_bird_house": "Casetta per uccelli",
+	"rae_bird_house_desc": "Questa casetta per uccelli ti darà delle piume",
+	"piece_rae_bird_name": "Casetta per uccelli",
+	"piece_rae_bird_add": "Dai vermi",
+	"piece_rae_bird_empty": "Gli uccelli hanno fame",
+	"rae_fish_trap": "Trappola per pesci",
+	"rae_fish_trap_desc": "Semplice trappola per pesci",
+	"rae_fish_trap_name": "Trappola per pesci",
+	"rae_fish_trap_add": "Dai vermi",
+	"rae_fish_trap_empty": "Nessun verme all'interno",
+	"rae_compost": "Composta primitiva",
+	"rae_compost_desc": "Riempila con code di Neck e carne cruda per ottenere vermi",
+	"rae_compost_name": "Composta primitiva",
+	"rae_compost_add": "Aggiungi rifiuti",
+	"rae_compost_empty": "Nessun rifiuto"
+}

@@ -1,0 +1,95 @@
+# 1.0.20
+* fixed sail not changing
+
+# 1.0.19
+* fixed pink alternative heads
+
+# 1.0.18
+* Updated for the Valheim 1.0.7 release.
+* Updated required dependencies to BepInExPack Valheim 5.4.2350 and ConditionalConfigSync 1.0.5.
+* Restored ship map-data indexes when loading worlds saved in the new chunk format.
+* Updated trophy attachments to integer prefab hashes while retaining support for saved legacy names.
+* Refreshed trophy visuals when quality changes, preserved quality/variant metadata, and prevented duplicate visual objects.
+* Kept attached trophy data intact when the item prefab cannot be found, and guarded null item references.
+* Fixed compressed ship-map context for both explicit reads and the read performed before writing to the map table.
+* Restored temporary map serialization and effect state after exceptional exits.
+
+# 1.0.17
+* enabled strict ModRequired admission: Longship Upgrades must now be installed on the server and every connecting client because ship component changes and map-data synchronization use mod-specific RPCs
+* migrated configuration synchronization from ServerSync to ConditionalConfigSync
+* shared ship upgrade mechanics are now explicitly server-controlled while client presentation settings remain policy-controlled
+* upgrade recipes now accept item prefab names and localization tokens without case sensitivity
+* crafting stations can now be configured by localization token or prefab name without case sensitivity
+* corrected FineWood and Raspberry prefab names in default recipes
+* localizations revised
+
+# 1.0.16
+* rehauled map data storage and sync between clients to prevent increased network traffic caused by ships with map table
+
+# 1.0.15
+* container upgrade will stay even if mod was disabled
+* optimized stored map table data size to potentially fix occasional ship desync
+
+# 1.0.14
+* more translations
+* wisp sparcs now will be affected by ship movement
+* ship should stay ashlands protected when handled by vanilla clients (just in case)
+* fixed rare issue when ship could stay in constantly damaged state when ship parked in Ashlands
+
+# 1.0.13
+* patch 0.221.10
+* translations refined
+* more translations: Chinese Traditional, Czech, Dutch, French, Korean, Ukranian
+
+# 1.0.12
+* Call To Arms patch
+* Map table
+
+# 1.0.11
+* fixed issue with texture loading on Awake
+
+# 1.0.10
+* new upgrade - wisp torch on mast
+* big thanks to Ephemeral for adding more vanillaish color variants for sails, tent and shields
+* ServerSync updated
+* patch 0.220.3
+
+# 1.0.9
+* little tweaks to translations
+* final fix for stray ship
+
+# 1.0.8
+* no more stray ships! Fixed ship not stopping after leaving the board when tent+lamp state was changed
+
+# 1.0.7
+* more distinct visuals for new and damaged ships with ashlands protection
+* fixed overlapping head when ship is at critical health
+
+# 1.0.6
+* polish translation
+
+# 1.0.5
+* more consistent upgrades and switch in multiplayer
+* pink objects fixed
+* hover will tell explicitly if you have no access to ship (not the owner)
+* ship's health and visual state will be correct after loading
+* you can no longer use box climb while sitting
+
+# 1.0.4
+* disableable forsaken power on item stand
+* bog witch
+
+# 1.0.3
+* fixed blinking station required text in hover
+
+# 1.0.2
+* hover text and interaction refinements for an upgrade with empty station or requirements set
+* option to limit upgrade usage to ship's creator only (enabled by default)
+* option to limit stand put and get item on trophy stand to ship's creator only (enabled by default)
+* lantern will now hang more freely
+
+# 1.0.1
+* more translations
+
+# 1.0.0
+ * Initial Release

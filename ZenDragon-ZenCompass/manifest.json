@@ -1,0 +1,9 @@
+﻿{
+  "name": "ZenCompass",
+  "description": "Highly optimized craftable radial compass. Tracks time of day and wind direction. Automatic death pin cleanup",
+  "version_number": "1.8.0",
+  "website_url": "https://github.com/ZenDragonX/ZenMods_Valheim/wiki",
+  "dependencies": [
+    "ZenDragon-Zen_ModLib-1.14.0"
+  ]
+}

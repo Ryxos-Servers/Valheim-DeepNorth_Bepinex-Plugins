@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "오딘의 망치",
+	"odin_hammer_desc": "완벽하게 맞는 손잡이, 놀랍도록 균형 잡힌 헤드, 이 모든 것은 당신이 더 많이 건축할 수 있도록 하기 위함입니다. 전설에 따르면 오딘의 건축가 자신도 직접 이것으로 건축했다고 합니다.",
+
+	"food_smelter": "고급 조리 시설",
+	"food_smelter_desc": "자동화된 조리 시설",
+	"food_smelter_additem": "음식 추가",
+	"food_smelter_empty": "비어 있습니다",
+	"rae_bird_house": "새집",
+	"rae_bird_house_desc": "이 새집은 깃털을 줍니다",
+	"piece_rae_bird_name": "새집",
+	"piece_rae_bird_add": "벌레 주기",
+	"piece_rae_bird_empty": "새들이 배고파합니다",
+	"rae_fish_trap": "물고기 덫",
+	"rae_fish_trap_desc": "간단한 물고기 덫",
+	"rae_fish_trap_name": "물고기 덫",
+	"rae_fish_trap_add": "벌레 주기",
+	"rae_fish_trap_empty": "안에 벌레가 없습니다",
+	"rae_compost": "원시 퇴비함",
+	"rae_compost_desc": "넥의 꼬리와 생고기를 넣어 벌레를 얻으세요",
+	"rae_compost_name": "원시 퇴비함",
+	"rae_compost_add": "쓰레기 추가",
+	"rae_compost_empty": "쓰레기가 없습니다"
+}

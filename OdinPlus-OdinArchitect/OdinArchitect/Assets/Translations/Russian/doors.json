@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Большие ворота",
+	"wooden_gate_1_desc": "Большие и тяжёлые деревянные ворота",
+	"wooden_drawbridge_1": "Подъёмный мост Сюртлинга",
+	"wooden_drawbridge_1_desc": "Подъёмный мост, управляемый ядром Сюртлинга",
+	"wooden_drawbridge_2": "IG Подъёмный мост Сюртлинга",
+	"wooden_drawbridge_2_desc": "Подъёмный мост, управляемый ядром Сюртлинга, сделан IG88V1",
+
+	"iron_gate_small": "Маленькие железные ворота",
+	"iron_gate_small_desc": "Маленькие железные ворота без центрального столба",
+	"iron_gate_big": "Большие железные ворота",
+	"iron_gate_big_desc": "Большие железные ворота без центрального столба",
+
+	"rae_elevator_small": "Маленький простой лифт",
+	"rae_elevator_small_desc": "Двигается на один этаж за раз",
+	"rae_elevator": "Простой лифт",
+	"rae_elevator_desc": "Двигается на один этаж за раз",
+	"rae_elevator_big": "Грузовой лифт",
+	"rae_elevator_big_desc": "Двигается на один этаж за раз",
+
+	"piece_woodgate_iron": "Деревянные двери с железом",
+	"piece_woodgate_iron_desc": "Деревянные двери с железным орнаментом",
+	"piece_woodgate_darkwood": "Деревянные двери с тёмным деревом",
+	"piece_woodgate_darkwood_desc": "Деревянные двери с орнаментом из тёмного дерева",
+	"piece_woodgate_crystal": "Деревянные двери с окном",
+	"piece_woodgate_crystal_desc": "Деревянные двери с кристальным окном",
+	"rae_hidden_door": "Скрытый люк",
+	"rae_hidden_door_desc": "Скрытый деревянный люк",
+
+	"piece_dvergr_wood_custom": "Железные двери Двергр",
+	"piece_dvergr_wood_custom_desc": "Элемент в стиле Двергр"
+}

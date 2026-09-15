@@ -1,0 +1,16 @@
+{
+  "CraftGroup_Everything": "Tudo",
+  "CraftGroup_Weapons": "Armas",
+  "CraftGroup_Magic": "Magia",
+  "CraftGroup_Ammo": "Munição",
+  "CraftGroup_Armor": "Armadura",
+  "CraftGroup_Shields": "Escudos",
+  "CraftGroup_Tools": "Ferramentas",
+  "CraftGroup_Equipment": "Equipamento",
+  "CraftGroup_Resources": "Recursos",
+  "CraftGroup_Food": "Comida",
+  "CraftGroup_Misc": "Diversos",
+  "CraftGroup_Trophy": "Troféu",
+  "inventory_take_stacks": "Pegar pilhas",
+  "inventory_take_weight": "Pegar peso"
+}

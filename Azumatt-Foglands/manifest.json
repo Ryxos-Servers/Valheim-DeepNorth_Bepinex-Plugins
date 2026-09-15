@@ -1,0 +1,9 @@
+{
+  "name": "Foglands",
+  "version_number": "1.0.1",
+  "website_url": "https://discord.gg/pdHgy6Bsng",
+  "description": "Foglands replaces the oppressive purple particle mist in Valheim's Mistlands with a more pleasant, atmospheric fog system.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333"
+  ]
+}

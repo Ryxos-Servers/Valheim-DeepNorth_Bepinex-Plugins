@@ -1,0 +1,14 @@
+{
+  "input_interact_alt": "InteractAlt",
+  "time_day0": "Less than a day",
+  "time_day1": "day",
+  "time_dayN": "days",
+  "time_hour0": "Less than an hour",
+  "time_hour1": "hour",
+  "time_hourN": "hours",
+  "time_minute0": "Less than a minute",
+  "time_minute1": "minute",
+  "time_minuteN": "minutes",
+  "time_second1": "second",
+  "time_secondN": "seconds"
+}

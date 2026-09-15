@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "大きな門",
+	"wooden_gate_1_desc": "大きくて重い木製の門",
+	"wooden_drawbridge_1": "サートリングの跳ね橋",
+	"wooden_drawbridge_1_desc": "サートリングのコアで制御される跳ね橋",
+	"wooden_drawbridge_2": "IG サートリングの跳ね橋",
+	"wooden_drawbridge_2_desc": "サートリングのコアで制御される跳ね橋、IG88V1作",
+
+	"iron_gate_small": "小さな鉄の門",
+	"iron_gate_small_desc": "中央ポールのない小さな鉄の門",
+	"iron_gate_big": "大きな鉄の門",
+	"iron_gate_big_desc": "中央ポールのない大きな鉄の門",
+
+	"rae_elevator_small": "小さなシンプルエレベーター",
+	"rae_elevator_small_desc": "一度に一階分移動します",
+	"rae_elevator": "シンプルエレベーター",
+	"rae_elevator_desc": "一度に一階分移動します",
+	"rae_elevator_big": "貨物用エレベーター",
+	"rae_elevator_big_desc": "一度に一階分移動します",
+
+	"piece_woodgate_iron": "鉄付きの木製ドア",
+	"piece_woodgate_iron_desc": "鉄の装飾が付いた木製ドア",
+	"piece_woodgate_darkwood": "ダークウッド付きの木製ドア",
+	"piece_woodgate_darkwood_desc": "ダークウッドの装飾が付いた木製ドア",
+	"piece_woodgate_crystal": "窓付きの木製ドア",
+	"piece_woodgate_crystal_desc": "クリスタルの窓が付いた木製ドア",
+	"rae_hidden_door": "隠し扉",
+	"rae_hidden_door_desc": "隠された木製のハッチ",
+
+	"piece_dvergr_wood_custom": "ドヴェルグの鉄ドア",
+	"piece_dvergr_wood_custom_desc": "ドヴェルグ様式のパーツ"
+}

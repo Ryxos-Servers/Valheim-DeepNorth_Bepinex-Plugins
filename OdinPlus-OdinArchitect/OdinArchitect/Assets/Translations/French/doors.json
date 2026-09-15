@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Grand portail",
+	"wooden_gate_1_desc": "Grand et lourd portail en bois",
+	"wooden_drawbridge_1": "Pont-levis à Surtling",
+	"wooden_drawbridge_1_desc": "Pont-levis contrôlé par un noyau de Surtling",
+	"wooden_drawbridge_2": "IG Pont-levis à Surtling",
+	"wooden_drawbridge_2_desc": "Pont-levis contrôlé par un noyau de Surtling, fait par IG88V1",
+
+	"iron_gate_small": "Petit portail en fer",
+	"iron_gate_small_desc": "Petit portail en fer sans poteau central",
+	"iron_gate_big": "Grand portail en fer",
+	"iron_gate_big_desc": "Grand portail en fer sans poteau central",
+
+	"rae_elevator_small": "Petit ascenseur simple",
+	"rae_elevator_small_desc": "Se déplace d'un étage à la fois",
+	"rae_elevator": "Ascenseur simple",
+	"rae_elevator_desc": "Se déplace d'un étage à la fois",
+	"rae_elevator_big": "Ascenseur de transport",
+	"rae_elevator_big_desc": "Se déplace d'un étage à la fois",
+
+	"piece_woodgate_iron": "Portes en bois avec fer",
+	"piece_woodgate_iron_desc": "Portes en bois avec ornement en fer",
+	"piece_woodgate_darkwood": "Portes en bois avec bois sombre",
+	"piece_woodgate_darkwood_desc": "Portes en bois avec ornement en bois sombre",
+	"piece_woodgate_crystal": "Portes en bois avec fenêtre",
+	"piece_woodgate_crystal_desc": "Portes en bois avec fenêtre en cristal",
+	"rae_hidden_door": "Trappe cachée",
+	"rae_hidden_door_desc": "Trappe en bois cachée",
+
+	"piece_dvergr_wood_custom": "Portes en fer Dvergr",
+	"piece_dvergr_wood_custom_desc": "Élément de style Dvergr"
+}

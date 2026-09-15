@@ -1,0 +1,16 @@
+{
+  "CraftGroup_Everything": "Alles",
+  "CraftGroup_Weapons": "Waffen",
+  "CraftGroup_Magic": "Magie",
+  "CraftGroup_Ammo": "Munition",
+  "CraftGroup_Armor": "Rüstung",
+  "CraftGroup_Shields": "Schilde",
+  "CraftGroup_Tools": "Werkzeuge",
+  "CraftGroup_Equipment": "Ausrüstung",
+  "CraftGroup_Resources": "Ressourcen",
+  "CraftGroup_Food": "Essen",
+  "CraftGroup_Misc": "Verschiedenes",
+  "CraftGroup_Trophy": "Trophäe",
+  "inventory_take_stacks": "Stapel nehmen",
+  "inventory_take_weight": "Gewicht aufnehmen"
+}

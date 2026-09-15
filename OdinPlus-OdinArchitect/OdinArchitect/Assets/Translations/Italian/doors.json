@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Grande cancello",
+	"wooden_gate_1_desc": "Grande e pesante cancello in legno",
+	"wooden_drawbridge_1": "Ponte levatoio di Surtling",
+	"wooden_drawbridge_1_desc": "Ponte levatoio controllato da un nucleo di Surtling",
+	"wooden_drawbridge_2": "IG Ponte levatoio di Surtling",
+	"wooden_drawbridge_2_desc": "Ponte levatoio controllato da un nucleo di Surtling, realizzato da IG88V1",
+
+	"iron_gate_small": "Piccolo cancello di ferro",
+	"iron_gate_small_desc": "Piccolo cancello di ferro senza palo centrale",
+	"iron_gate_big": "Grande cancello di ferro",
+	"iron_gate_big_desc": "Grande cancello di ferro senza palo centrale",
+
+	"rae_elevator_small": "Piccolo ascensore semplice",
+	"rae_elevator_small_desc": "Si sposta di un piano alla volta",
+	"rae_elevator": "Ascensore semplice",
+	"rae_elevator_desc": "Si sposta di un piano alla volta",
+	"rae_elevator_big": "Ascensore da trasporto",
+	"rae_elevator_big_desc": "Si sposta di un piano alla volta",
+
+	"piece_woodgate_iron": "Porte in legno con ferro",
+	"piece_woodgate_iron_desc": "Porte in legno con ornamento in ferro",
+	"piece_woodgate_darkwood": "Porte in legno con legno scuro",
+	"piece_woodgate_darkwood_desc": "Porte in legno con ornamento in legno scuro",
+	"piece_woodgate_crystal": "Porte in legno con finestra",
+	"piece_woodgate_crystal_desc": "Porte in legno con finestra in cristallo",
+	"rae_hidden_door": "Botola nascosta",
+	"rae_hidden_door_desc": "Botola in legno nascosta",
+
+	"piece_dvergr_wood_custom": "Porte di ferro Dvergr",
+	"piece_dvergr_wood_custom_desc": "Pezzo in stile Dvergr"
+}

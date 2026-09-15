@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "Martillo de Odín",
+	"odin_hammer_desc": "Mango perfectamente ajustado, cabeza increíblemente equilibrada, todo para que puedas hacer más cosas. Según la leyenda, el propio Arquitecto de Odín solía construir con él con sus propias manos.",
+
+	"food_smelter": "Estación de cocina avanzada",
+	"food_smelter_desc": "Estación de cocina automatizada",
+	"food_smelter_additem": "Añadir comida",
+	"food_smelter_empty": "Está vacío",
+	"rae_bird_house": "Casa de pájaros",
+	"rae_bird_house_desc": "Esta casa de pájaros te dará algunas plumas",
+	"piece_rae_bird_name": "Casa de pájaros",
+	"piece_rae_bird_add": "Dar gusanos",
+	"piece_rae_bird_empty": "Los pájaros tienen hambre",
+	"rae_fish_trap": "Trampa para peces",
+	"rae_fish_trap_desc": "Trampa para peces simple",
+	"rae_fish_trap_name": "Trampa para peces",
+	"rae_fish_trap_add": "Dar gusanos",
+	"rae_fish_trap_empty": "Sin gusanos dentro",
+	"rae_compost": "Compostaje primitivo",
+	"rae_compost_desc": "Llénalo con colas de Neck y carne cruda para obtener gusanos",
+	"rae_compost_name": "Compostaje primitivo",
+	"rae_compost_add": "Añadir desechos",
+	"rae_compost_empty": "Sin desechos"
+}

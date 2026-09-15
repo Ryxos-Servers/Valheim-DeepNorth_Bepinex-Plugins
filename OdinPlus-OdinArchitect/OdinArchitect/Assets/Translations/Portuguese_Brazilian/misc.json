@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "Martelo de Odin",
+	"odin_hammer_desc": "Cabo perfeitamente ajustado, cabeça incrivelmente equilibrada, tudo para que você possa construir mais. Segundo a lenda, o próprio Arquiteto de Odin costumava construir com ele com as próprias mãos.",
+
+	"food_smelter": "Estação de cozimento avançada",
+	"food_smelter_desc": "Estação de cozimento automatizada",
+	"food_smelter_additem": "Adicionar comida",
+	"food_smelter_empty": "Está vazio",
+	"rae_bird_house": "Casinha de pássaros",
+	"rae_bird_house_desc": "Esta casinha de pássaros vai te dar penas",
+	"piece_rae_bird_name": "Casinha de pássaros",
+	"piece_rae_bird_add": "Dar vermes",
+	"piece_rae_bird_empty": "Os pássaros estão com fome",
+	"rae_fish_trap": "Armadilha para peixes",
+	"rae_fish_trap_desc": "Armadilha simples para peixes",
+	"rae_fish_trap_name": "Armadilha para peixes",
+	"rae_fish_trap_add": "Dar vermes",
+	"rae_fish_trap_empty": "Nenhum verme dentro",
+	"rae_compost": "Composteira primitiva",
+	"rae_compost_desc": "Encha com caudas de Neck e carne crua para obter vermes",
+	"rae_compost_name": "Composteira primitiva",
+	"rae_compost_add": "Adicionar resíduos",
+	"rae_compost_empty": "Nenhum resíduo"
+}

@@ -1,0 +1,24 @@
+{
+	"odin_hammer": "オーディンのハンマー",
+	"odin_hammer_desc": "完璧にフィットする柄、驚くほどバランスの取れたヘッド、すべてはあなたがより多く建築できるように。伝説によれば、オーディンの建築家自身がこれを手にして建築していたという。",
+
+	"food_smelter": "高度な調理ステーション",
+	"food_smelter_desc": "自動調理ステーション",
+	"food_smelter_additem": "食料を追加",
+	"food_smelter_empty": "空です",
+	"rae_bird_house": "鳥の巣箱",
+	"rae_bird_house_desc": "この鳥の巣箱は羽根をくれます",
+	"piece_rae_bird_name": "鳥の巣箱",
+	"piece_rae_bird_add": "虫を与える",
+	"piece_rae_bird_empty": "鳥はお腹が空いています",
+	"rae_fish_trap": "魚罠",
+	"rae_fish_trap_desc": "シンプルな魚罠",
+	"rae_fish_trap_name": "魚罠",
+	"rae_fish_trap_add": "虫を与える",
+	"rae_fish_trap_empty": "中に虫がいません",
+	"rae_compost": "原始的な堆肥",
+	"rae_compost_desc": "ネックの尻尾と生肉を入れて虫を手に入れよう",
+	"rae_compost_name": "原始的な堆肥",
+	"rae_compost_add": "廃棄物を追加",
+	"rae_compost_empty": "廃棄物がありません"
+}

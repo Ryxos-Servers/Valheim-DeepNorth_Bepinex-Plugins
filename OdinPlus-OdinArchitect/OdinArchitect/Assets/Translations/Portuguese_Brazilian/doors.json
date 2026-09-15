@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Portão grande",
+	"wooden_gate_1_desc": "Portão de madeira grande e pesado",
+	"wooden_drawbridge_1": "Ponte levadiça de Surtling",
+	"wooden_drawbridge_1_desc": "Ponte levadiça controlada por um núcleo de Surtling",
+	"wooden_drawbridge_2": "IG Ponte levadiça de Surtling",
+	"wooden_drawbridge_2_desc": "Ponte levadiça controlada por um núcleo de Surtling, feita por IG88V1",
+
+	"iron_gate_small": "Portão pequeno de ferro",
+	"iron_gate_small_desc": "Portão pequeno de ferro sem poste central",
+	"iron_gate_big": "Portão grande de ferro",
+	"iron_gate_big_desc": "Portão grande de ferro sem poste central",
+
+	"rae_elevator_small": "Pequeno elevador simples",
+	"rae_elevator_small_desc": "Move-se um andar por vez",
+	"rae_elevator": "Elevador simples",
+	"rae_elevator_desc": "Move-se um andar por vez",
+	"rae_elevator_big": "Elevador de carga",
+	"rae_elevator_big_desc": "Move-se um andar por vez",
+
+	"piece_woodgate_iron": "Portas de madeira com ferro",
+	"piece_woodgate_iron_desc": "Portas de madeira com adorno de ferro",
+	"piece_woodgate_darkwood": "Portas de madeira com madeira escura",
+	"piece_woodgate_darkwood_desc": "Portas de madeira com adorno de madeira escura",
+	"piece_woodgate_crystal": "Portas de madeira com janela",
+	"piece_woodgate_crystal_desc": "Portas de madeira com janela de cristal",
+	"rae_hidden_door": "Alçapão escondido",
+	"rae_hidden_door_desc": "Alçapão de madeira escondido",
+
+	"piece_dvergr_wood_custom": "Portas de ferro Dvergr",
+	"piece_dvergr_wood_custom_desc": "Peça estilo Dvergr"
+}

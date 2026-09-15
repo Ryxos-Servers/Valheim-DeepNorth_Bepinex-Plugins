@@ -1,0 +1,32 @@
+﻿{
+	"wooden_gate_1": "大型木门",
+	"wooden_gate_1_desc": "巨大且沉重的木门",
+	"wooden_drawbridge_1": "火灵吊桥",
+	"wooden_drawbridge_1_desc": "由火灵核心控制的吊桥",
+	"wooden_drawbridge_2": "IG 火灵吊桥",
+	"wooden_drawbridge_2_desc": "由 IG88V1 制作的火灵核心控制吊桥",
+
+	"iron_gate_small": "小型铁门",
+	"iron_gate_small_desc": "不带中心柱的简易铁门",
+	"iron_gate_big": "大型铁门",
+	"iron_gate_big_desc": "不带中心柱的大型铁门",
+
+	"rae_elevator_small": "简易小型电梯",
+	"rae_elevator_small_desc": "每层都能移动",
+	"rae_elevator": "简易电梯",
+	"rae_elevator_desc": "每层都能移动",
+	"rae_elevator_big": "运输电梯",
+	"rae_elevator_big_desc": "每层都能移动",
+
+	"piece_woodgate_iron": "带铁装饰的木门",
+	"piece_woodgate_iron_desc": "带有铁质装饰的木门",
+	"piece_woodgate_darkwood": "带黑木装饰的木门",
+	"piece_woodgate_darkwood_desc": "带有黑木装饰的木门",
+	"piece_woodgate_crystal": "带窗户的木门",
+	"piece_woodgate_crystal_desc": "带水晶窗的木门",
+	"rae_hidden_door": "隐藏舱口",
+	"rae_hidden_door_desc": "木制隐藏舱口",
+
+	"piece_dvergr_wood_custom": "矮人铁门",
+	"piece_dvergr_wood_custom_desc": "矮人风格部件"
+}

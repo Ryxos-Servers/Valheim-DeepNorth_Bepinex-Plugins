@@ -1,0 +1,5 @@
+{
+  "inventory_search": "Find",
+  "msg_sign_search_result": "$1 has $2",
+  "msg_sign_search_fail": "$1 not found nearby"
+}

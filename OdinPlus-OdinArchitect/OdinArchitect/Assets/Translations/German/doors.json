@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Großes Tor",
+	"wooden_gate_1_desc": "Großes und schweres Holztor",
+	"wooden_drawbridge_1": "Surtling-Zugbrücke",
+	"wooden_drawbridge_1_desc": "Zugbrücke, gesteuert durch einen Surtling-Kern",
+	"wooden_drawbridge_2": "IG Surtling-Zugbrücke",
+	"wooden_drawbridge_2_desc": "Von IG88V1 gebaute Zugbrücke, gesteuert durch einen Surtling-Kern",
+
+	"iron_gate_small": "Kleines Eisentor",
+	"iron_gate_small_desc": "Kleines Eisentor ohne Mittelpfosten",
+	"iron_gate_big": "Großes Eisentor",
+	"iron_gate_big_desc": "Großes Eisentor ohne Mittelpfosten",
+
+	"rae_elevator_small": "Einfacher kleiner Aufzug",
+	"rae_elevator_small_desc": "Bewegt sich jeweils ein Stockwerk",
+	"rae_elevator": "Einfacher Aufzug",
+	"rae_elevator_desc": "Bewegt sich jeweils ein Stockwerk",
+	"rae_elevator_big": "Transportaufzug",
+	"rae_elevator_big_desc": "Bewegt sich jeweils ein Stockwerk",
+
+	"piece_woodgate_iron": "Holztüren mit Eisen",
+	"piece_woodgate_iron_desc": "Holztüren mit Eisenverzierung",
+	"piece_woodgate_darkwood": "Holztüren mit Dunkelholz",
+	"piece_woodgate_darkwood_desc": "Holztüren mit Dunkelholzverzierung",
+	"piece_woodgate_crystal": "Holztüren mit Fenster",
+	"piece_woodgate_crystal_desc": "Holztüren mit Kristallfenster",
+	"rae_hidden_door": "Versteckte Falltür",
+	"rae_hidden_door_desc": "Versteckte hölzerne Falltür",
+
+	"piece_dvergr_wood_custom": "Dvergr-Eisentüren",
+	"piece_dvergr_wood_custom_desc": "Dvergr-Stück"
+}

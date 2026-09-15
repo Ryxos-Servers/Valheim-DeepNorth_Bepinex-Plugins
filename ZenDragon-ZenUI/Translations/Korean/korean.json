@@ -1,0 +1,16 @@
+{
+  "CraftGroup_Everything": "전체",
+  "CraftGroup_Weapons": "무기",
+  "CraftGroup_Magic": "마법",
+  "CraftGroup_Ammo": "탄약",
+  "CraftGroup_Armor": "방어구",
+  "CraftGroup_Shields": "방패",
+  "CraftGroup_Tools": "도구",
+  "CraftGroup_Equipment": "장비",
+  "CraftGroup_Resources": "자원",
+  "CraftGroup_Food": "음식",
+  "CraftGroup_Misc": "기타",
+  "CraftGroup_Trophy": "트로피",
+  "inventory_take_stacks": "스택으로 가져가기",
+  "inventory_take_weight": "무게만큼 가져가기"
+}

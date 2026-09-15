@@ -1,0 +1,24 @@
+﻿{
+	"odin_hammer": "奥丁之锤",
+	"odin_hammer_desc": "配套的手柄完美契合，头部平衡性极佳，能让你做更多事情。根据传说，奥丁建筑师本人曾亲手用它建造。",
+
+	"food_smelter": "高级烹饪站",
+	"food_smelter_desc": "自动化烹饪站",
+	"food_smelter_additem": "添加食物",
+	"food_smelter_empty": "为空",
+	"rae_bird_house": "鸟舍",
+	"rae_bird_house_desc": "这个鸟舍会给你一些羽毛",
+	"piece_rae_bird_name": "鸟舍",
+	"piece_rae_bird_add": "投喂蠕虫",
+	"piece_rae_bird_empty": "鸟儿饿了",
+	"rae_fish_trap": "鱼笼",
+	"rae_fish_trap_desc": "简单的捕鱼陷阱",
+	"rae_fish_trap_name": "鱼笼",
+	"rae_fish_trap_add": "投喂蠕虫",
+	"rae_fish_trap_empty": "里面没有蠕虫",
+	"rae_compost": "原始堆肥桶",
+	"rae_compost_desc": "用脖颈尾巴和生肉填充，以获得蠕虫",
+	"rae_compost_name": "原始堆肥桶",
+	"rae_compost_add": "填充废物",
+	"rae_compost_empty": "没有废物"
+}

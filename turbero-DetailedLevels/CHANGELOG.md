@@ -1,0 +1,239 @@
+### CHANGELOG
+
+## 2.1.3
+
+* Fixing blood magic skill updates when invocations hit a "T.W.I.G." dummy (yes, it's feasible! Thank you, SnazzyGames)
+
+## 2.1.2
+
+* Fixed bundle with correct ServerSync for 1.0
+
+## 2.1.1
+
+* ServerSync upgrade for version 1.0 compatibility
+
+## 2.1.0
+
+* Compatibility with 1.0 Deep North
+* Fixed issues after update
+* Added "above"/"below" translations in options panel
+* Temporarily removed gamepad keys in stats window to avoid warnings flood in console
+
+## 2.0.1
+
+* Added support for EpicLoot → equipment that increases skill values will also color with blue the corresponding skill buff value once equipped.
+
+## 2.0.0
+
+* Finally! Skills values are shown below the buff icons, not as part of the title!
+  * Added new option in .cfg file to show the value above the icon (as usual) or below (new). 
+  * It can be changed in-game in the skills options panel
+  * Default will be "below" when mod is installed for first time.
+* Protection shields also showing remaining damage above or below the icon according to the new option:
+  * In addition, now the remaining damage is updated when receiving elemental or fall damage, not only physical damage from enemies
+  * Game bug fixed:
+    * when recasting the shield with one active the timer is reset but not the damage to absorb.
+    * The mod will also reset the damage to absorb as if it was a new shield. It should be like this, Iron Gate!
+* Now trinket powers triggered by adrenaline will also increase skill buff values accordingly
+* Removed some warnings in console when using a controller
+
+## 1.7.5
+
+* Added support for controllers. Now the mod panels can be navigated using the buttons through a gamepad.
+
+## 1.7.4
+
+* Removed option to hide "day x" message at the beginning of each day (this was moved to PvPBiomeDominions mod. If interested, https://thunderstore.io/c/valheim/p/turbero/PvPBiomeDominions/)
+* Now it is fully client-side, I only left the translations synced-forced to apply all players playing in servers.
+* Fixed typo in .cfg option "Kill Stats Grouping Format"
+
+## 1.7.3
+
+* Just added small null protection when changing configuration
+
+## 1.7.2
+
+* Small fix for kill stats with monster names contained in other monster names (i.e: Greydwarf, Greydwarf Brute and Greydwarf Shaman)
+
+## 1.7.1
+
+* Added compatibility with different monsters which are translated to the same name. It was breaking the skill dialog options (thank you, Dash200017) 
+
+## 1.7.0
+
+Stats enhancements:
+* Added new stats category created in the stats window inside the skill dialog with the number of kills of each monster killed. Monster names automatically translated. 
+* Stats categories separated in tabs: main stats and kill stats.
+* Kill stats are sorted by name. They can be grouped by initial letter or show all together in the .cfg file.
+* Separated death reasons in main stats in a new subcategory "Death Types".
+
+---
+
+<details><summary><b>Old releases notes (click to expand)</b></summary>
+
+## 1.6.1
+
+* Fixed skill loss rate value in the options panel (it was not adding up the skill reduction rate from the world modifier)
+
+## 1.6.0
+
+* Added new config option to show the skill number values with decimals or percentage (decimals by default). It can be changed in a new slider in the skill options panel in-game.
+* Removed config to set the skills death penalty (to avoid overwriting other mods configuration). You can still see the player value in the options panel.
+* Swapped some configurations to different categories. If any trouble, just delete and regenerate the .cfg file.
+
+Minor fixes:
+* Fixed issue to avoid repeating equipment buff text in the skills dialog.
+* Fixed reloading some config options to update them in the options panel immediately.
+* Fixed shown value in some sliders when changing them.
+
+## 1.5.7
+
+* Added option to hide "day x" message at the beginning of each day (default = false, activate manually in the .cfg file)
+
+(Why adding here if not related to levels? I was asked to recover certain mod ability for a community server and they were already using this mod anyway lol)
+
+## 1.5.6
+
+* Added option to save last skills order selected and load skills dialog for first time with same order
+* Removed warnings when drawing skills dialog and stats dialog on the screen
+
+## 1.5.5
+
+* Small fix to avoid exceptions when changing config file manually with the game on.
+
+## 1.5.4
+
+* Fixed issue when changing worlds or logging on and off without closing the game client.
+* Fixed sorting buttons not showing up when logging on and off without closing the game client.
+
+## 1.5.3
+
+* Fixed warnings from log when opening the skills dialog for first time
+* Preventing log errors when editing config file before opening the skills dialog for first time when the game is running.
+
+## 1.5.2
+
+* Improved player stats panel. Now scrollable and organized with categories! Check out your performance!
+* Fixed sneak buff blue color when troll full set is equipped
+
+## 1.5.1
+
+* Added skill type description in the craft stations to craftables that make you skill up when they are used so you don't have to craft it in advance and spend materials if you're not interested.
+* Skill up message also skipped when fighting Hildir bosses
+
+## 1.5.0
+
+* Added:
+  * new button below the skills list to open a new window and see all the player stats that the game saves about the player: about 100 different gossipy stats! (only in english for now. In the future I'll group and format them by category to be prettier).
+  * skill up message skipped when fighting a boss (to avoid players to be annoyed!)
+* Updated:
+  * Now skill buffs texts show bonuses in blue with the extra skill (for instance, if wearing Fenris set you will see Bows: 21 (+15) in blue).
+* Fixed:
+  * attempt to fix shield buff text when it is generated by another player nearby, it was not showing the absorbed damage on local player.
+
+## 1.4.2
+
+* Fixed shield buff text when recasting if having one active, the absorbed damage value was not reset
+
+## 1.4.1
+
+* Added remaining absorb damage to the magic shield buff icon, dynamically updated when being hit
+* Fixed several text updates during the blood magic skill events. For the record, the Blood Magic skill up happens when:
+  * your tamed allies hit an enemy (summoned troll is NOT an enemy)
+  * your magic shield is destroyed or your tamed allies magic shields are destroyed
+
+## 1.4.0
+
+* Updated custom options panel with same background as rest of game window backgrounds
+* Little tweak to skill up message sliders when the value is 0 (messages are not shown)
+* Fixed skill up messages when slider values are 0 (they must not pop up)
+
+## 1.3.7
+
+* Fixed new skill "dodge" to update on buffs section at the same time a dodge is done successfully
+* Recompiled with latest game libraries. Everything else didn't break with the update.
+
+## 1.3.6
+
+* Update libraries for latest game version
+* Fixed issue with level up messages
+
+## 1.3.5
+
+* Translating options panel in .cfg file
+* Small adjust to panel options
+
+## 1.3.4
+
+* Using inventory font style for detailed levels menu
+
+## 1.3.3
+
+* ServerSync integration
+* Added option to configure the skill loss percentage in the world (server-synced)
+
+## 1.3.2
+
+* Small fix to prevent random NREs when opening inventory
+* Default hotkey changed to F4
+
+## 1.3.1
+
+* Small fix for exception when pressing Esc or tab for first time in the game
+
+## 1.3.0
+
+* Created wood panel with options for the mod at the bottom of the skills dialog panel (only in English for now):
+	1) Added existing options of current skill loss and reload tracked skills after dying
+	2) Added new controls to configure level up messages
+* Now the toggle value to reload skill buffs after dying remains when exiting the game
+* Removed option to disable the mod by config (who does after installing a mod anyway lol)
+
+## 1.2.2
+
+* Added toggle in skills panel to save skill buffs when dying and setting them automatically when respawning
+
+## 1.2.1
+
+* Added small icon and text with exact value of the skills percentage lost when dying (not hardcoded. If you change with other mods, it will be shown here)
+* Added option to change skill background color in skills dialog from configuration file
+
+## 1.2.0
+
+* Added new buttons to sort skills dialog by name and by skill, up and down
+* Fixed skill dialog hotfix to avoid opening/closing while game is paused
+
+## 1.1.2
+
+* Adding hotkey to skill dialog button tooltip in inventory
+
+## 1.1.1
+
+* Added configurable hot key to open/close skills dialog (default = F7)
+* Fixed issue when new skill is learnt, it was not creating the buff at that very moment
+
+## 1.1.0
+
+* Added new feature to select skills and attach them to the buff UI and check progress continuously while fighting, running, building, etc
+
+## 1.0.3
+
+* Small fix for removing error in log when loading mod
+
+## 1.0.2
+
+* Small fix for yellow message when showing level achieved
+* Refactored code for future new features
+
+## 1.0.1
+
+* Added configuration file for manipulating new options
+* Enable/disable the mod and the debug logs entirely (logs disabled by default)
+* Choose how many decimals you want to see from 0 to 15 (default = 2)
+* Choose how often you want to see the yellow message in the center when you skill up (default = each 5 levels)
+
+## 1.0.0
+
+Initial version
+
+</details>

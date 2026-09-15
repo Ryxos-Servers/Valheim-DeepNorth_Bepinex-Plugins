@@ -1,0 +1,32 @@
+{
+	"wooden_gate_1": "Puerta grande",
+	"wooden_gate_1_desc": "Puerta de madera grande y pesada",
+	"wooden_drawbridge_1": "Puente levadizo de Surtling",
+	"wooden_drawbridge_1_desc": "Puente levadizo controlado por un núcleo de Surtling",
+	"wooden_drawbridge_2": "IG Puente levadizo de Surtling",
+	"wooden_drawbridge_2_desc": "Puente levadizo controlado por un núcleo de Surtling, hecho por IG88V1",
+
+	"iron_gate_small": "Puerta pequeña de hierro",
+	"iron_gate_small_desc": "Puerta pequeña de hierro sin poste central",
+	"iron_gate_big": "Puerta grande de hierro",
+	"iron_gate_big_desc": "Puerta grande de hierro sin poste central",
+
+	"rae_elevator_small": "Ascensor pequeño simple",
+	"rae_elevator_small_desc": "Se mueve un piso a la vez",
+	"rae_elevator": "Ascensor simple",
+	"rae_elevator_desc": "Se mueve un piso a la vez",
+	"rae_elevator_big": "Ascensor de transporte",
+	"rae_elevator_big_desc": "Se mueve un piso a la vez",
+
+	"piece_woodgate_iron": "Puertas de madera con hierro",
+	"piece_woodgate_iron_desc": "Puertas de madera con ornamento de hierro",
+	"piece_woodgate_darkwood": "Puertas de madera con madera oscura",
+	"piece_woodgate_darkwood_desc": "Puertas de madera con ornamento de madera oscura",
+	"piece_woodgate_crystal": "Puertas de madera con ventana",
+	"piece_woodgate_crystal_desc": "Puertas de madera con ventana de cristal",
+	"rae_hidden_door": "Trampilla oculta",
+	"rae_hidden_door_desc": "Trampilla de madera oculta",
+
+	"piece_dvergr_wood_custom": "Puertas de hierro Dvergr",
+	"piece_dvergr_wood_custom_desc": "Pieza de estilo Dvergr"
+}

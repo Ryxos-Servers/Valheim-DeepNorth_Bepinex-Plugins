@@ -1,0 +1,5 @@
+{
+  "inventory_search": "Найти",
+  "msg_sign_search_result": "У $1 есть $2",
+  "msg_sign_search_fail": "$1 не найден поблизости"
+}
