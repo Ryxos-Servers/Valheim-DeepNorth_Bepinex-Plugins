@@ -1,6 +1,6 @@
 {
     "name": "Blacksmithing",
-    "version_number": "1.3.5",
+    "version_number": "1.3.6",
     "website_url": "https://github.com/blaxxun-boop/Blacksmithing",
     "description": "Adds a skill that increases the durability of armor and weapons and other perks for blacksmithing.",
     "dependencies": []

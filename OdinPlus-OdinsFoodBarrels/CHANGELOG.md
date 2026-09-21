@@ -1,5 +1,14 @@
 ## Updates 
 
+### Version 1.2.9
+- Fixed Russian Localizations, thank you Dare Vita
+
+### Version 1.2.8
+- Fixed piece catagory with build hammer.
+
+### Version 1.2.7
+- Added new Deep North resources.
+
 ### Version 1.2.6
 - Fixed a build hammer crash caused by the recent Valheim update restructuring PieceTable's per-category piece storage.
 

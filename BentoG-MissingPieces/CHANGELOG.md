@@ -1,25 +1,10 @@
+## 2.3.1
+
+* Added build usage tags to all pieces.
+
 ## 2.3.0
 
-Hours and hours of my free time.
-Nobody bats an eye.
-We love your work.
-Great Job.
-This isn't my job.
-I make a decision to alleviate the work.
-Just a few more days,
-
-please wait.
-
-But no, we can not wait.
-
-Why don't you work faster?
-Why can't you put more hours in?
-It has only been 40.
-
-Play your game,
-I'll keep working for you.
-
-(The actual update will follow, please be patient. I know it's hard.)
+* Release for game version 1.0.7
 
 ## 2.2.3
 

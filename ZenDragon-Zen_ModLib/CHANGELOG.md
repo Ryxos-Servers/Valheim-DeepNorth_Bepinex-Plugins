@@ -1,3 +1,32 @@
+v1.14.8
+- added helper functions
+- fix vanilla: prevent nullref on title screen when inv has an item with a worldlevel > 0
+
+v1.14.7
+- relaxed valheim version check to be non-fatal.
+- recompile for Valheim v1.0.15
+
+v1.14.6
+- add config: "Admin / Unencumbered Gods" if you are in god mode, you will never be encumbered.  Default: true
+
+v1.14.5
+- fix vanilla: when opening containers with scroll bars the alignment of the grid was not reset when switching to containers without scrollbars.  this resulted in the grid being shifted up and looking weird. 
+
+v1.14.4
+- updated for support Valheim version v1.0.14
+- removed config to map the Radial Menu key since vanilla now has the option.
+
+v1.14.3
+- fix: InteractAlt (Q) was not registering correctly, the translation string was not loading.
+
+v1.14.2
+- fix: pressing the Y button on gamepad when inside the build menu to select repair was automatically opening the inventory. 
+
+v1.14.1
+- add config "Inputs / Keyboard Radial Menu" for setting the radial menu key.  Vanilla does not currently have a way to change it from the default: G
+- fix: gamepad layout2 was incorrectly mapping the crouch button when triggers were swapped.
+- fix: version check accepts both v1.0.12 (steam) and v1.0.11 (microsoft)
+
 v1.14.0
 - update for Valheim (Deep North)
 - require BepInEx to v5.4.2350

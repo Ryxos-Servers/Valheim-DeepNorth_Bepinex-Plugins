@@ -1,9 +1,9 @@
 ﻿{
   "name": "ZenUI",
   "description": "Crafting panel icons, grouping, sorting, and searching. Colored durability bars. Colored food bars. Ammo remaining. Hide status effect icons. Biome notifications. Disable slide anim. Auto open skills. Disable shout capitalization. First-person camera",
-  "version_number": "1.8.0",
+  "version_number": "1.8.6",
   "website_url": "https://github.com/ZenDragonX/ZenMods_Valheim/wiki",
   "dependencies": [
-    "ZenDragon-Zen_ModLib-1.14.0"
+    "ZenDragon-Zen_ModLib-1.14.8"
   ]
 }

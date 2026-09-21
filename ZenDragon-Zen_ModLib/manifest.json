@@ -1,7 +1,7 @@
 ﻿{
   "name": "Zen_ModLib",
   "description": "Shared code library used in all ZenMods.",
-  "version_number": "1.14.0",
+  "version_number": "1.14.8",
   "website_url": "https://github.com/ZenDragonX/ZenMods_Valheim/wiki",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2350",

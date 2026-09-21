@@ -1,3 +1,27 @@
+# 1.2.12
+* fixed backup recovery being blocked when one item prefab is unavailable
+* unavailable backup items are preserved for later recovery without restoring already recovered items again
+* normal slot backups keep updating while unavailable items remain pending
+
+# 1.2.11
+* patch 1.0.15
+
+# 1.2.10
+* ServerManager compatibility
+
+# 1.2.9
+* fixed cheated items stacking with each other
+
+# 1.2.8
+* fixed stack all prevention
+
+# 1.2.7
+* removed obsolete with ZenBeeHive
+* patch 1.0.14
+
+# 1.2.6
+* fixed compatibility with Jewelcrafting and other mods that replace crafting, so intentionally destroyed items in ExtraSlots are not restored
+
 # 1.2.5
 * fixed ServerCharacters compatibility so food, ammo, quick-slot and other ExtraSlots items keep their slot placement across reconnects
 

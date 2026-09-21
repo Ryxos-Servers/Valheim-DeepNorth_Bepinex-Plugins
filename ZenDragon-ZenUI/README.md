@@ -14,6 +14,7 @@ Helpful UI additions.
 - Biome notifications when spawning or teleporting and other key moments.
 - Auto open the skills panel.
 - Disable sliding animations.
+- Adjust default inventory size.
 - Colored food bars based on the food you ate: Health, Stamina, Eitr, or Balanced.
 - Take All button has three states: Take stacks, Take weight, Take all
 - Dropping items drops them in the direction of the camera, not your character's direction.
@@ -85,12 +86,13 @@ Enjoy!
 ## Sample Config File
 
 ```
-## Settings file was created by plugin ZenUI v1.7.3
+## Settings file was created by plugin ZenUI v1.8.1
 ## Plugin GUID: ZenDragon.ZenUI
 
 [Camera]
 
 ## [Admin] Set the mode for first person camera to be enabled.
+## (Vanilla: Disabled)
 # Setting type: FirstPersonMode
 # Default value: ZoomToEnable
 # Acceptable values: Disabled, ZoomToEnable, AlwaysExceptShips, Always
@@ -259,13 +261,13 @@ Hide Uncraftable Variants = true
 Show Any Known Station = true
 
 ## Show an indicator on the items that you have never crafted or held in your inventory.
-## [close and reopen UI for changes to take effect]
+## [close/open your UI for changes to take effect]
 # Setting type: Boolean
 # Default value: true
 Untouched Item Indicator = true
 
 ## Set the color for Untouched Item Indicator
-## [close and reopen UI for changes to take effect]
+## [close/open your UI for changes to take effect]
 # Setting type: Color
 # Default value: FFB75CFF
 Untouched Item Indicator Color = FFB75CFF
@@ -464,6 +466,20 @@ Show Full Stack Style = HideMaxWhenFull
 # Default value: true
 Show Durability Bar Colors = true
 
+## [Admin] CAUTION: This applies to all players on the server when installed on the server and client.
+## Number of inventory rows that a player starts the game with.
+## Set to -1 to disable this config. (Vanilla: 3 + hotbar)
+## There are merchant items you can buy to expand your inventory size through progression.
+## This setting has no effect if the playerkey invrows is already set.
+## You must remove it before login or this config will not work: "removekeyplayer invrows num"
+## Vanilla also has a console command to adjust size locally: inventorysize
+## Server admin can adjust other player keys via the "relay" command in Zen.ModLib
+## [logout required for changes to take effect]
+# Setting type: Int32
+# Default value: -1
+# Acceptable value range: From -1 to 6
+Inventory Rows Default = -1
+
 [Inventory Equip]
 
 ## When gear is equipped it always moves to the same pre-configured slot (Vanilla: false)
@@ -610,7 +626,7 @@ Extra Level Symbols = ★
 [Notifications]
 
 ## [Admin] Show the biome notification on key events.  (Vanilla: Discovery)
-## Player Spawn, After teleport, First discovery
+## Player spawn, After teleport, First discovery
 # Setting type: BiomeNoticeType
 # Default value: PlayerSpawn, Teleport, Discovery
 # Acceptable values: PlayerSpawn, Teleport, Discovery

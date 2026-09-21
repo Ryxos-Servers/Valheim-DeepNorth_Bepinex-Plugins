@@ -1,3 +1,239 @@
+**0.31.0**
+---
+```
+- Improves ProxyLoader detection
+    - Adds AllowedProxyLoaderHashes (Anti-Cheat, empty): SHA256s to treat as legitimate. The hash of the
+      flagged file is printed in the server log line for the detection and the log prints the hash when detecting one.
+    - IgnoredCheatProcesses entries containing a path separator now also match the folder a proxy DLL
+      was loaded from. Entries without one keep matching names only, so an existing entry like "steam"
+      cannot become an exemption for the whole game folder.
+- Fixes the server log flooding with "Delta removal ... found no match"
+- Fixes skill reductions being recorded for a rounding error (it wasn't causing a change, but was logging more than it should)
+```
+
+**0.30.0**
+---
+```
+- Adds NewCharacterClearKnownTexts (Player Sync, default on): a character joining a server for the first time
+  forgets its known texts.
+    - Vanilla's own reset did not cover this
+    - EpicMMO keeps its data in these KnownTexts, which 
+- Adds KnownTextPassthroughPrefixes (Player Sync, advanced, default EpicMMOSystem): comma separated key
+  prefixes in a character's known texts that are not touched.
+    - Fixes EpicMMO progression being rolled back on every join.
+- Adds EpicMMOKnownTextCompat (Player Sync, advanced, default on): does nothing unless EpicMMO is installed.
+```
+
+**0.29.0**
+---
+```
+- Adds detection for injected cheat menus
+- Adds the inventory grid check (World Integrity, DetectInventoryGrid, default on).
+    - Warns and never confiscates, like the item origin checks beside it. It does record a contradiction
+      against the connection, so it counts toward ContradictionThreshold and shows up in enforcer-trust.
+- Adds enforcer-harden: reports which of this server's defences against an injected cheat menu are switched
+  off and what each one leaves open.
+- Fixes a chance that customdata will become stale
+```
+
+**0.28.3**
+---
+```
+- Fixes clean logouts being reported as stale data in the Discord player-left message. The check read the
+  departing player's save off disk, but their final save was still queued for the character store's background
+  writer at that point - ZRpc hands the final-save RPC and vanilla's disconnect to us from the same batch of
+  incoming packets - so it read back the DirtyDisconnect a mid-session delta had written and announced the data
+  as outdated by a delta window. Almost every clean logout was reported wrongly. The final save's arrival is now
+  recorded as it is received and the message reads that instead: the same fact the file's own field carried, a
+  round trip earlier.
+- Removes a main-thread stall from every disconnect. Resolving that same clean/stale state read and fully
+  deserialized the departing player's save - inventory, confiscated list, custom data and the whole progression
+  record - to recover one enum, on the server's main thread, whether or not a Discord webhook was configured.
+  With no webhook, which is the default, the message it was for was discarded, so the work was pure waste on
+  every server running the mod. In internal storage mode it inflated every character on the account rather than
+  the one leaving.
+    - This is also the allocation most worth removing from a world autosave. ZDOExtraData.PrepareSave clones the
+      world's entire extra-data store and holds it live for the duration of the background save thread, and a
+      large character graph inflating on the main thread inside that window can push Unity's Boehm collector
+      into a mark stack overflow it cannot recover from - an immediate SIGABRT, exit code 134. The clone itself
+      is vanilla and is not patched here.
+- Times the character load path, which was the untimed half of character persistence. A slow read or
+  deserialize now reports itself through the stall watch the way the save path already did, rather than showing
+  up as an unexplained hitch.
+- Fixes the container audit reading the item list out of the wrong place, which had left it unable to record
+  anything at all. Container.Save writes the list with ZDO.Set(int, byte[]) and ZDOExtraData keeps byte arrays
+  in a different store from strings, so asking for "items" as a string returned the default for every container
+  on the server and no take or store could ever be diffed. It reads the byte array now. Both are dictionary
+  lookups that hand back the stored reference, so the unchanged path - the one every replicated container walks
+  - still allocates nothing.
+- Fixes cart, sled and ship storage never being audited. The index of which prefabs are containers was built
+  with GetComponent, which only looks at a prefab's root object, and vanilla mounts the Container of a Cart,
+  Sled, Karve, VikingShip, VikingShip_Ashlands, Trailership and the incinerator on a child instead - pointing
+  Container.m_rootObjectOverride back at the root so the contents still live on the root's ZDO. That is the ZDO
+  the server receives, under the root prefab's hash, so none of the seven ever matched and the one container a
+  player can empty out of sight of everybody and then drive away was the single thing this audit did not watch.
+  A child's Container now counts when its override resolves to the prefab's own root, which deliberately
+  excludes the dungeon and camp pieces that are built by parenting whole chest prefabs underneath them - those
+  carry their own ZDO, and filing their contents under the building they stand in would be a false record.
+- A performance pass aimed at servers running 50 to 100 players, where the concern is how much short-lived memory
+  the mod produces: Unity's collector stops every thread to clean up, so garbage made on a worker thread costs the
+  main thread exactly what garbage made on the main thread does. Measured on a real 66 KB character save:
+    - Character saves are written by a purpose-built writer instead of the general YAML serializer
+      (FastCharacterWriter, Advanced, default on). Same file, same keys and layout, read back by the same reader and
+      interchangeable with saves written the old way. Writing one cost 3.5 MB of garbage and now costs about 90 KB,
+      and a character is rewritten for every incremental update from every player. The writer checks itself
+      against the serializer once at startup - every property of every nested type, found by reflection so a field
+      added later is covered, plus a set of strings chosen to break a YAML writer - and hands every save back to
+      the serializer for the session if the two disagree about anything, saying so in the log.
+    - Incremental updates travel in a compact binary form instead of YAML (BinaryDeltaUpdates, Advanced, default
+      on). Reading one on the server cost 152 KB on the main thread and now costs 7 KB. Negotiated rather than
+      assumed: the server says it understands the form in the character payload every client is sent at connect,
+      so a client from before this existed keeps sending YAML and is handled as it always was, and a newer client
+      on an older server does the same.
+    - Audit lines are written by hand into a reused buffer. One 275 character line cost 50 KB and now costs
+      nothing to speak of. The line is unchanged - same keys, same order, still read back as YAML - and the
+      serializer remains as the fallback.
+    - The periodic full saves are asked for one player at a time, spread evenly across FullSyncPullIntervalMinutes,
+      rather than from everybody in waves at the end of it (FullSyncSpreadAcrossInterval, Advanced, default on).
+      Each player is asked exactly as often. A hundred full saves inside a minute was half a gigabyte of garbage
+      every interval; one every fifteen seconds is nothing.
+    - Adds CharacterWriteIntervalSeconds (Advanced, default 0, which changes nothing). When set, a character
+      changed by an incremental update is written at most that often instead of after every update. Full saves,
+      deaths, a player joining or leaving, admin commands and a shutdown still write at once. The cost is that a
+      server which dies without shutting down loses up to that many seconds of routine updates. 30 to 60 is a
+      sensible value for a busy server.
+    - A login no longer waits on other players' saves. It asked the character store whether anything at all was
+      queued, and on a busy server something nearly always is, so a join could hold the main thread for up to
+      three quarters of a second - twice, with map sync on - over a save that had nothing to do with it. It now asks
+      about its own character only.
+    - Looking up a character's save no longer lists every account that has ever joined. That listing is remembered
+      and only re-read when the character folder changes, which is when an account joins for the first time. "This
+      player has no save here" is still always checked against the disk before it is believed, because that answer
+      is what gets a new character's inventory stripped.
+    - The admin exemptions for structure validation, the RPC guards and the audit remember whether a connection is
+      an admin for ten seconds - the same staleness vanilla's own admin list already has. ZNet.IsAdmin builds
+      several strings per call and these asked it once per ZDO packet and twice per relayed hit. The command relay's
+      admin gate still asks vanilla directly, every time.
+    - Three log lines per incremental update move from Info to Debug. On a full server that was around twenty
+      lines a second, all day.
+- Main-thread stall warnings are written as warnings again, without debug logging on. They had ended up behind the
+  debug switch along with the background-thread ones, so a production server never reported a stall at all.
+  Background-thread timings stay debug-only, and StallWarningThresholdMs = 0 still silences both.
+- A connecting client's mod list is accepted once per connection. The handler stayed registered, so a peer could
+  send the list again as often as it liked - before the password and the ban list are checked - and have the
+  server parse up to 2 MB of YAML on the main thread each time, for as long as it held the socket open. The
+  ceiling on that list is now 512 KB and 4096 entries, and working out which required mods are missing no longer
+  costs declared-mods times required-mods.
+```
+
+**0.28.2**
+---
+```
+- Fixes empty loadouts causing errors
+```
+
+**0.28.1**
+---
+```
+- Documentation overhaul and readme condense
+```
+
+**0.28.0**
+---
+```
+- Fixes Mods.yaml losing optionalMods, adminOnlyMods and serverOnlyMods on a restart.
+    - A file that fails to parse is now copied to Mods.yaml.unreadable-<date>-<time>.bak before anything is
+      written, and the error names the line and column and what did load. Previously it logged "fix the file and
+      restart" and then published an empty file over the top of it, which made that impossible.
+    - A duplicate top-level key is now reported with its line number instead of being silently resolved
+      last-wins, which quietly discarded whichever copy came first and then wrote the loss to disk.
+- Fixes a NullReferenceException on every connecting client when any mod entry was written with no settings under
+  it, and the same entry then being named twice in the rejection text. An entry with nothing under it now reads as
+  listing the mod with no options set, which is what it looks like it means.
+- Adds keepWhenUnloaded on a mod entry (default false): keeps a requiredMods entry out of the reach of
+  RemoveUnloadedModsFromRequired, for a mod required of clients that the server does not run itself. Corrects that
+  setting's description and the README, both of which said it was off by default when it has been on.
+- Removes the versionStrictness field, which was read by nothing. A versionStrictness line in an existing file is
+  ignored and disappears on the next rewrite.
+- Adds Starter Loadouts (Player Sync, EnableStarterLoadouts, default off): a kit of items, skill levels, known
+  materials and a spawn point handed to a character joining this server for the first time. The kits are written
+  in Loadouts.yaml beside the other config files, created with a commented example in it and re-read while the
+  server is running; DefaultStarterLoadout picks the one new characters get.
+    - Granted AFTER the new-character rules have stripped what the character arrived with, which is what keeps the
+      two from fighting: nothing in a loadout needs listing in NewCharacterStartingItems as well, and a loadout may
+      hand over an upgraded item even though the allowlist refuses one that turns up on its own.
+    - Skills are only ever raised, never lowered. Items arrive at full durability and are not marked cheated, so
+      they do not put a character out of the running for the game's own achievements.
+    - knownMaterials, knownRecipes and the spawn point need SyncKnownItems / SyncSpawnPoint, which are what give
+      the server somewhere to record them; enforcer-loadout-list says so against each line when they are off.
+    - A prefab name that does not exist is named in the log and skipped rather than failing the join, and a
+      Loadouts.yaml that will not parse keeps the kits already loaded rather than emptying them.
+    - Adds enforcer-loadout-list [name] and enforcer-loadout-apply <accountId> <characterName> <name> confirm, the
+      second for giving a kit to a character the server already has a save for.
+- Adds Emergency Crash Recovery (Crash Recovery, EnableCrashRecovery, default off): every few minutes each
+  connected player is handed a sealed snapshot of their own character. Server still verifies and wins if the
+  clients character is tampered with.
+    - CrashRecoveryAutoRestore (default on) is a separate switch from the master one, so snapshots can be kept and
+      distributed without the server ever acting on one unasked. CrashRecoveryPushIntervalMinutes (default 10)
+      bounds how much a crash can cost and is also the bandwidth knob. CrashRecoveryKeepBlobs (default 3) bounds
+      what a client keeps per world.
+    - Adds enforcer-recovery-status, enforcer-recovery-open, enforcer-recovery-close and
+      enforcer-recovery-key-rotate.
+    - It cannot help with a lost or corrupted LOCAL character file - the client cannot read its own snapshot 
+      which is what progression sync is for. This is exlusively to handle server-crash recovery.
+- Adds Save Archives (Backups, EnableSaveArchives, default off): rolling, compressed archives holding the world save
+  and the character saves from the same moment.
+    - An archive is only ever taken just after a world save FINISHES.
+    - SaveArchiveIntervalMinutes (default 120) is a minimum gap, not a schedule
+    - SaveArchiveKeepCount (default 5) and SaveArchiveMaxTotalMB (default 0, no ceiling) decide what is kept, 
+      oldest deleted first.
+    - SaveArchiveIncludeCharacters (default on), SaveArchiveIncludeConfig (default on), SaveArchiveCompression
+      (Fastest / Optimal / NoCompression) and SaveArchivePath (empty = BepInEx/config/ValheimEnforcer/Archives).
+    - Adds enforcer-archive-list, enforcer-archive-now [save] and enforcer-archive-prune
+    - This does drastically increase storage size of the world on disk.
+- Adds Server-Synced Progression (Player Sync, EnableProgressionSync, default off)
+    - SyncMapExploration (default off): Syncs the players map to the server
+    - SyncKnownItems (default off): recipes, build pieces, materials, crafting stations, biomes, runestone texts and
+      permanent unlocks.
+    - SyncTrophies (default off): Syncs trophy list
+    - SyncPlayerStats (default off): Syncs player statistics, these are also used for achievements
+    - SyncSpawnPoint (default off): the bed a character has claimed here, and the fallback point.
+    - NewCharacterClearPlayerStats (default off): a character joining for the first time gets their stats cleared
+    - MapSyncIntervalMinutes (Advanced, default 15): how often a client may upload its map. This is mildly expensive.
+    - Adds enforcer-progress-show <accountId> <characterName>, which reports what the server holds section by section
+    - Adds enforcer-progress-clear <accountId> <characterName> <map|items|stats|spawn|all> allows deleting saved character progress
+- Slight memory optimization when Gzipping contents such as large save data
+```
+
+**0.27.1**
+---
+```
+    - Adds an Admin override config (NOT SERVER SYNCED, must be set on the server itself)
+```
+
+**0.27.0**
+---
+```
+- Adds ModValidationExemptAdmins (Mods, default off): anyone on the server's adminlist may connect with any mods at
+  all - missing required mods, mods the server does not allow, mismatched versions, modified files, unlisted BepInEx
+  patchers, and a missing or wrong attestation even under Require. It also covers an admin running no ValheimEnforcer
+  at all, who is otherwise refused for never sending a mod list. Meant for testing a mod against the live server
+  without editing Mods.yaml first.
+    - The checks still run and their result still goes to the server log, so you can read what the admin was
+      carrying; only the rejection is skipped.
+    - The Discord mod-mismatch notification is not sent for an exempt admin - nobody was turned away.
+    - An exempt admin whose list failed gets no client-contradiction declaration on file, since that feature reasons
+      from a premise this setting sets aside.
+    - The oversize mod-list guard is not part of the exemption.
+    - enforcer-whoami reports when it is on.
+- Reduces player memory footprint
+    - Adds CharacterCacheIdleMinutes (Advanced, default 30): a character untouched for this long is dropped from
+      memory and read back from its file on the next update. 0 keeps everything until restart, as before.
+- Adds enforcer-memory (Diagnostics): process and managed heap size, what the mod is holding, and the world's
+  object counts including the game's own per-peer object tables. MemoryReportIntervalMinutes (Advanced, default
+  0 = off) writes the same summary to the server log on a schedule.
+```
+
 **0.26.0**
 ---
 ```

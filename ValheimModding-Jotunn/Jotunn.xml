@@ -1273,6 +1273,11 @@
                 Piece 'Furniture' category
             </summary>
         </member>
+        <member name="P:Jotunn.Configs.PieceCategories.DeepNorth">
+            <summary>
+                Piece 'DeepNorth' category
+            </summary>
+        </member>
         <member name="P:Jotunn.Configs.PieceCategories.Food">
             <summary>
                 Piece 'Food' category
@@ -1290,7 +1295,9 @@
         </member>
         <member name="P:Jotunn.Configs.PieceCategories.All">
             <summary>
-                All piece categories
+                All piece categories.<br />
+                Since Valheim 1.0 this doesn't show the piece under every tag in the build menu anymore,
+                use <see cref="P:Jotunn.Configs.PieceConfig.Usage"/> to define where a piece shows up.
             </summary>
         </member>
         <member name="M:Jotunn.Configs.PieceCategories.GetNames">
@@ -1355,10 +1362,17 @@
         </member>
         <member name="P:Jotunn.Configs.PieceConfig.Category">
             <summary>
-                The name of the category this piece will appear on. If categories are disabled on the 
-                target <see cref="T:PieceTable"/>, this setting will be ignored.<br />
-                If categories are enabled but the given category can't be found, a new 
-                <see cref="T:Piece.PieceCategory"/> will be added to the table.
+                The name of the category this piece belongs to.<br />
+                If the given category can't be found, a new <see cref="T:Piece.PieceCategory"/> is created.
+                Pieces of a custom category are shown under an own tag in the build menu,
+                next to the vanilla tags defined by <see cref="P:Jotunn.Configs.PieceConfig.Usage"/>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceConfig.Usage">
+            <summary>
+                Hammer categories where this piece can be selected.<br />
+                See <see cref="T:Jotunn.Configs.PieceUsages"/> for valid values.<br />
+                If left empty, Jötunn will guess appropriate tags from the piece's category, components and name.
             </summary>
         </member>
         <member name="P:Jotunn.Configs.PieceConfig.CraftingStation">
@@ -1440,7 +1454,7 @@
         </member>
         <member name="P:Jotunn.Configs.PieceTableConfig.CustomCategories">
             <summary>
-                Array of custom categories the <see cref="T:PieceTable"/> uses. 
+                Array of custom categories the <see cref="T:PieceTable"/> uses.
                 Will be ignored when <see cref="P:Jotunn.Configs.PieceTableConfig.UseCustomCategories"/> is false.
             </summary>
         </member>
@@ -1449,9 +1463,15 @@
                 Indicator if the <see cref="T:PieceTable"/> can also remove pieces. Defaults to <c>true</c>.
             </summary>
         </member>
+        <member name="P:Jotunn.Configs.PieceTableConfig.GuessUsage">
+            <summary>
+                Indicator if Jötunn guesses the hammer usage tags for pieces added to this
+                <see cref="T:PieceTable"/> which have no usage tags set. Defaults to <c>true</c>.
+            </summary>
+        </member>
         <member name="M:Jotunn.Configs.PieceTableConfig.GetCategories">
             <summary>
-                Creates the final categories array for this <see cref="T:PieceTable"/>. 
+                Creates the final categories array for this <see cref="T:PieceTable"/>.
                 Adds vanilla categories when <see cref="P:Jotunn.Configs.PieceTableConfig.UseCategories"/> is true.
                 Adds custom categories when <see cref="P:Jotunn.Configs.PieceTableConfig.UseCustomCategories"/> is true.
             </summary>
@@ -1514,6 +1534,140 @@
                 The matched internal name.
                 If the pieceTable parameter is null or empty, an empty string is returned.
                 Otherwise the unchanged pieceTable parameter is returned.
+            </returns>
+        </member>
+        <member name="T:Jotunn.Configs.PieceUsages">
+            <summary>
+                Helper to get existing piece usage tag names
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Misc">
+            <summary>
+                Piece 'Misc' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Crafting">
+            <summary>
+                Piece 'Crafting' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Building">
+            <summary>
+                Piece 'Building' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Floor">
+            <summary>
+                Piece 'Floor' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Wall">
+            <summary>
+                Piece 'Wall' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Roof">
+            <summary>
+                Piece 'Roof' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Architecture">
+            <summary>
+                Piece 'Architecture' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Furniture">
+            <summary>
+                Piece 'Furniture' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Lighting">
+            <summary>
+                Piece 'Lighting' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Decor">
+            <summary>
+                Piece 'Decor' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Storage">
+            <summary>
+                Piece 'Storage' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Transport">
+            <summary>
+                Piece 'Transport' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Food">
+            <summary>
+                Piece 'Food' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Meads">
+            <summary>
+                Piece 'Meads' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Feasts">
+            <summary>
+                Piece 'Feasts' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Defense">
+            <summary>
+                Piece 'Defense' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Stacks">
+            <summary>
+                Piece 'Stacks' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Stairs">
+            <summary>
+                Piece 'Stairs' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Doors">
+            <summary>
+                Piece 'Doors' usage tag
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.PieceUsages.Seasonal">
+            <summary>
+                Piece 'Seasonal' usage tag
+            </summary>
+        </member>
+        <member name="M:Jotunn.Configs.PieceUsages.GetNames">
+            <summary>
+                Gets the human readable name to internal names map
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jotunn.Configs.PieceUsages.GetAcceptableValueList">
+            <summary>
+                Get a <see cref="T:BepInEx.Configuration.AcceptableValueList`1"/> of all piece usage tag names.<br/>
+                Since a piece can have any number of tags, store them as one comma separated <see cref="T:System.String"/>
+                Example:
+                <code>
+                    var pieceUsageConfig = Config.Bind("Piece", "Hammer Usages", $"{PieceUsages.Storage},{PieceUsages.Doors}", $"Comma separated usage tags.\n{PieceUsages.GetAcceptableValueList().ToDescriptionString()}");
+                    pieceConfig.Usage = pieceUsageConfig.Value.Split(',');
+                </code>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jotunn.Configs.PieceUsages.GetInternalName(System.String)">
+            <summary>
+                Get the internal name for a piece usage tag from its human readable name.
+            </summary>
+            <param name="pieceUsage"></param>
+            <returns>
+                The matched internal name.
+                If the pieceUsage parameter is null or empty, an empty string is returned.
+                Otherwise the unchanged pieceUsage parameter is returned.
             </returns>
         </member>
         <member name="T:Jotunn.Configs.RecipeConfig">
@@ -2879,7 +3033,16 @@
         <member name="P:Jotunn.Entities.CustomPiece.Category">
             <summary>
                 Name of the category this custom piece belongs to.<br />
-                When setting this value, Piece.m_category will be updated as well.
+                When setting this value, Piece.m_category will be updated as well.<br />
+                Pieces of a custom category are shown under an own tag in the build menu,
+                next to the vanilla tags defined by <see cref="P:Jotunn.Entities.CustomPiece.Usage"/>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomPiece.Usage">
+            <summary>
+                Hammer categories where this custom piece can be selected.<br />
+                See <see cref="T:Jotunn.Configs.PieceUsages"/> for valid values.<br />
+                If left empty, Jötunn will guess appropriate tags from the piece's category, components and name.
             </summary>
         </member>
         <member name="P:Jotunn.Entities.CustomPiece.FixReference">
@@ -3023,10 +3186,8 @@
         <member name="T:Jotunn.Entities.CustomPieceTable">
             <summary>
                 Main interface for adding custom piece tables to the game.<br />
-                All custom piece tables have to be wrapped inside this class 
-                to add it to Jötunns <see cref="T:Jotunn.Managers.PieceManager"/>.<br />
-                Add strings to <see cref="P:Jotunn.Entities.CustomPieceTable.Categories"/> to use custom categories on your
-                piece table. All categories will be replaced so list vanilla categories, too.
+                All custom piece tables have to be wrapped inside this class
+                to add it to Jötunns <see cref="T:Jotunn.Managers.PieceManager"/>.
             </summary>
         </member>
         <member name="P:Jotunn.Entities.CustomPieceTable.PieceTablePrefab">
@@ -3041,9 +3202,15 @@
         </member>
         <member name="P:Jotunn.Entities.CustomPieceTable.Categories">
             <summary>
-                String array of categories used on the <see cref="T:PieceTable"/>. 
-                Will be ignored when m_useCategories is false.<br />
-                All categories provided here will be used and displayed on the <see cref="T:Hud"/>.
+                String array of categories used on the <see cref="T:PieceTable"/>.<br />
+                All categories listed here are registered when the table is added.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomPieceTable.GuessUsage">
+            <summary>
+                Indicator if Jötunn guesses the hammer usage tags for pieces added to this
+                <see cref="T:PieceTable"/> which have no usage tags set. Defaults to <c>true</c>.<br />
+                Set to <c>false</c> to keep the usage tags defined on the piece prefabs untouched.
             </summary>
         </member>
         <member name="M:Jotunn.Entities.CustomPieceTable.#ctor(UnityEngine.GameObject)">
@@ -6269,6 +6436,14 @@
             </summary>
             <returns>A list of <see cref="T:PieceTable"/> instances</returns>
         </member>
+        <member name="M:Jotunn.Managers.PieceManager.FindUsageTagFlags(Piece,System.Boolean)">
+            <summary>
+                Optimistically guess the <see cref="T:Piece.UsageTagFlags"/> for a given <see cref="T:Piece"/> by the piece category, and optionally by attached components, prefab name and localized name.
+            </summary>
+            <param name="piece">The <see cref="T:Piece"/> to find the usage tags for.</param>
+            <param name="guessUsage">If true, Jötunn will try to guess the usage tags for pieces that have no usage tags set.</param>
+            <returns>All vanilla <see cref="T:Piece.UsageTagFlags"/> that match</returns>
+        </member>
         <member name="M:Jotunn.Managers.PieceManager.AddPieceCategory(System.String,System.String)">
             <summary>
                 Add a new <see cref="T:Piece.PieceCategory"/> by name. A new category
@@ -6283,7 +6458,9 @@
             <summary>
                 Add a new <see cref="T:Piece.PieceCategory"/> by name. A new category
                 gets assigned a random integer for internal use. If you pass a vanilla category
-                the actual integer value of the enum is returned.
+                the actual integer value of the enum is returned.<br />
+                Since Valheim 1.0 pieces of a custom category are shown under an own tag
+                in the build menu, next to the vanilla <see cref="T:Piece.UsageTagFlags"/> tags.
             </summary>
             <param name="name">Name of the category.</param>
             <returns>int value of the vanilla or custom category</returns>
@@ -6306,8 +6483,8 @@
         </member>
         <member name="M:Jotunn.Managers.PieceManager.RemovePieceCategory(System.String)">
             <summary>
-                Remove a <see cref="T:Piece.PieceCategory"/> from a table by name.
-                This does noting if a piece is still assigned to the category, remove it before calling this.
+                Remove a <see cref="T:Piece.PieceCategory"/> by name.<br />
+                The category id stays registered, this method does nothing.
             </summary>
             <param name="name">Name of the category.</param>
         </member>
@@ -6374,9 +6551,15 @@
             <param name="pieceTable">Prefab or item name of the PieceTable</param>
             <param name="category">Optional category string, does not create new custom categories</param>
         </member>
-        <member name="M:Jotunn.Managers.PieceManager.RegisterPieceInPieceTable(UnityEngine.GameObject,System.String,System.String,BepInEx.BepInPlugin)">
+        <member name="M:Jotunn.Managers.PieceManager.RegisterPieceInPieceTable(UnityEngine.GameObject,System.String,System.String,System.String[],BepInEx.BepInPlugin)">
             <summary>
                 Internal method for adding a prefab to a piece table.
+            </summary>
+        </member>
+        <member name="M:Jotunn.Managers.PieceManager.GuessesUsage(PieceTable)">
+            <summary>
+                Determines if usage tags may be guessed for pieces added to a table.
+                Only custom tables can opt out, vanilla tables always guess.
             </summary>
         </member>
         <member name="M:Jotunn.Managers.PieceManager.ReloadKnownRecipes(Player)">
@@ -6385,9 +6568,16 @@
             </summary>
             <param name="self"></param>
         </member>
-        <member name="M:Jotunn.Managers.PieceManager.RefreshCategories">
+        <member name="M:Jotunn.Managers.PieceManager.UpdatePieceTableCategories(PieceTable)">
             <summary>
-                Updates the piece categories, should be called after setting the m_category field of a piece.
+                Mirrors every category used by the table into <see cref="F:PieceTable.m_categories"/>.
+                The category tabs are gone, but vanilla still gates SetCategory, NextCategory,
+                PrevCategory and GetSelectedCategory on a non-empty list.
+            </summary>
+        </member>
+        <member name="M:Jotunn.Managers.PieceManager.GetCategoryLabel(Piece.PieceCategory)">
+            <summary>
+                Label for a category without an existing entry, only custom categories have a known token.
             </summary>
         </member>
         <member name="T:Jotunn.Managers.PrefabManager">
@@ -9265,6 +9455,14 @@
             <summary>
                 Path to cached icons. See <see cref="T:Jotunn.Managers.RenderManager"/>
             </summary>
+        </member>
+        <member name="M:Jotunn.Utils.PieceUtils.UsageTagFlagsFromStrings(System.String[])">
+            <summary>
+                Parses an array of human readable piece usage tag names into a combined <see cref="T:Piece.UsageTagFlags"/> value.
+                Invalid or unknown names are logged and skipped.
+            </summary>
+            <param name="usage">Array of usage tag names, see <see cref="T:Jotunn.Configs.PieceUsages"/> for valid values</param>
+            <returns>The combined <see cref="T:Piece.UsageTagFlags"/> for all recognized names</returns>
         </member>
         <member name="T:Jotunn.Utils.ReflectionHelper">
             <summary>

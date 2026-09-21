@@ -1,3 +1,34 @@
+v1.8.6
+- improve how tooltip summaries work:
+  - live switching between summary and detail views.
+  - handle the new cast system in Deep North.
+  - dynamically recalculate the weight when the multicraft button is held down.
+- fix: compatibility with AzuEPI. tooltip now displays always on top instead of clipping behind the icons.
+- fix: null ref when disabling crafting panel and search filter.
+- fix: when the crafting panel was disabled, it would prevent other grid icon enhancments from working.
+- recompile for Zen.ModLib v1.14.8 ??
+
+v1.8.5
+- removed tooltip old cache, no longer needed.
+- recompile for Zen.ModLib v1.14.5
+
+v1.8.4
+- fix: prevent search filter from appearing if crafting panel is disabled in the configs.
+
+v1.8.3
+- fix: text could display through the crafting panel grid icons after player logout/login.
+- improved auto-hide handling of the info panel when an item is selected; pin recipe without blocking view.
+- improved gamepad support for the crafting panel.
+- cleaned up the aesthetics for the Build Menu & Container so that they have thin scroll bars.
+- recompile for Zen.ModLib v1.14.3
+
+v1.8.2
+- fixed item info not switching to detail view when using keyboard and pressing alt key.
+
+v1.8.1
+- add config to set the default number of inventory rows for new characters.
+- recompile for Zen.ModLib v1.14.1
+
 v1.8.0
 - update for Valheim (Deep North)
 - recompile for Zen.ModLib v1.14.0

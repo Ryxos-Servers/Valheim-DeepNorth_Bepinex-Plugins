@@ -272,6 +272,33 @@
             </code>
             </example>
         </member>
+        <member name="M:ConditionalConfigSync.ConditionalConfigSync.GetRemoteConsumerState(System.String,System.Int64)">
+             <summary>
+             Gets the compatibility state of a Conditional Config Sync consumer on a connected remote peer.
+             </summary>
+             <param name="consumerGuid">Stable consumer/mod GUID used to create its <see cref="T:ConditionalConfigSync.ConfigSync"/> or <see cref="T:ConditionalConfigSync.VersionCheck"/>.</param>
+             <param name="peerUid">Valheim routed peer UID (<c>ZNetPeer.m_uid</c>).</param>
+             <returns>
+             The current <see cref="T:ConditionalConfigSync.RemoteConsumerState"/>. <see cref="F:ConditionalConfigSync.RemoteConsumerState.Unknown"/> is returned when the
+             peer is not currently admitted, the local/server CCS runtime cannot authoritatively evaluate that consumer, or
+             capability data has not been supplied by the connected server.
+             </returns>
+             <remarks>
+             On the server, the result is derived directly from the existing version-handshake state for the requested peer.
+             On a client, the connected server distributes compact per-peer capability snapshots derived from the same
+             handshake state; raw remote versions and handshake payloads are not exposed through this API.
+            
+             For client-to-client queries the server compares the two peers' existing consumer handshakes. When the server
+             also has that consumer registered, its ordinary validation result is enforced as well and absence can be reported
+             as <see cref="F:ConditionalConfigSync.RemoteConsumerState.Missing"/> when advertisement is guaranteed. Without a server-side consumer,
+             two advertising peers can still be compared, while a silent target remains <see cref="F:ConditionalConfigSync.RemoteConsumerState.Unknown"/>.
+             </remarks>
+        </member>
+        <member name="M:ConditionalConfigSync.ConditionalConfigSync.HasCompatibleConsumer(System.String,System.Int64)">
+            <summary>Returns whether a connected remote peer exposes a compatible CCS consumer.</summary>
+            <param name="consumerGuid">Stable consumer/mod GUID.</param>
+            <param name="peerUid">Valheim routed peer UID (<c>ZNetPeer.m_uid</c>).</param>
+        </member>
         <member name="M:ConditionalConfigSync.ConditionalConfigSync.ConfigData``1(BepInEx.Configuration.ConfigEntry{``0})">
             <summary>Returns the synchronization wrapper attached to a registered BepInEx config entry.</summary>
             <typeparam name="T">The config value type.</typeparam>
@@ -722,6 +749,28 @@
             Current ConditionalConfigSync wire protocol version.
             Increase this value only when the network format becomes incompatible.
             </summary>
+        </member>
+        <member name="T:ConditionalConfigSync.RemoteConsumerState">
+            <summary>Describes whether a specific remote peer exposes a compatible Conditional Config Sync consumer.</summary>
+        </member>
+        <member name="F:ConditionalConfigSync.RemoteConsumerState.Unknown">
+            <summary>
+            The state cannot currently be determined. This is returned before peer admission completes, for disconnected
+            peers, when the server cannot authoritatively evaluate the consumer, or when an older deployment does not
+            provide peer capability information.
+            </summary>
+        </member>
+        <member name="F:ConditionalConfigSync.RemoteConsumerState.Missing">
+            <summary>
+            Peer admission has completed and the remote peer did not advertise a consumer that is expected to advertise
+            whenever it is installed.
+            </summary>
+        </member>
+        <member name="F:ConditionalConfigSync.RemoteConsumerState.Incompatible">
+            <summary>The remote peer advertised the consumer, but it did not satisfy the applicable CCS compatibility check.</summary>
+        </member>
+        <member name="F:ConditionalConfigSync.RemoteConsumerState.Compatible">
+            <summary>The remote peer advertised the consumer and passed the applicable CCS version/protocol compatibility check.</summary>
         </member>
         <member name="T:ConditionalConfigSync.OwnConfigEntryBase">
             <summary>

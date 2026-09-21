@@ -5,7 +5,7 @@
 </p>
 
 
-<p align="center">A custom build set by the OdinPlus Team. Now with Mistland and Ashlands materials!!!
+<p align="center">A custom build set by the OdinPlus Team.
 
 </p>
 
@@ -55,7 +55,7 @@ OH_Egg_Basket
 
 OH_RoyalJelly
 
-OH_JotunPuffs
+OH_JotunPuffs_Basket
 
 OH_Magecap
 
@@ -66,6 +66,18 @@ OH_SmokePuffs_Basket
 OH_Vineberries
 
 OH_Volture_Eggs
+
+OH_Bzerker_Mushrooms
+
+OH_Bukeberries
+
+OH_Kale
+
+OH_Poteitr
+
+OH_Oats
+
+OH_LingonBerries
 
 OH_Seedbag
 
@@ -95,4 +107,3 @@ OH_Seedbag
 <p align="center">Visit my buymeacoffee for a free Admin craft Shark Hat and Tuna Sword!</p>
  
 <p align="center"><a href="https://www.buymeacoffee.com/Gravebear"><img src="https://noobtrap.eu/images/crystallights/GBSupporter.png"></a></p>
-
