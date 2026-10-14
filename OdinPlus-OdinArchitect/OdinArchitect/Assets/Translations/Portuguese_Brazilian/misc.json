@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Encha com caudas de Neck e carne crua para obter vermes",
 	"rae_compost_name": "Composteira primitiva",
 	"rae_compost_add": "Adicionar resíduos",
-	"rae_compost_empty": "Nenhum resíduo"
+	"rae_compost_empty": "Nenhum resíduo",
+
+	"hud_snappoint_left": "Esquerda",
+	"hud_snappoint_right": "Direita",
+	"hud_snappoint_back": "Trás",
+	"hud_snappoint_forward": "Frente"
 }

@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Llénalo con colas de Neck y carne cruda para obtener gusanos",
 	"rae_compost_name": "Compostaje primitivo",
 	"rae_compost_add": "Añadir desechos",
-	"rae_compost_empty": "Sin desechos"
+	"rae_compost_empty": "Sin desechos",
+
+	"hud_snappoint_left": "Izquierda",
+	"hud_snappoint_right": "Derecha",
+	"hud_snappoint_back": "Atrás",
+	"hud_snappoint_forward": "Delante"
 }

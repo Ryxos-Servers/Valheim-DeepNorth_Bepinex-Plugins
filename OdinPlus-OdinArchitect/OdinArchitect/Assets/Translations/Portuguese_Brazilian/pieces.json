@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Grande janela de madeira",
-	"ig_wooden_window_big_desc": "Grande janela de madeira feita por IG88V1",
-	"ig_woodeniron_window_big": "IG Grande janela de madeira",
-	"ig_woodeniron_window_big_desc": "Grande janela de madeira com elementos de ferro feita por IG88V1",
+	"ig_wooden_window_big": "IG Veneziana de madeira",
+	"ig_wooden_window_big_desc": "Venezianas de madeira feitas por IG88V1",
+	"ig_woodeniron_window_big": "IG Veneziana de madeira com ferro",
+	"ig_woodeniron_window_big_desc": "Venezianas de madeira com elementos de ferro feitas por IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Lareira com moldura",
 	"ig_fireplace_mantel_small_desc": "Pequena moldura de lareira feita por IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Cruz de pedra 45",
 	"piece_stonewallcross45_desc": "Elemento de cumeeira de pedra",
 	"piece_stonewallcross26": "Cruz de pedra 26",
-	"piece_stonewallcross26_desc": "Elemento de cumeeira de pedra"
+	"piece_stonewallcross26_desc": "Elemento de cumeeira de pedra",
+
+	"stonewall_hardrock_1x2": "Muro de rocha dura 1x2",
+	"stonewall_hardrock_1x2_desc": "Muro de pedra alternativo",
+	"stonewall_hardrock_2x2": "Muro de rocha dura 2x2",
+	"stonewall_hardrock_2x2_desc": "Muro de pedra alternativo",
+	"stonewall_hardrock_4x3": "Muro de rocha dura 4x3",
+	"stonewall_hardrock_4x3_desc": "Muro de pedra alternativo",
+	"rae_woodwall_4_quar": "Muro de madeira de pântano 1x1",
+	"rae_woodwall_4_quar_desc": "Muro feito de madeira de pântano",
+	"rae_woodwall_1_1x1": "Muro de troncos 1x1",
+	"rae_woodwall_1_1x1_desc": "Muro feito de troncos",
+	"rae_woodwall_2_1x1": "Muro de troncos 1x1",
+	"rae_woodwall_2_1x1_desc": "Muro feito de troncos",
+	"rae_woodwall_3_1x1": "Muro de madeira 1x1",
+	"rae_woodwall_3_1x1_desc": "Muro de madeira alternativo",
+	"IG_Hardwood_Floor_1x1": "Piso de madeira nobre 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Elegante piso de madeira",
+	"IG_Chevron_Floor_1x1": "Piso de madeira em espinha de peixe 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Elegante piso de madeira"
 }

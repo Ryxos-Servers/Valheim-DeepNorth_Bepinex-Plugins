@@ -9,8 +9,10 @@ can install it on a server without anyone having to agree about how the game sho
 
 Performance fixes are always on; the config holds only their tuning values and the admin-only Verify
 diagnostics. Correctness and terrain fixes each have their own toggle. Server memory fixes are the
-exception: they are off by default and opt-in, see [Server memory](#server-memory-opt-in). Config
-values are admin-only and server-synced.
+exception: they are off by default and opt-in, see [Server memory](#server-memory-opt-in). The
+dedicated-server garbage collector settings moved to a separate plugin, see
+[Server garbage collector](#server-garbage-collector). Config values are admin-only and
+server-synced.
 
 Each fix is tagged with the side it is worth installing on. *(server)* fixes only do something on
 the machine hosting the world — a dedicated server or a listen host. *(client)* fixes need a local
@@ -21,9 +23,10 @@ safe; it just gets you a subset. See [Installation](#installation).
 ### Why so many fixes are client-side
 
 A Valheim dedicated server is not a simulation host. It only creates game objects inside its *own*
-active area, and a headless server never has a player to anchor that area to, so that area stays at
-world origin for the whole run. Creatures, fires, chests, tar pits and everything else near a player
-are created, owned and simulated on that player's client; the server holds the data and relays it.
+active area, and a dedicated server never has a player to anchor that area to, so the game parks it
+far outside the world for the whole run. Creatures, fires, chests, tar pits and everything else near
+a player are created, owned and simulated on that player's client; the server holds the data and
+relays it.
 
 So the fixes a server gains from are the data-and-network ones — ZDO handling, world load, packet
 allocation, socket logging — and almost everything else is worth having on the client.
@@ -119,12 +122,12 @@ fix under [Credit and sources](#credit-and-sources).
 - **Fix Collision Callback Allocation** *(both)* — turns on Unity's `reuseCollisionCallbacks` so one
   collision object serves every callback; the first suspect if a physics-touching mod that stores
   collision objects misbehaves.
-- **Fix Equipment Visual Refresh** *(client)* — re-applies a character's skin and hair colour only
+- **Fix Equipment Visual Refresh** *(client)* — re-applies a character's skin and hair color only
   when an input changed or another system overwrote it, and reads its equipment fields with one
   table lookup instead of thirty.
 - **Fix Light Settings Subscription** *(client)* — registers lights for graphics-setting changes in a
   lookup table instead of a static event whose unsubscribe scans every other lit light.
-- **Fix Portal Idle Updates** *(client)* — stops a portal re-writing its emission colour, light and
+- **Fix Portal Idle Updates** *(client)* — stops a portal re-writing its emission color, light and
   audio every frame once the connection fade has finished.
 - **Fix Material Fader Settling** *(client)* — stops a finished fade re-applying the same material
   property block to every renderer every frame; lingering corpses are the common case.
@@ -136,12 +139,94 @@ fix under [Credit and sources](#credit-and-sources).
   revision, so an hour of missed production is not re-read once per simulated second.
 - **Fix Idle Sound Updates** *(client)* — drops a finished one-shot sound out of the per-frame audio
   updater list until something plays it again.
+- **Fix Loading Zone Cadence** *(client)* — behind a portal, respawn or login loading screen,
+  installs the zones around you nearest first, as many per tick as `Loading Zone Budget` allows
+  (default 30 ms, 0 is vanilla), instead of one zone every 0.1 s, which at the highest simulation
+  distance alone kept the loading screen up for 13.7 s.
+- **Fix Reference Position Send Delay** *(client)* — tells the server where you are as soon as a
+  portal, respawn or login moves you two or more zones, instead of at the next 2 s report, so the
+  server starts sending the new area at once.
+- **Fix Destination Terrain Delay** *(client)* — starts building the ground at a teleport's destination
+  as the fade begins, and at your bed while you are dead, instead of only once you arrive, so the
+  loading screen no longer waits for it. It never asks for more than the terrain builder can hold, so
+  nothing finished is thrown away before it is used.
+- **Fix Portal Destination Send Delay** *(both)* — while you stand within `Portal Prefetch Range`
+  (default 10 m) of a connected portal, the server starts sending the building pieces and terrain
+  edits around the other end, instead of only once you have gone through, so the loading screen behind
+  the portal has less to wait for. The server checks that you really are at that portal and works out
+  its destination itself, and it uses only what your connection has spare after the area around you,
+  nearest pieces first. Needs the mod on the server and the client; players without it are unaffected.
+  Can be turned off, for servers that would rather not send players areas they may not visit.
+- **Fix Minimap Fog Upload** *(client)* — uploads only the patch of map fog you just revealed
+  instead of the whole 8 MiB fog texture every time exploring reveals new ground.
+- **Fix Dungeon Spawn Hitch** *(client)* — places the rooms of a dungeon or camp loading in near you
+  over a few frames within `Dungeon Room Budget` (default 4 ms, 0 is vanilla) instead of all in one
+  frame; the zone's contents wait for the last room as they do while the rooms load, and nothing
+  is spread behind a loading screen.
+- **Fix Location Spawn Hitch** *(client)* — spawns one location per frame plus as many more as
+  `Location Spawn Budget` allows (default 4 ms, 0 is vanilla), through the game's own wait-and-retry,
+  instead of every ready location in the same frame; nothing waits behind a loading screen.
+- **Fix Location Room Preload** *(server)* — loads each location and its dungeon's rooms in the
+  background as soon as its zone enters the ring generated ahead of the players, instead of when
+  generation reaches it; the whole zone, ground included, waits for that load, so while travelling
+  the ground went missing until it finished. A zone you are about to enter waits at most `Location
+  Load Wait` (default 1 s) before loading what is left at once. Also makes a first-time location
+  wait for its room prefabs as the game intends when a copy already standing nearby loaded only the
+  location: the game then loaded every room in one frame, over a second for the Deep North halls.
+- **Fix Background Dungeon Generation** *(server)* — lays out dungeons and camps generated in the
+  ring ahead of the players with lightweight stand-ins instead of full room models. The game built
+  every room model there only to read its layout and destroy it again within the frame; the dungeon,
+  its contents and its saved room list come out the same, and the rooms are built when players
+  arrive, as before. Rooms with terrain-layer colliders are still built in full, and the fix stands
+  down when another mod hooks room placement. `Verify Background Dungeon Stand-ins` in the `Debug`
+  section builds both and logs any difference.
+- **Fix Location Model Placeholders** *(client)* — builds location and dungeon room models from a
+  copy of the prefab without the networked objects (chests, trees, creatures, ore) the model never
+  uses. Those come from the world's saved data, so the game clones them switched off and leaves them
+  dead in the model while it is loaded; in the Deep North they are most of it, 33,390 of The Hole's
+  33,587 objects, 99% of a north village house and two thirds of a hall. A template is made, between
+  frames, once a prefab has been used twice and has enough of them; a networked object the model
+  refers to stays in it as an empty, switched-off placeholder, so every reference survives. It keeps
+  its prefab loaded, so a dungeon's rooms keep their templates between visits, and is dropped after
+  five minutes unused; until then, and when another mod hooks location spawning or room placement,
+  the game's own clone is used. `Verify Location Model Templates` in the `Debug` section builds both and logs any
+  difference.
+- **Fix Arriving Location Hitch** *(client)* — when the host reaches a zone holding a location
+  before the game has generated it, generates the zone in the background first and loads it on the
+  next tick the way already-generated land loads: objects a few per frame, the location model within
+  Fix Location Spawn Hitch's budget and dungeon rooms within Fix Dungeon Spawn Hitch's. The game
+  otherwise builds every object, the whole location model and every room model of such a zone in
+  one frame. The world and its dungeons come out the same; only when the visible parts are built
+  changes. The player's own zone, loading screens and zones without a location are left to the game.
+- **Fix Hotbar Key Allocation** *(client)* — checks the hotbar keys with cached key names instead of
+  formatting up to sixteen new strings every frame.
+- **Fix Equipment Modifier Allocation** *(client)* — totals your equipment's movement, stamina and
+  heat modifiers through typed field reads instead of boxing every value fifty times a second, with
+  identical results.
+- **Fix Active Area Check Allocation** *(both)* — tests whether a point is inside the loaded area
+  without allocating an array per test, which wear updates, physics settling and the server's
+  ownership release do thousands of times a second.
+- **Fix Idle Creature Sync** *(both)* — stops a standing creature's owner re-sending it to every
+  player each frame over physics jitter: its position, velocity and ground tilt are sent once they
+  move more than 2 cm, 0.05 m/s or 1 degree from what was last sent, instead of on any change at
+  all. Players, ships, carts and items are untouched. The one performance fix with a toggle, since
+  it changes what other players see, by at most those amounts.
+- **Fix Paint-Only Terrain Rebuilds** *(both)* — when something that only paints the ground loads
+  or unloads, like the big rocks and copper deposits of the Black Forest, coast and heath, refreshes
+  just the terrain paint under it instead of also rebuilding the ground's collision and shape. Each
+  such refresh checks the ground's heights came out the same, and does the full rebuild if not.
+- **Fix Hourly Server Freeze** *(server)* — on a dedicated server, holds the game's hourly cleanup of
+  unused assets until nobody has been connected for two minutes, instead of running it on the hour.
+  On a large world that cleanup freezes the server, and everyone on it, for most of a second. On a
+  server that is never empty it still runs within `Asset Unload Max Delay` (default 12 h). Each run is
+  logged with the freeze that followed it and the memory before and after, so you can see what the
+  cleanup gives back on your server. Can be turned off for the game's own hourly timing.
 
 ### Terrain
 
-**Fix Terrain Seams** and **Fix Terrain Paint Seams** change only what is drawn, never what is saved,
-so they are client-only. **Fix Terrain Paint Zone Fanout** changes what is recorded, so it runs on
-every side.
+**Fix Terrain Seams**, **Fix Terrain Paint Seams** and **Fix Swamp Plains Shore Seams** change only
+what is drawn, never what is saved, so they are client-only. **Fix Terrain Paint Zone Fanout** and **Fix Terrain Paint Doubling** change
+what is recorded, so they run on every side.
 
 - **Fix Terrain Seams** *(client)* — computes terrain lighting normals across zone boundaries,
   removing the hard crease along the 64 m grid.
@@ -150,6 +235,15 @@ every side.
 - **Fix Terrain Paint Zone Fanout** *(both)* — records terrain paint into every zone it actually
   covers, including the neighbour about a metre west or south that vanilla left out; affects edits
   made from now on.
+- **Fix Terrain Paint Doubling** *(both)* — applies an edit that reaches two zones once to the
+  ground they share, instead of twice (four times at a corner); in the Deep North that stops
+  piling or clearing snow from leaving a ridge or trench along the zone line.
+- **Fix Swamp Plains Shore Seams** *(client)* — stops shores where swamp blends into plains from being
+  drawn with the Ashlands shoreline in hard straight lines along the zone grid. The game's terrain
+  colors cannot express that blend without also meaning Ashlands, so the two are bridged by a
+  narrow strip where they meet instead: black forest ground by default, or Ashlands ground that
+  follows the crossover rather than the zone grid ("Swamp Plains Bridge Ground"; "Swamp Plains
+  Blend Sharpness" sets the strip's width).
 - **Fix Terrain Paint Mask Indexing** *(client)* — corrects the stride and bounds the `optterrain`
   console command uses to walk terrain paint data.
 - **Fix Terrain Compiler Init Race** *(both)* — recovers a zone's terrain compiler that loaded before
@@ -169,6 +263,7 @@ every side.
 - **Refund Rejected Station Items** *(both)* — drops an item back at the player when a smelter, kiln,
   fireplace, cooking station or fermenter discards it on arrival because the station changed owner or
   filled up after the item left their inventory; covers a vanilla sender and the "last slot" race.
+  Inactive when AutomaticFuel, or Eternal Fire older than 1.1.6, is installed.
 - **Share Boss Defeat Keys** *(client)* — gives every nearby player the per-player boss defeat key,
   not only the one whose client owned the boss; works against a vanilla server.
 - **Fix Recipe Amount Crash** *(client)* — guards the null dereference that broke the crafting panel
@@ -181,26 +276,70 @@ every side.
   debug logging.
 - **Fix Container Log Spam** *(both)* — redirects the four log lines written on every chest open,
   stack-all and take-all to debug logging.
+- **Fix Container Grid Alignment** *(client)* — resets the container grid's alignment and scroll position
+  when you open a different chest, so a standard chest opened after a larger one is centered instead of
+  keeping the larger one's top-aligned, scrolled layout.
 - **Fix Item Icon Crash** *(client)* — draws the first icon for an item whose stored icon variant is
   out of range instead of throwing from every UI panel.
 - **Fix Negative Stamina** *(client)* — floors player stamina at zero (`NaN` included), repairs a
   character that loads in broken, and drops a `UseStamina` network message carrying `NaN` or infinity.
-- **Fix Dungeon Load Stall** *(both)* — counts a dungeon room whose asset failed to load as finished
-  and drops it, so the zone is not left flagged as loading forever.
 - **Fix Teleport Ghost Players** *(server)* — tells a client to drop a player who teleported out of its
   loaded area, instead of leaving them standing frozen where they left (and still in local chat range).
 - **Fix Unsaved Client Changes** *(server)* — marks an object a connected player placed or changed for
   the next world save; the chunked save format only rewrites chunks the game marked as changed, and it
   never marks one for a change that arrives from another player.
-- **Fix Water Colour Seams** *(client)* — colours each water tile by the depth blended across it, as its
-  waves already are, instead of by one corner, removing the hard colour line along the 64 m grid.
-  `Water Colour Depth Scale` (default 2) sets how soon shading reaches deep water; above 1 it also makes
-  shallow-water waves look taller than the ones boats ride.
+- **Fix Water Color Seams** *(client)* — colors each water tile by the depth blended across it, as its
+  waves already are, instead of by one corner, removing the hard color line along the 64 m grid.
+  `Water Color Shore Tint` (0 to 1, default 0.75) moves the sandy shallow-water color towards the deep-sea
+  color, so one shallow corner no longer tints a whole tile of open sea; it changes color only, never waves.
 - **Fix Non-Item ObjectDB Entries** *(both)* — drops prefabs that are not items from the game's item
   list on load; the 2026-09-09 update listed three (`PropFeastDeepNorth`, `SnowRoller`,
   `FrozenKing_Summon`) that break mods treating every entry as an item. They can still be spawned.
+- **Clear Patrol Point On Taming** *(both)* — clears the patrol point a spawner stamped on a creature
+  when you tame it, so it settles where you keep it instead of running back to where it spawned.
+  Mostly boars, which cannot be told to follow or stay and so had no way to clear it. Telling a tamed
+  creature to stay still sets a patrol point as normal.
+- **Fix Map Auto-Close** *(client)* — stops the map closing for every player on the server whenever
+  anyone wakes or kills a boss; vanilla closes an open map on every world key change. It still closes
+  for a player with a boss within `Map Auto-Close Boss Range` (default 100 m, the boss health bar
+  range).
+- **Fix Biome Sector Lookup** *(both)* — makes the biome sector lookup agree with the actual biome near
+  borders. Vanilla reads its 12 m biome grid rounded down, so within about 12 m of a border the player's
+  biome, weather, spawn levels, the map's biome name and terrain coloring follow the neighbouring biome,
+  and a `GetBiome error` warning is logged every second. Location placement keeps vanilla's lookup, so
+  seeds still place locations where unmodded Valheim does.
+- **Fix Loading Screen Hang** *(both)* — unregisters a networked object that was destroyed without the
+  game's object manager being told, so a dungeon exit, portal trip or respawn next to it can finish
+  loading. Vanilla leaves one behind on your client each time another player opens an Infested Mine
+  treasure pile near you, and the loading screen then waits on it until you quit.
+- **Fix Equipment Texture Errors** *(client)* — stops the `doesn't have a texture property` errors each
+  Deep North Shadow logs when it is created, about eleven per Shadow and several Shadows per village.
+  The game copies its body and armour textures from a material that has none of them; a missing
+  texture is now read as empty, which is what the game ended up with anyway, and the Shadow looks the
+  same.
+- **Fix Unkillable Creatures** *(both)* — finishes the death of a creature left alive at zero health,
+  which in vanilla ignores every hit for good. Mostly Deep North creatures whose owner changed during
+  their death animation, which a busy server makes more likely, and creatures whose death another
+  mod's code broke. A creature whose health another mod made `NaN` is put back to full health.
+- **Fix Cloth Wind Shelter Errors** *(both)* — stops the `MagicaCloth component not found` error the
+  Root Crown logs, stack trace included, each time one is created: dropped, put on a stand, or worn by
+  a player coming into range. Its hat model carries the Deep North cloth wind shelter without the cloth
+  it controls; the shelter now switches itself off quietly, and the crown looks the same.
+- **Fix Loading Screen Wait** *(both)* — ends a portal, respawn or login loading screen once the server
+  confirms it has sent every building piece and terrain edit around the destination and the area is
+  built, instead of after a fixed 8 seconds. The fixed wait is too short for a big base on a busy
+  server, which drops you in under floors that have not arrived yet, and longer than needed everywhere
+  else. A client of a dedicated server needs the mod on the server too; against a server without it
+  the game's own timings apply. A host or single-player game waits only for the area to be built. If
+  the server has not confirmed within `Loading Confirmation Timeout` (default 20 s), the game's own
+  checks decide.
+- **Fix Lost Bed Spawn Point** *(client)* — keeps your bed as the respawn point while the server has
+  not yet sent the area around it, for up to 30 s, instead of sending you to the world start. Vanilla
+  decides the bed is gone as soon as the ground there has loaded, which can be before the buildings
+  have; mods that shorten the respawn wait make it common.
 
-The two log fixes redirect rather than delete: turn on `EnableDebugMode` and the messages come back.
+The log fixes, Fix Biome Sector Lookup's warning, Fix Equipment Texture Errors and Fix Cloth Wind
+Shelter Errors redirect rather than delete: turn on `EnableDebugMode` and the messages come back.
 
 ### Server memory (opt-in)
 
@@ -223,6 +362,16 @@ sizes involved, so the effect can be seen before and after turning one on.
 - **Fix ZDO Serialize Allocation** *(server)* — writes an object's fields to the network straight
   from their tables instead of copying all seven into fresh lists, plus seven callbacks, per object
   per player per send tick. Garbage-collector churn rather than a leak; the bytes sent are identical.
+
+### Server garbage collector
+
+The dedicated-server garbage collector settings and the `vcp_gc` console command that shipped in
+0.31.0 are now a separate plugin,
+[Valheim Community Patch GC](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimCommunityPatchGC/).
+They read and write the Mono runtime's own memory, which malware scanners flag. Install it on a
+dedicated server alongside this mod; it pre-grows the collector's mark stack against
+`Unexpected mark stack overflow` crashes on large worlds. The old `Server - Garbage Collector`
+section in this mod's config is no longer read and can be deleted.
 
 ## Credit and sources
 
@@ -288,6 +437,23 @@ The mods involved:
 | Fix Station Range Scans | MidnightsFX | — |
 | Fix Smelter Catch-up Reads | MidnightsFX | — |
 | Fix Idle Sound Updates | MidnightsFX | — |
+| Fix Loading Zone Cadence | MidnightsFX | — |
+| Fix Reference Position Send Delay | MidnightsFX | — |
+| Fix Destination Terrain Delay | MidnightsFX | — |
+| Fix Portal Destination Send Delay | MidnightsFX | — |
+| Fix Minimap Fog Upload | MidnightsFX | — |
+| Fix Dungeon Spawn Hitch | MidnightsFX | — |
+| Fix Location Spawn Hitch | MidnightsFX | — |
+| Fix Location Room Preload | MidnightsFX | — |
+| Fix Background Dungeon Generation | MidnightsFX | — |
+| Fix Arriving Location Hitch | MidnightsFX | — |
+| Fix Location Model Placeholders | MidnightsFX | — |
+| Fix Hotbar Key Allocation | MidnightsFX | — |
+| Fix Equipment Modifier Allocation | MidnightsFX | — |
+| Fix Active Area Check Allocation | MidnightsFX | — |
+| Fix Idle Creature Sync | MidnightsFX | — |
+| Fix Paint-Only Terrain Rebuilds | MidnightsFX | — |
+| Fix Hourly Server Freeze | MidnightsFX | — |
 
 ### Terrain
 
@@ -296,6 +462,8 @@ The mods involved:
 | Fix Terrain Seams | MidnightsFX | — |
 | Fix Terrain Paint Seams | MidnightsFX | — |
 | Fix Terrain Paint Zone Fanout | MidnightsFX | — |
+| Fix Terrain Paint Doubling | MidnightsFX | — |
+| Fix Swamp Plains Shore Seams | MidnightsFX | — |
 | Fix Terrain Paint Mask Indexing | MidnightsFX | — |
 | Fix Terrain Compiler Init Race | MidnightsFX | — |
 
@@ -315,13 +483,21 @@ The mods involved:
 | Fix Projectile Rotation Spam | ComfyMods — BetterZeeLog | The same fix |
 | Fix Send Failure Log Spam | ComfyMods — BetterZeeLog | The defect; that mod removes the call, this one redirects it |
 | Fix Container Log Spam | ComfyMods — BetterZeeLog | The defect; that mod removes the calls, this one redirects them |
+| Fix Container Grid Alignment | Dreamwraith | Contributed the fix ([#19](https://github.com/MidnightsFX/Valheim-Community-Patch/pull/19)) |
 | Fix Item Icon Crash | ComfyMods — LetMePlay | The defect; a smaller fix here that leaves the shared item data alone |
 | Fix Negative Stamina | MidnightsFX | — |
-| Fix Dungeon Load Stall | MidnightsFX | — |
 | Fix Teleport Ghost Players | MidnightsFX | — |
 | Fix Unsaved Client Changes | MidnightsFX | — |
-| Fix Water Colour Seams | MidnightsFX | — |
+| Fix Water Color Seams | MidnightsFX | — |
 | Fix Non-Item ObjectDB Entries | MidnightsFX | — |
+| Clear Patrol Point On Taming | MidnightsFX | — |
+| Fix Map Auto-Close | MidnightsFX | — |
+| Fix Biome Sector Lookup | MidnightsFX | — |
+| Fix Loading Screen Hang | MidnightsFX | — |
+| Fix Equipment Texture Errors | nezuma — ShadowPersonMaterialFix | The defect; that mod swaps the Shadow's shader, this one guards the reads |
+| Fix Unkillable Creatures | MidnightsFX | The `NaN` health handling follows StarLevelSystem's |
+| Fix Loading Screen Wait | MidnightsFX | — |
+| Fix Lost Bed Spawn Point | MidnightsFX | — |
 
 ### Server memory
 
@@ -341,7 +517,7 @@ Requires [BepInEx](https://valheim.thunderstore.io/package/denikson/BepInExPack_
 **Install it on the server and on every client to get all of it.** It is not required on both:
 a modded client can join a vanilla server, and a modded server accepts vanilla clients. The mod adds
 no items, prefabs, recipes or save data, so a world it has touched still loads in vanilla, and the
-one network message it sends is ignored by anyone who does not have it.
+network messages it sends are ignored by anyone who does not have it.
 
 What a one-sided install gets you:
 
@@ -390,6 +566,95 @@ the mechanism working.
 Known overlap: **ComfyMods BetterZeeLog** fixes three of the same defects (container request logging,
 "Failed to send data", and the projectile zero-velocity rotation warning). The two are safe to run
 together, and BetterZeeLog's versions of those three take effect.
+
+Known overlap: **Network Performance System** 1.9.1 and later apply the same idle creature fix as Fix
+Idle Creature Sync. When it is installed this mod's version stands down and says so once in the log.
+
+Known overlap: **ZenPortal** has its own rules for which portals may pair: portals without a rune
+shard never link, each rune links one pair, and wood and stone portals can be kept apart. Fix Portal
+Connection Scan replaces the game's pairing pass, which would skip those rules, so it stands down
+whenever another mod patches that pass and says so once in the log with *"Portal pairing is changed
+by ..."*. The game's own pairing then runs with the other mod's rules applied.
+
+Known overlap: **AutomaticFuel**, and **Eternal Fire** older than 1.1.6, add fuel to fires, ovens and
+smelters without taking an item, or send more than the station has room for. Refund Rejected Station
+Items would turn each of those into a free item, so it stands down when either is installed and says
+so once in the log with *"'Refund Rejected Station Items' is disabled because ..."*. Without it,
+items put into fermenters, ovens and cooking stations can be lost in multiplayer, as in vanilla.
+Eternal Fire 1.1.6 and later no longer does this, and the fix stays on beside it.
+
+Known overlap: **Expand World Size** resizes and stretches the game's biome grid along with the world.
+Fix Biome Sector Lookup reads the grid's size and spacing from the game on every lookup, so it follows
+the resized grid. Before 0.32.3 it assumed the vanilla grid and gave wrong biomes, weather and terrain
+colors on resized worlds.
+
+Known overlap: **Fast Loading (Portals-Respawn-Login-Dungeons)** installs the zones around you itself
+during loading screens, so Fix Loading Zone Cadence stands down when it is installed and says so once
+in the log with *"Zone loading is changed by ..."*. Fix Loading Screen Wait and Fix Lost Bed Spawn
+Point stay on beside it, and on a dedicated server they keep its shortened waits from dropping you in
+before your buildings arrive or from losing your bed spawn point.
+
+Known overlap: **SteadyFrame** replaces the game's fixed portal arrival wait with its own timing.
+Before 0.34.0 that switched Fix Loading Screen Wait off for portals; now SteadyFrame's timing applies
+and the arrival still waits for the server to send the destination, and the log says so once with
+*"another mod has replaced the fixed portal arrival wait ..."*. Its building support lookup is the
+same as Fix Support Lookup Cost's, so that fix stands down with a warning in the log and SteadyFrame's
+version applies. SteadyFrame turns its own object streaming, terrain and housekeeping changes off when this
+mod is installed. From 0.35.0 it can instead keep its terrain priority, terrain cache and loading-screen
+ghost zone pause through this mod's API (see below), once a SteadyFrame version that uses the API is
+installed.
+
+Known overlap: **ValheimOptimized** builds terrain colliders on a background thread itself, as Fix
+Zone Collider Stall does. Before 0.32.5 the two worked on the same terrain at once and crashed the
+game. Fix Zone Collider Stall now stands down whenever another mod takes over building terrain
+colliders, and says so once in the log with *"Terrain collider building is changed by ..."*.
+ValheimOptimized also builds most terrain meshes on its own threads, out of reach of Fix Terrain Seams
+and Fix Swamp Plains Shore Seams, so before 0.32.5 those reached only some of the ground and a fixed
+spot lost the fix when it was rebuilt. Both now stand down whenever another mod takes over building
+terrain meshes, and say so once in the log with *"Terrain mesh building is changed by ..."*. Zone
+borders and swamp shores then look as they do with ValheimOptimized alone. ValheimOptimized also
+replaces the game's object spawning and its distant-terrain rebuild. Fix Spawn Queue Churn now spawns
+nothing on a pass another mod has already handled, where before 0.32.5 it spawned a second batch, and
+Fix Distant Terrain Hitch stands down and says so once with *"Distant terrain rebuilding is changed by
+..."*. Fix Piece Event Stall now also reaches building pieces when ValheimOptimized finishes a terrain
+rebuild late, so their support no longer stays out of date. ValheimOptimized has its own versions of
+the 0.33.0 fixes too. Fix Dungeon Spawn Hitch and Fix Location Spawn Hitch stand down and say so once
+with *"Dungeon room placement is changed by ..."* and *"Location spawn timing is changed by ..."*,
+Fix Hotbar Key Allocation says at startup that the method was already rewritten, and the other three
+are simply not reached; in each case ValheimOptimized's version applies.
+
+Known overlap: **HearthBelow** lets players dig into the ground. The dug-out ground exists only in
+HearthBelow's own collision meshes, and the game's terrain data still describes the surface from
+before digging. Fix Grass Ground Raycasts reads that data instead of casting a ray at the ground, so
+before 0.34.1 grass regrew floating over dug-out ground after a hoe or cultivator edit there. Fix
+Static Object Ground Checks replaces the ground check that HearthBelow hooks to stop objects in dug-out
+ground being pushed up out of it. While HearthBelow is installed, both fixes stand down and say so
+once in the log with *"HearthBelow is loaded, so '...' stands down"*. Grass placement and the ground
+check then run as they do in the game, with HearthBelow's changes applied.
+
+Known overlap: **Valheim Performance Overhaul** replaces each smoke puff's update with its own, as Fix
+Smoke Overhead does. Before 0.34.2 both ran on every puff, so smoke aged twice as fast and rose in
+shorter columns. Fix Smoke Overhead now leaves a puff's update to a mod that has already replaced it,
+and says so once in the log with *"Smoke puff updates are replaced by ..."*. Its smoke rendering
+change stays on. With Valheim Performance Overhaul's smoke option off, this mod's version applies as
+before.
+
+## API for other mods
+
+Where another mod would change the same game code as one of these fixes, it can usually work through
+this mod instead of standing down. The API is a single file other mods copy into their own project (or
+a small DLL they merge in). It finds this mod at runtime and does nothing when it is not installed.
+It lets a mod:
+
+- have the ground at a destination built before anything else queued,
+- keep finished ground and hand it back, so returning somewhere does not build it again,
+- pause background zone generation while its loading screen is up,
+- check which fixes are running, applied, switched off or standing down,
+- turn off a fix that does the same job as the mod, for the rest of the session, with a warning in the
+  log naming that mod.
+
+See the [API documentation](https://github.com/MidnightsFX/Valheim-Community-Patch/tree/master/ValheimCommunityPatch.API)
+for setup and examples.
 
 ## Reporting a bug
 

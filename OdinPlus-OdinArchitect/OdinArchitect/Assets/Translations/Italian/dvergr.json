@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "Elemento del tetto di rame",
 	"copper_roof_ocorner_45_desc": "Elemento del tetto di rame",
 	"copper_roof_top_desc": "Elemento del tetto di rame",
-	"copper_roof_top_45_desc": "Elemento del tetto di rame"
+	"copper_roof_top_45_desc": "Elemento del tetto di rame",
+
+	"stonemarble_tile_wall_1x2": "Muro piastrellato in marmo 1x2",
+	"stonemarble_tile_wall_1x2_desc": "Pezzo in stile Dvergr",
+	"stonemarble_tile_wall_2x3": "Muro piastrellato in marmo 2x3",
+	"stonemarble_tile_wall_2x3_desc": "Pezzo in stile Dvergr",
+	"stonemarble_tile_wall_2x5": "Muro piastrellato in marmo 2x5",
+	"stonemarble_tile_wall_2x5_desc": "Pezzo in stile Dvergr",
+	"dvergrprops_wood_floor_custom_1x1": "Pavimento Dvergr 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "Pezzo in stile Dvergr"
 }

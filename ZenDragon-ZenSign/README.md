@@ -145,9 +145,10 @@ Fuel Search Range = 25
 [General]
 
 ## [Admin] Radius of the sign to search for containers.
+## WARNING: Increased distance causes higher performance impact, recommend to stay under 25.
 # Setting type: Single
 # Default value: 20
-# Acceptable value range: From 1 to 25
+# Acceptable value range: From 1 to 50
 Sign Search Radius = 20
 
 ## [Admin] The color of sign text. (Vanilla: Black)

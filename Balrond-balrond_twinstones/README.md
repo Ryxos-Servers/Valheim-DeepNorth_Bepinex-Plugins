@@ -1,189 +1,200 @@
 # ⚒️ Balrond TwinStones
 
----
+Balrond TwinStones adds a buildable **Teleport Obelisk** to Valheim, allowing you to create paired short-distance teleport connections between locations.
 
-## Overview
-
-This mod adds a new buildable **Teleport Obelisk** to Valheim.
-
-Teleport Obelisks can be linked together in pairs. Once two obelisks are connected, a player can use one obelisk to teleport to the other one. The system is meant for **short-distance travel**, outposts, bases, mining camps and local travel networks.
-
-Each obelisk stores its own persistent ID and linked target through ZDO data, so the connection can stay synchronized in multiplayer.
+Use TwinStones to connect nearby bases, outposts, mining camps, workshops, docks, farms, or other places where a full portal network would be unnecessary.
 
 ---
 
-## 🧭 How It Works
+## ✨ Features
 
-1. Build a **Teleport Obelisk**.
-2. Use **Shift + Use** on the first obelisk to start linking.
-3. Go to the second obelisk and press **Shift + Use** again.
-4. If the second obelisk is close enough, both obelisks become linked.
-5. Press **Use** on a linked obelisk to teleport to its paired obelisk.
-
-The default maximum link distance in the script is **50 meters**.
-
-The default teleport cooldown is **1.5 seconds** per player.
-
----
-
-## ⚙️ Features
-
-- New buildable **Teleport Obelisk**
-- Pair-based teleport system
-- Two-way teleport connection
-- Short-distance link limit
-- Per-player pending link state
-- Renameable obelisks
-- Visual states for:
-  - unconnected obelisk
-  - pending link obelisk
-  - connected obelisk
-- Temporary connection effect between linked obelisks
-- Multiplayer synchronization through ZDO
-- Pending links are cleared on player death or disconnect
+- Buildable **Teleport Obelisk**
+- Pair two obelisks together for two-way travel
+- Configurable maximum linking distance
+- Configurable construction cost
+- Rename individual obelisks
+- Visual states for unlinked, pending, and connected stones
+- Connection effects between linked obelisks
+- Multiplayer support
+- Server-synchronized gameplay configuration
+- External JSON translation support
 
 ---
 
-## 🧱 Building
+## 🧱 Building the Teleport Obelisk
 
-- **Teleport Obelisk**
+The **Teleport Obelisk** is built with a **Stonecutter** and appears in the build menu.
 
+### Default Build Cost
 
-### Build Piece
+| Material | Amount |
+|---|---:|
+| Stone | 10 |
+| Thunderstone | 2 |
+| Greydwarf Eye | 4 |
+| Iron | 2 |
 
-The Teleport Obelisk is built using the **Stonecutter** crafting station.
+The construction cost can be changed in the mod configuration.
 
-Based on the build piece setup in code (piece_obeliskPortal_bal), the exact construction cost is:
+---
 
-**🧱 Build Cost**
-Stone x10
-Thunderstone x2
-Greydwarf Eye x4
-Iron x2
+## 🔗 How to Link TwinStones
+
+1. Build two **Teleport Obelisks**.
+2. Hold **Shift** and press **Use** on the first obelisk.
+3. Go to the second obelisk.
+4. Hold **Shift** and press **Use** again.
+5. If both stones are within the allowed linking distance, they become paired.
+6. Press **Use** on either linked obelisk to teleport to the other one.
+
+By default, TwinStones can be linked up to **50 meters** apart.
 
 ---
 
 ## 🎮 Controls
 
-### Normal Interaction
+| Input | Action |
+|---|---|
+| **Use (E)** | Teleport through a linked TwinStone |
+| **Shift + Use** | Start or complete a link; use again on the same pending stone to cancel |
+| **Ctrl + Use** | Cancel a pending link or disconnect an existing pair |
+| **Alt + Use** | Rename the obelisk |
 
-- **Use (E)** — teleport to the linked obelisk
-- **Shift + Use** — start linking, finish linking, relink, or cancel if used again on the same pending obelisk
-- **Ctrl + Use** — cancel pending link or disconnect an existing link
-- **Alt + Use** — rename the obelisk
-
----
-
-## 🔗 Linking Instructions
-
-### Start a Link
-
-Press **Shift + Use** on an obelisk.
-
-That obelisk becomes the pending source for your player.
-
-### Complete a Link
-
-Go to another obelisk and press **Shift + Use**.
-
-If the obelisks are within the allowed range, they are linked together.
-
-### Cancel a Pending Link
-
-You can cancel a pending link by:
-
-- pressing **Shift + Use** again on the same obelisk, or
-- pressing **Ctrl + Use** while you have a pending link.
-
-### Disconnect Linked Obelisks
-
-Press **Ctrl + Use** on a linked obelisk.
-
-Both sides of the connection are cleared.
-
-### Rename an Obelisk
-
-Press **Alt + Use** to open the name input.
-
-The name limit is **32 characters**.
+Obelisk names can contain up to **32 characters**.
 
 ---
 
 ## 🚪 Teleporting
 
-Once two obelisks are linked, press **Use (E)** on either obelisk to teleport to the other one.
+Once two TwinStones are linked, simply press **Use** on either one to travel to its paired stone.
 
-The destination position uses the target obelisk exit point if one exists. Otherwise, it places the player slightly in front of the target obelisk using the script exit offset.
+Teleporting will not work when:
 
-Default exit offset:
+- the obelisk is not linked,
+- the linked TwinStone no longer exists or is currently unavailable,
+- the short teleport cooldown is still active.
 
-- Y: `0.5`
-- Z: `1.5`
+Destroying a linked TwinStone will attempt to clear the connection on its paired stone as well.
 
----
-
-## 🚫 Exceptions & Limitations
-
-Teleporting will not work if:
-
-- the obelisk is not linked
-- the linked target is missing, destroyed, unloaded, or invalid
-- the teleport cooldown is still active
-
-Linking will not work if:
-
-- the second obelisk is farther than the maximum link distance
-- the first pending obelisk is missing or invalid
-- another player currently has that obelisk in pending link state
-
-When a linked obelisk is destroyed, the script attempts to clear the connection on the other obelisk.
-
-When a player dies or disconnects, their pending link state is cleared automatically.
+Pending links are automatically cleared when the player dies or disconnects.
 
 ---
 
-## 🧪 Technical Notes
+## ⚙️ Configuration
 
-The obelisk stores these values in ZDO:
+The configuration file is created after the game is launched with the mod installed.
 
-- portal ID
-- linked portal ID
-- portal name
-- pending player ID
+Default location:
 
-The plugin registers assets and build pieces through the standard Valheim / BepInEx / Harmony initialization flow.
+```text
+BepInEx/config/balrond.astafaraios.BalrondTwinStones.cfg
+```
 
-Plugin info:
-- GUID: `balrond.astafaraios.BalrondTwinStones`
-- Name: `BalrondTwinStones`
+You can edit the file manually while the game is closed, or use a compatible BepInEx configuration manager.
+
+### Available Settings
+
+| Section | Setting | Default | Description |
+|---|---|---:|---|
+| `Server` | `LockConfiguration` | `true` | Locks synchronized gameplay settings to the host/server values. |
+| `Portal` | `MaxLinkDistance` | `50` | Maximum distance in meters between two TwinStones when linking them. |
+| `Portal` | `BuildRecipe` | `Stone:10,Thunderstone:2,GreydwarfEye:4,Iron:2` | Construction cost of the Teleport Obelisk. |
+| `Diagnostics` | `AudioDebugLogging` | `false` | Enables additional audio diagnostic logging. This setting is local and is not synchronized. |
+
+### Changing the Build Recipe
+
+`BuildRecipe` uses Valheim prefab names in this format:
+
+```text
+PrefabName:Amount,PrefabName:Amount
+```
+
+Default:
+
+```text
+Stone:10,Thunderstone:2,GreydwarfEye:4,Iron:2
+```
+
+For example:
+
+```text
+Stone:20,GreydwarfEye:10,Iron:5
+```
+
+Use valid item prefab names rather than translated display names.
+
+---
+
+## 🌐 Multiplayer & Server Configuration
+
+TwinStones automatically synchronizes its gameplay configuration in multiplayer.
+
+The **host/server configuration is authoritative** for synchronized settings such as:
+
+- `MaxLinkDistance`
+- `BuildRecipe`
+
+When `LockConfiguration = true`, connected clients use the host/server values and cannot override those synchronized settings with different local values.
+
+For a dedicated server, configure TwinStones in the server's own BepInEx configuration folder. Players connecting to that server will receive the synchronized gameplay settings automatically.
+
+`AudioDebugLogging` is intentionally local and can be enabled independently by each player for troubleshooting.
+
+---
+
+## 🌍 Translations
+
+TwinStones supports external JSON translation files.
+
+Translation files are loaded from:
+
+```text
+BepInEx/config/BalrondTwinStones-translation/
+```
+
+The folder is created automatically when the mod runs.
+
+Create one `.json` file for each language you want to provide. The filename should match the Valheim language name, for example:
+
+```text
+English.json
+German.json
+Polish.json
+```
+
+Translation files use a simple key/value JSON format:
+
+```json
+{
+  "tag_linked": "Linked",
+  "tag_not_linked": "Not linked",
+  "tag_link_started": "Link started",
+  "tag_disconnected": "Disconnected"
+}
+```
+
+If a translation for the currently selected language is not available, TwinStones falls back to **English** when an English translation file is available.
+
+This makes it possible to add or update translations without modifying the mod itself.
 
 ---
 
 ## 🔧 Installation
 
 1. Install **BepInEx** for Valheim.
-2. Place the mod DLL into:
+2. Place Balrond TwinStones in your `BepInEx/plugins` folder.
+3. Start Valheim.
+4. Build two **Teleport Obelisks** and link them together.
 
-   `BepInEx/plugins`
-
-3. Start the game.
-4. Build a **Teleport Obelisk** and link it with another one.
+For multiplayer, install the mod on the server/host and on connecting clients.
 
 ---
 
 ## 🤝 Compatibility
 
-- Multiplayer-friendly
-- Uses Valheim ZDO synchronization
-- Uses Harmony patches
-- Compatible with most mods that do not replace the same build piece or interfere with the same teleport object behavior
+Balrond TwinStones is designed for multiplayer and uses Valheim's normal network synchronization for its placed objects.
 
-Potential conflicts may happen with mods that modify:
-
-- the same obelisk prefab
-- build piece registration
-- player teleport behavior
-- ZNetView / ZDO ownership handling on the same objects
+Potential conflicts may occur with mods that directly modify the same Teleport Obelisk prefab, replace build-piece registration, or heavily alter player teleport behavior.
 
 ---
 
@@ -194,4 +205,4 @@ Ko-fi: https://ko-fi.com/balrond1020
 
 ---
 
-⚒️ Build your TwinStones and create short-distance teleport paths across Valheim!
+⚒️ **Build your TwinStones, link them together, and create convenient short-distance travel routes across Valheim.**

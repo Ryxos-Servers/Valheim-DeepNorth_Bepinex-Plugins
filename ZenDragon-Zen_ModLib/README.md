@@ -11,6 +11,7 @@ Generally this would be run with other `ZenMods`. However, even by itself, it ap
 - Puts your avatar into a floating animation when you are in debug fly mode.  So that's nice.
 - Configure console commands to be admin-only default to seed-related commands.
 - Relay console commands through another player for server admin maintenance.
+- Allow achievements to be rewarded even if dev commands are used for all players on the server (default: true), this is the same as the vanilla command: `yesiuseddevcommandsbutiwantmyachievementsanyway`
 
 Fixes a few small vanilla bugs:
 - Remove blank PlayerKeys

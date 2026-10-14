@@ -11,7 +11,7 @@
 
 <h2>  About: </h2>
 
->Food storage for your Produce! Customizable Seed Bag via config.
+>Food storage for your Produce! Customizable Seed Bag and Meat Freezer via config.
 
 <h2>Prefab Names:</h2>
 
@@ -40,6 +40,8 @@ OH_Dandelion
 OH_Thistle
 
 OH_Barley
+
+OH_BarleyFlour
 
 OH_Flax
 
@@ -81,6 +83,8 @@ OH_LingonBerries
 
 OH_Seedbag
 
+OH_Meat_Freezer
+
 </p>
 
 <p align="center">
@@ -104,6 +108,6 @@ OH_Seedbag
 
 <p align="center"><a href="https://discord.gg/mbkPcvu9ax"><img src="https://i.imgur.com/Ji3u63C.png"></a></p>
 
-<p align="center">Visit my buymeacoffee for a free Admin craft Shark Hat and Tuna Sword!</p>
+<p align="center">Visit my buymeacoffee if you enjoy this mod, I will forever love you!</p>
  
 <p align="center"><a href="https://www.buymeacoffee.com/Gravebear"><img src="https://noobtrap.eu/images/crystallights/GBSupporter.png"></a></p>

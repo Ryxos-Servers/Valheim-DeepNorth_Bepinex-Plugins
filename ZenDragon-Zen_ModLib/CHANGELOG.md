@@ -1,3 +1,46 @@
+v1.14.21
+- recompile for Valheim v1.0.17
+
+v1.14.20
+- recompile with embedded shaders for windows, osx, and linux to fix a bug where the yellow outline of highlighted pieces was not displaying correctly on mac.
+
+v1.14.19
+- recompile quick outline shader for macOS.
+
+v1.14.18
+- add a config to disable ZenMods from updating KeyHints for compatibility with other mods that want to change the key hints structure or do other things which cause conflicts.
+
+v1.14.17
+- fix vanilla: Show the AltDodge key in the key hint when the key is defined in settings.
+
+v1.14.16
+- update for Valheim v1.0.16
+
+v1.14.15
+- added a config option to prevent AltDodge from firing if the UI is open or no movement is applied.
+- changed the dependency to BepInEx 5.4.2351
+
+v1.14.14
+- fix vanilla: Prevent AltDodge from firing if the UI is open.  This way you can use that keybind for other things with the UI is open.  Such as the Alt key doing stuff in the inventory or construction screen, etc.
+
+v1.14.13
+- add config: only admin can see the build piece author info.
+- hide steamID from the player list if the viewer is not admin.
+- add compatibility for AzuAntiCheat when using admin-relay commands.
+
+v1.14.12
+- fix: config option to disable the console on the server was not working with DeepNorth update.
+
+v1.14.11
+- BROKEN! Use v1.14.12 instead.
+
+v1.14.10
+- add a config variable to NOT display items as "cheated" and NOT disable achievements.  This works the same as the vanilla console command "yesiuseddevcommandsbutiwantmyachievementsanyway", but it's synced to all players on the server to make life easier for admin.
+- add a vanilla fix to swap the trophy and achievements icons in the info panel because they are backwards in vanilla.  there is a config to turn it back to the backwards state if you want to keep seeing it wrong.
+
+v1.14.9
+- changed InventoryGui.Update transpiler of JoyButtonY tap detection for better compatibility with other mods, now just consumes the result of GetButtonDown("JoyButtonY") instead of replacing the function, also raised the priority slightly from normal to high.
+
 v1.14.8
 - added helper functions
 - fix vanilla: prevent nullref on title screen when inv has an item with a worldlevel > 0

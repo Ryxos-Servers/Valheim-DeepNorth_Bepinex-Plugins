@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Portão grande de ferro sem poste central",
 
 	"rae_elevator_small": "Pequeno elevador simples",
-	"rae_elevator_small_desc": "Move-se um andar por vez",
+	"rae_elevator_small_desc": "Adicione trilhos de elevador acima ou abaixo para alcançar mais andares",
 	"rae_elevator": "Elevador simples",
-	"rae_elevator_desc": "Move-se um andar por vez",
+	"rae_elevator_desc": "Adicione trilhos de elevador acima ou abaixo para alcançar mais andares",
+	"rae_elevator_large": "Elevador grande",
+	"rae_elevator_large_desc": "Adicione trilhos de elevador acima ou abaixo para alcançar mais andares",
+	"rae_elevator_track": "Trilho de elevador 4 m",
+	"rae_elevator_track_desc": "Encaixe acima ou abaixo de um elevador para adicionar um andar",
+	"rae_elevator_track_2m": "Trilho de elevador 2 m",
+	"rae_elevator_track_2m_desc": "Encaixe acima ou abaixo de um elevador para adicionar um andar",
+	"rae_elevator_track_3m": "Trilho de elevador 3 m",
+	"rae_elevator_track_3m_desc": "Encaixe acima ou abaixo de um elevador para adicionar um andar",
+	"oa_elevator_floor": "Andar",
+	"oa_elevator_up": "Subir",
+	"oa_elevator_down": "Descer",
+	"oa_elevator_call": "Chamar elevador",
+	"oa_elevator_top": "Último andar",
+	"oa_elevator_bottom": "Térreo",
+	"oa_elevator_none": "Não conectado a um elevador",
 	"rae_elevator_big": "Elevador de carga",
 	"rae_elevator_big_desc": "Move-se um andar por vez",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Alçapão de madeira escondido",
 
 	"piece_dvergr_wood_custom": "Portas de ferro Dvergr",
-	"piece_dvergr_wood_custom_desc": "Peça estilo Dvergr"
+	"piece_dvergr_wood_custom_desc": "Peça estilo Dvergr",
+	"oa_elevator_hold": "Segure para ir ao último / primeiro andar",
+	"oa_elevator_going_top": "Indo para o último andar",
+	"oa_elevator_going_bottom": "Indo para o primeiro andar"
 }

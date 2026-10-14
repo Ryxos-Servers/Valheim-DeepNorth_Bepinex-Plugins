@@ -1,5 +1,38 @@
 # Changelog
 
+### 1.8.5 (Update brought to you by GraveBear)
+- Changed how Elevator and Elevator Tracks work.
+
+### 1.8.4 (Update brought to you by GraveBear)
+- Fixed glass windows and pieces.
+
+### 1.8.3 (Update brought to you by GraveBear)
+- New 1x1 pieces: Log wood walls (both kinds), Wood wall, Hardwood floor, Chevron floor and Dvergr floor
+- Big Wood Floors (Hardwood, Chevron, Dvergr) no longer have stretched boards; they now line up with the normal floors
+- Elevators: hold Use (or Shift+Use) on the platform to go straight to the top (or bottom) floor; new "Hold Time" config
+- "Swamp wood woodwall" renamed to "Swamp wood wall"; Polish name fixes
+
+### 1.8.2 (Update brought to you by GraveBear)
+- Fixed missing particle effect material.
+
+### 1.8.1 (update brought to you by Gravebear)
+- Elevators can now travel multiple floors: stack the new Elevator Track pieces above or below to add floors, ride with Use / Alt+Use or call the elevator from any floor, and there’s a new double-wide Large Elevator.
+
+### 1.8.0 (Update brought to you by GraveBear)
+- Fixed missing mesh layer
+
+### 1.7.9 (Update brought to you by GraveBear)
+- Restored Hammer piece table to the config file.
+
+### 1.7.8 (Update brought to you by GraveBear)
+- Every OdinArchitect piece now has server-synced config options (enable, build category, crafting station, crafting costs), existing Misc settings carry over automatically, and the hammer piece-table option has been removed.
+
+### 1.7.7 (Update brought to you by GraveBear)
+- Merged OdinArchitect's three asset bundles into one, removed duplicate sound and visual effects, gave all our effects unique names and registered them.
+
+### 1.7.6 (Update brought to you by GraveBear)
+- Changed audio mixer group for some sounds.
+
 ### 1.7.5 (Update brought to you by GraveBear)
 - Changed storage size settings
 

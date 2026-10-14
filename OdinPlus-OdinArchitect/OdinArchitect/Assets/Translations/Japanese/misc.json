@@ -20,5 +20,10 @@
 	"rae_compost_desc": "ネックの尻尾と生肉を入れて虫を手に入れよう",
 	"rae_compost_name": "原始的な堆肥",
 	"rae_compost_add": "廃棄物を追加",
-	"rae_compost_empty": "廃棄物がありません"
+	"rae_compost_empty": "廃棄物がありません",
+
+	"hud_snappoint_left": "左",
+	"hud_snappoint_right": "右",
+	"hud_snappoint_back": "後ろ",
+	"hud_snappoint_forward": "前"
 }

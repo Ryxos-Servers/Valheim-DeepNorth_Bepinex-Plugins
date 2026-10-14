@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Большое деревянное окно",
-	"ig_wooden_window_big_desc": "Большое деревянное окно, сделано IG88V1",
-	"ig_woodeniron_window_big": "IG Большое деревянное окно",
-	"ig_woodeniron_window_big_desc": "Большое деревянное окно с железными элементами, сделано IG88V1",
+	"ig_wooden_window_big": "IG Деревянные ставни",
+	"ig_wooden_window_big_desc": "Деревянные ставни от IG88V1",
+	"ig_woodeniron_window_big": "IG Деревянные ставни с железом",
+	"ig_woodeniron_window_big_desc": "Деревянные ставни с железными элементами от IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Каминная полка",
 	"ig_fireplace_mantel_small_desc": "Маленькая каминная полка, сделана IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Каменный крест 45",
 	"piece_stonewallcross45_desc": "Элемент каменного конька",
 	"piece_stonewallcross26": "Каменный крест 26",
-	"piece_stonewallcross26_desc": "Элемент каменного конька"
+	"piece_stonewallcross26_desc": "Элемент каменного конька",
+
+	"stonewall_hardrock_1x2": "Стена из твёрдой породы 1x2",
+	"stonewall_hardrock_1x2_desc": "Альтернативная каменная стена",
+	"stonewall_hardrock_2x2": "Стена из твёрдой породы 2x2",
+	"stonewall_hardrock_2x2_desc": "Альтернативная каменная стена",
+	"stonewall_hardrock_4x3": "Стена из твёрдой породы 4x3",
+	"stonewall_hardrock_4x3_desc": "Альтернативная каменная стена",
+	"rae_woodwall_4_quar": "Стена из болотного дерева 1x1",
+	"rae_woodwall_4_quar_desc": "Стена, сделанная из болотного дерева",
+	"rae_woodwall_1_1x1": "Стена из брёвен 1x1",
+	"rae_woodwall_1_1x1_desc": "Стена, сделанная из брёвен",
+	"rae_woodwall_2_1x1": "Стена из брёвен 1x1",
+	"rae_woodwall_2_1x1_desc": "Стена, сделанная из брёвен",
+	"rae_woodwall_3_1x1": "Деревянная стена 1x1",
+	"rae_woodwall_3_1x1_desc": "Альтернативная деревянная стена",
+	"IG_Hardwood_Floor_1x1": "Пол из твёрдой древесины 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Элегантный деревянный пол",
+	"IG_Chevron_Floor_1x1": "Деревянный пол «ёлочка» 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Элегантный деревянный пол"
 }

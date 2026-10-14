@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "中央ポールのない大きな鉄の門",
 
 	"rae_elevator_small": "小さなシンプルエレベーター",
-	"rae_elevator_small_desc": "一度に一階分移動します",
+	"rae_elevator_small_desc": "上か下にエレベーターのレールを追加すると、より多くの階へ行けます",
 	"rae_elevator": "シンプルエレベーター",
-	"rae_elevator_desc": "一度に一階分移動します",
+	"rae_elevator_desc": "上か下にエレベーターのレールを追加すると、より多くの階へ行けます",
+	"rae_elevator_large": "大型エレベーター",
+	"rae_elevator_large_desc": "上か下にエレベーターのレールを追加すると、より多くの階へ行けます",
+	"rae_elevator_track": "エレベーターのレール 4m",
+	"rae_elevator_track_desc": "エレベーターの上か下に取り付けて階を追加します",
+	"rae_elevator_track_2m": "エレベーターのレール 2m",
+	"rae_elevator_track_2m_desc": "エレベーターの上か下に取り付けて階を追加します",
+	"rae_elevator_track_3m": "エレベーターのレール 3m",
+	"rae_elevator_track_3m_desc": "エレベーターの上か下に取り付けて階を追加します",
+	"oa_elevator_floor": "階",
+	"oa_elevator_up": "上へ",
+	"oa_elevator_down": "下へ",
+	"oa_elevator_call": "エレベーターを呼ぶ",
+	"oa_elevator_top": "最上階",
+	"oa_elevator_bottom": "最下階",
+	"oa_elevator_none": "エレベーターに接続されていません",
 	"rae_elevator_big": "貨物用エレベーター",
 	"rae_elevator_big_desc": "一度に一階分移動します",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "隠された木製のハッチ",
 
 	"piece_dvergr_wood_custom": "ドヴェルグの鉄ドア",
-	"piece_dvergr_wood_custom_desc": "ドヴェルグ様式のパーツ"
+	"piece_dvergr_wood_custom_desc": "ドヴェルグ様式のパーツ",
+	"oa_elevator_hold": "長押しで最上階 / 最下階へ",
+	"oa_elevator_going_top": "最上階へ移動中",
+	"oa_elevator_going_bottom": "最下階へ移動中"
 }

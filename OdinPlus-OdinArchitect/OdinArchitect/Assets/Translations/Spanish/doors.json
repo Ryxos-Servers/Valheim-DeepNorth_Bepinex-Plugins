@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Puerta grande de hierro sin poste central",
 
 	"rae_elevator_small": "Ascensor pequeño simple",
-	"rae_elevator_small_desc": "Se mueve un piso a la vez",
+	"rae_elevator_small_desc": "Añade rieles de ascensor encima o debajo para llegar a más pisos",
 	"rae_elevator": "Ascensor simple",
-	"rae_elevator_desc": "Se mueve un piso a la vez",
+	"rae_elevator_desc": "Añade rieles de ascensor encima o debajo para llegar a más pisos",
+	"rae_elevator_large": "Ascensor grande",
+	"rae_elevator_large_desc": "Añade rieles de ascensor encima o debajo para llegar a más pisos",
+	"rae_elevator_track": "Riel de ascensor 4 m",
+	"rae_elevator_track_desc": "Encájalo encima o debajo de un ascensor para añadir un piso",
+	"rae_elevator_track_2m": "Riel de ascensor 2 m",
+	"rae_elevator_track_2m_desc": "Encájalo encima o debajo de un ascensor para añadir un piso",
+	"rae_elevator_track_3m": "Riel de ascensor 3 m",
+	"rae_elevator_track_3m_desc": "Encájalo encima o debajo de un ascensor para añadir un piso",
+	"oa_elevator_floor": "Piso",
+	"oa_elevator_up": "Subir",
+	"oa_elevator_down": "Bajar",
+	"oa_elevator_call": "Llamar al ascensor",
+	"oa_elevator_top": "Último piso",
+	"oa_elevator_bottom": "Planta baja",
+	"oa_elevator_none": "No conectado a un ascensor",
 	"rae_elevator_big": "Ascensor de transporte",
 	"rae_elevator_big_desc": "Se mueve un piso a la vez",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Trampilla de madera oculta",
 
 	"piece_dvergr_wood_custom": "Puertas de hierro Dvergr",
-	"piece_dvergr_wood_custom_desc": "Pieza de estilo Dvergr"
+	"piece_dvergr_wood_custom_desc": "Pieza de estilo Dvergr",
+	"oa_elevator_hold": "Mantén pulsado para ir al último / primer piso",
+	"oa_elevator_going_top": "Subiendo al último piso",
+	"oa_elevator_going_bottom": "Bajando al primer piso"
 }

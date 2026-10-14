@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Großes Holzfenster",
-	"ig_wooden_window_big_desc": "Großes Holzfenster von IG88V1",
-	"ig_woodeniron_window_big": "IG Großes Holzfenster",
-	"ig_woodeniron_window_big_desc": "Großes Holzfenster mit Eisenelementen von IG88V1",
+	"ig_wooden_window_big": "IG Holzfensterladen",
+	"ig_wooden_window_big_desc": "Hölzerne Fensterläden von IG88V1",
+	"ig_woodeniron_window_big": "IG Holzfensterladen mit Eisen",
+	"ig_woodeniron_window_big_desc": "Hölzerne Fensterläden mit Eisenelementen von IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Kaminsims",
 	"ig_fireplace_mantel_small_desc": "Kleiner Kaminsims von IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Stein-X 45",
 	"piece_stonewallcross45_desc": "Steindachfirst-Teil",
 	"piece_stonewallcross26": "Stein-X 26",
-	"piece_stonewallcross26_desc": "Steindachfirst-Teil"
+	"piece_stonewallcross26_desc": "Steindachfirst-Teil",
+
+	"stonewall_hardrock_1x2": "Hartgestein-Wand 1x2",
+	"stonewall_hardrock_1x2_desc": "Alternative Steinwand",
+	"stonewall_hardrock_2x2": "Hartgestein-Wand 2x2",
+	"stonewall_hardrock_2x2_desc": "Alternative Steinwand",
+	"stonewall_hardrock_4x3": "Hartgestein-Wand 4x3",
+	"stonewall_hardrock_4x3_desc": "Alternative Steinwand",
+	"rae_woodwall_4_quar": "Sumpfholzwand 1x1",
+	"rae_woodwall_4_quar_desc": "Wand aus Sumpfholz",
+	"rae_woodwall_1_1x1": "Stammholzwand 1x1",
+	"rae_woodwall_1_1x1_desc": "Wand aus Stämmen",
+	"rae_woodwall_2_1x1": "Stammholzwand 1x1",
+	"rae_woodwall_2_1x1_desc": "Wand aus Stämmen",
+	"rae_woodwall_3_1x1": "Holzwand 1x1",
+	"rae_woodwall_3_1x1_desc": "Alternative Holzwand",
+	"IG_Hardwood_Floor_1x1": "Hölzerner Hartholzboden 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Eleganter Holzboden",
+	"IG_Chevron_Floor_1x1": "Hölzerner Fischgrätboden 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Eleganter Holzboden"
 }

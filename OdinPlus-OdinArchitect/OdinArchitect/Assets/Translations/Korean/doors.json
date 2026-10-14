@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "중앙 기둥이 없는 큰 철제 문",
 
 	"rae_elevator_small": "작은 심플 엘리베이터",
-	"rae_elevator_small_desc": "한 번에 한 층씩 이동합니다",
+	"rae_elevator_small_desc": "위나 아래에 엘리베이터 레일을 추가하면 더 많은 층으로 갈 수 있습니다",
 	"rae_elevator": "심플 엘리베이터",
-	"rae_elevator_desc": "한 번에 한 층씩 이동합니다",
+	"rae_elevator_desc": "위나 아래에 엘리베이터 레일을 추가하면 더 많은 층으로 갈 수 있습니다",
+	"rae_elevator_large": "대형 엘리베이터",
+	"rae_elevator_large_desc": "위나 아래에 엘리베이터 레일을 추가하면 더 많은 층으로 갈 수 있습니다",
+	"rae_elevator_track": "엘리베이터 레일 4m",
+	"rae_elevator_track_desc": "엘리베이터 위나 아래에 붙여 층을 추가합니다",
+	"rae_elevator_track_2m": "엘리베이터 레일 2m",
+	"rae_elevator_track_2m_desc": "엘리베이터 위나 아래에 붙여 층을 추가합니다",
+	"rae_elevator_track_3m": "엘리베이터 레일 3m",
+	"rae_elevator_track_3m_desc": "엘리베이터 위나 아래에 붙여 층을 추가합니다",
+	"oa_elevator_floor": "층",
+	"oa_elevator_up": "위로",
+	"oa_elevator_down": "아래로",
+	"oa_elevator_call": "엘리베이터 호출",
+	"oa_elevator_top": "최상층",
+	"oa_elevator_bottom": "최하층",
+	"oa_elevator_none": "엘리베이터에 연결되지 않음",
 	"rae_elevator_big": "화물용 엘리베이터",
 	"rae_elevator_big_desc": "한 번에 한 층씩 이동합니다",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "숨겨진 나무 뚜껑문",
 
 	"piece_dvergr_wood_custom": "드베르그 철제 문",
-	"piece_dvergr_wood_custom_desc": "드베르그 스타일 부품"
+	"piece_dvergr_wood_custom_desc": "드베르그 스타일 부품",
+	"oa_elevator_hold": "길게 눌러 최상층 / 최하층으로 이동",
+	"oa_elevator_going_top": "최상층으로 이동 중",
+	"oa_elevator_going_bottom": "최하층으로 이동 중"
 }

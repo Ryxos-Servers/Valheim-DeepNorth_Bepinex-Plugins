@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Großes Eisentor ohne Mittelpfosten",
 
 	"rae_elevator_small": "Einfacher kleiner Aufzug",
-	"rae_elevator_small_desc": "Bewegt sich jeweils ein Stockwerk",
+	"rae_elevator_small_desc": "Füge Aufzugsschienen darüber oder darunter hinzu, um mehr Stockwerke zu erreichen",
 	"rae_elevator": "Einfacher Aufzug",
-	"rae_elevator_desc": "Bewegt sich jeweils ein Stockwerk",
+	"rae_elevator_desc": "Füge Aufzugsschienen darüber oder darunter hinzu, um mehr Stockwerke zu erreichen",
+	"rae_elevator_large": "Großer Aufzug",
+	"rae_elevator_large_desc": "Füge Aufzugsschienen darüber oder darunter hinzu, um mehr Stockwerke zu erreichen",
+	"rae_elevator_track": "Aufzugsschiene 4 m",
+	"rae_elevator_track_desc": "Über oder unter einem Aufzug einrasten, um ein Stockwerk hinzuzufügen",
+	"rae_elevator_track_2m": "Aufzugsschiene 2 m",
+	"rae_elevator_track_2m_desc": "Über oder unter einem Aufzug einrasten, um ein Stockwerk hinzuzufügen",
+	"rae_elevator_track_3m": "Aufzugsschiene 3 m",
+	"rae_elevator_track_3m_desc": "Über oder unter einem Aufzug einrasten, um ein Stockwerk hinzuzufügen",
+	"oa_elevator_floor": "Stockwerk",
+	"oa_elevator_up": "Hoch",
+	"oa_elevator_down": "Runter",
+	"oa_elevator_call": "Aufzug rufen",
+	"oa_elevator_top": "Oberstes Stockwerk",
+	"oa_elevator_bottom": "Unterstes Stockwerk",
+	"oa_elevator_none": "Mit keinem Aufzug verbunden",
 	"rae_elevator_big": "Transportaufzug",
 	"rae_elevator_big_desc": "Bewegt sich jeweils ein Stockwerk",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Versteckte hölzerne Falltür",
 
 	"piece_dvergr_wood_custom": "Dvergr-Eisentüren",
-	"piece_dvergr_wood_custom_desc": "Dvergr-Stück"
+	"piece_dvergr_wood_custom_desc": "Dvergr-Stück",
+	"oa_elevator_hold": "Halten, um ins oberste / unterste Stockwerk zu fahren",
+	"oa_elevator_going_top": "Fahre ins oberste Stockwerk",
+	"oa_elevator_going_bottom": "Fahre ins unterste Stockwerk"
 }

@@ -1,3 +1,8 @@
+### 1.21.3
+- Compiled against Valheim v1.0.15 & BepInEx 5.4.2351.
+- Fixed typo in setting description for [Berries]LingonBerryCost.
+- Refined the mod’s initialization behaviour during configuration synchronization.
+
 ### 1.21.2
 - Fixed seed drops for poteitrs.
 

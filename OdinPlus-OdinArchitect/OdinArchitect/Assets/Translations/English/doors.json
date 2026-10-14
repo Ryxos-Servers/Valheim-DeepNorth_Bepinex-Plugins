@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Big Iron Gate without central pole",
 
 	"rae_elevator_small": "Simple small elevator",
-	"rae_elevator_small_desc": "It moves every one floor",
+	"rae_elevator_small_desc": "Add elevator tracks above or below to reach more floors",
 	"rae_elevator": "Simple elevator",
-	"rae_elevator_desc": "It moves every one floor",
+	"rae_elevator_desc": "Add elevator tracks above or below to reach more floors",
+	"rae_elevator_large": "Large elevator",
+	"rae_elevator_large_desc": "Add elevator tracks above or below to reach more floors",
+	"rae_elevator_track": "Elevator track 4m",
+	"rae_elevator_track_desc": "Snap above or below an elevator to add a floor",
+	"rae_elevator_track_2m": "Elevator track 2m",
+	"rae_elevator_track_2m_desc": "Snap above or below an elevator to add a floor",
+	"rae_elevator_track_3m": "Elevator track 3m",
+	"rae_elevator_track_3m_desc": "Snap above or below an elevator to add a floor",
+	"oa_elevator_floor": "Floor",
+	"oa_elevator_up": "Up",
+	"oa_elevator_down": "Down",
+	"oa_elevator_call": "Call elevator",
+	"oa_elevator_top": "Top floor",
+	"oa_elevator_bottom": "Bottom floor",
+	"oa_elevator_none": "Not connected to an elevator",
 	"rae_elevator_big": "Transport elevator",
 	"rae_elevator_big_desc": "It moves every one floor",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Wooden hidden hatch",
 
 	"piece_dvergr_wood_custom": "Dvergr Iron Doors",
-	"piece_dvergr_wood_custom_desc": "Dvergr styled piece"
+	"piece_dvergr_wood_custom_desc": "Dvergr styled piece",
+	"oa_elevator_hold": "Hold to go to the top / bottom floor",
+	"oa_elevator_going_top": "Going to the top floor",
+	"oa_elevator_going_bottom": "Going to the bottom floor"
 }

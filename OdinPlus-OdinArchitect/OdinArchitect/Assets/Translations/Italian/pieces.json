@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Grande finestra in legno",
-	"ig_wooden_window_big_desc": "Grande finestra in legno realizzata da IG88V1",
-	"ig_woodeniron_window_big": "IG Grande finestra in legno",
-	"ig_woodeniron_window_big_desc": "Grande finestra in legno con elementi in ferro realizzata da IG88V1",
+	"ig_wooden_window_big": "IG Scuro in legno",
+	"ig_wooden_window_big_desc": "Scuri in legno realizzati da IG88V1",
+	"ig_woodeniron_window_big": "IG Scuro in legno con ferro",
+	"ig_woodeniron_window_big_desc": "Scuri in legno con elementi in ferro realizzati da IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Mensola del camino",
 	"ig_fireplace_mantel_small_desc": "Piccola mensola del camino realizzata da IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Croce in pietra 45",
 	"piece_stonewallcross45_desc": "Elemento del colmo in pietra",
 	"piece_stonewallcross26": "Croce in pietra 26",
-	"piece_stonewallcross26_desc": "Elemento del colmo in pietra"
+	"piece_stonewallcross26_desc": "Elemento del colmo in pietra",
+
+	"stonewall_hardrock_1x2": "Muro di roccia dura 1x2",
+	"stonewall_hardrock_1x2_desc": "Muro in pietra alternativo",
+	"stonewall_hardrock_2x2": "Muro di roccia dura 2x2",
+	"stonewall_hardrock_2x2_desc": "Muro in pietra alternativo",
+	"stonewall_hardrock_4x3": "Muro di roccia dura 4x3",
+	"stonewall_hardrock_4x3_desc": "Muro in pietra alternativo",
+	"rae_woodwall_4_quar": "Muro in legno di palude 1x1",
+	"rae_woodwall_4_quar_desc": "Muro fatto di legno di palude",
+	"rae_woodwall_1_1x1": "Muro di tronchi 1x1",
+	"rae_woodwall_1_1x1_desc": "Muro fatto di tronchi",
+	"rae_woodwall_2_1x1": "Muro di tronchi 1x1",
+	"rae_woodwall_2_1x1_desc": "Muro fatto di tronchi",
+	"rae_woodwall_3_1x1": "Muro in legno 1x1",
+	"rae_woodwall_3_1x1_desc": "Muro in legno alternativo",
+	"IG_Hardwood_Floor_1x1": "Pavimento in legno duro 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Elegante pavimento in legno",
+	"IG_Chevron_Floor_1x1": "Pavimento in legno a spina di pesce 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Elegante pavimento in legno"
 }

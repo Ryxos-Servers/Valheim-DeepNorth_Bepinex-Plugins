@@ -1,3 +1,42 @@
+* v1.5.53 - Bug fixes to experimental ownership.
+* v1.5.51 - Game Pass / Microsoft Store: FGN loads without Steam
+* v1.5.49 - Steam-only features are skipped where Steam is missing
+* v1.5.41 - server tuning suggestions are no longer logged by default
+* v1.5.40 - fixes crossplay join-code stalls, a false version warning on rejoin, and an AzuAntiCheat patch error
+* v1.5.36 - fixes the shield generator error spam on Server-Side Simulation servers
+* v1.5.35 - fixes world data wipes with Expand World Prefabs server-side data and teleport snap-backs
+* v1.5.28 - saddles and taming work on Server-Side Simulation servers; clearer config descriptions; timed reports moved to a new Debug log level
+* v1.5.19 - fixes corrupted objects when used with ValheimCommunityPatch
+
+* v1.5.18 - updates and optimizations for 1.0
+  - Server-Side Simulation stays off when ValheimPerformanceOptimizations or ValheimCommunityPatch is installed, as they replace the same code
+
+* v1.5.17 - PlayFab, Server-Side Simulation and ownership updates
+  - PlayFab: better crossplay connection
+  - Server-Side Simulation: stability fixes and more testing
+  - ZDO ownership (worlds without Server-Side Simulation): the player with the lowest ping now owns the mobs
+
+* v1.4.55 - less garbage and less traffic from sending objects
+  - every object sent over the network is written straight into the packet, without the temporary lists, closures and copies vanilla makes for each one, so the game has far less garbage to collect; the bytes sent are the same as before ([12 - Advanced] Allocation-free ZDO Writes turns it off)
+  - a player's own creatures and companions now send only what changed since the last update, instead of their whole state; an unchanged inventory or name is no longer re-sent every time
+  - update the server and every client to the same version
+
+* v1.4.50 - quieter logs
+  - connection settings are only logged when a value changes, and startup notices print once
+  - update the server and every client to the same version
+
+* v1.4.49 - smarter auto-tune, ships follow the helmsman, crossplay fixes, faster logins
+  - auto-tune waits for your connection to settle before measuring, measures one player at a time, and remembers the result per server address
+  - fast PCs and good connections are no longer rated Low because of a few slow frames or a noisy ping
+  - whoever takes the helm gets the ship, so steering answers right away
+  - the server picks what to send each player from where they are now, not where they were a moment ago
+  - crossplay (PlayFab) players get a properly sized send window, and playfab servers and clients can join by IP again
+  - compression skips data that barely shrinks, and servers use less memory
+  - new admin diagnostics: fgn_rtt, and an [Upload] summary of what a client sends
+  - joining a server is about half a second faster
+  - messages that another mod blocks are no longer passed on anyway
+  - update the server and every client to the same version
+
 * v1.4.31 - fairer sending, station fixes and lighter servers
   - the server sizes each player's connection to what it actually carries, and opens it back up once the line clears
   - chat, effects and damage numbers only go to the players who can see them, instead of everyone on the server

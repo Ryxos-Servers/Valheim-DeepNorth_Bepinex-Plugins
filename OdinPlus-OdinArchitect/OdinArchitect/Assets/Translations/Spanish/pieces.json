@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Gran ventana de madera",
-	"ig_wooden_window_big_desc": "Gran ventana de madera hecha por IG88V1",
-	"ig_woodeniron_window_big": "IG Gran ventana de madera",
-	"ig_woodeniron_window_big_desc": "Gran ventana de madera con elementos de hierro hecha por IG88V1",
+	"ig_wooden_window_big": "IG Contraventana de madera",
+	"ig_wooden_window_big_desc": "Contraventanas de madera hechas por IG88V1",
+	"ig_woodeniron_window_big": "IG Contraventana de madera con hierro",
+	"ig_woodeniron_window_big_desc": "Contraventanas de madera con elementos de hierro hechas por IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Repisa de chimenea",
 	"ig_fireplace_mantel_small_desc": "Repisa de chimenea pequeña hecha por IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Cruz de piedra 45",
 	"piece_stonewallcross45_desc": "Pieza de cumbrera de piedra",
 	"piece_stonewallcross26": "Cruz de piedra 26",
-	"piece_stonewallcross26_desc": "Pieza de cumbrera de piedra"
+	"piece_stonewallcross26_desc": "Pieza de cumbrera de piedra",
+
+	"stonewall_hardrock_1x2": "Muro de roca dura 1x2",
+	"stonewall_hardrock_1x2_desc": "Muro de piedra alternativo",
+	"stonewall_hardrock_2x2": "Muro de roca dura 2x2",
+	"stonewall_hardrock_2x2_desc": "Muro de piedra alternativo",
+	"stonewall_hardrock_4x3": "Muro de roca dura 4x3",
+	"stonewall_hardrock_4x3_desc": "Muro de piedra alternativo",
+	"rae_woodwall_4_quar": "Muro de madera de pantano 1x1",
+	"rae_woodwall_4_quar_desc": "Muro hecho de madera de pantano",
+	"rae_woodwall_1_1x1": "Muro de troncos 1x1",
+	"rae_woodwall_1_1x1_desc": "Muro hecho de troncos",
+	"rae_woodwall_2_1x1": "Muro de troncos 1x1",
+	"rae_woodwall_2_1x1_desc": "Muro hecho de troncos",
+	"rae_woodwall_3_1x1": "Muro de madera 1x1",
+	"rae_woodwall_3_1x1_desc": "Muro de madera alternativo",
+	"IG_Hardwood_Floor_1x1": "Suelo de madera dura 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Elegante suelo de madera",
+	"IG_Chevron_Floor_1x1": "Suelo de madera en chevron 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Elegante suelo de madera"
 }

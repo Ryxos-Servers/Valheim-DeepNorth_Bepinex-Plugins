@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Duża Żelazna Brama bez centralnego słupa",
 	
 	"rae_elevator_small": "Prosta mała winda",
-	"rae_elevator_small_desc": "Przenosi się o każde piętro",
+	"rae_elevator_small_desc": "Dodaj szyny windy nad lub pod nią, aby dotrzeć na więcej pięter",
 	"rae_elevator": "Prosta winda",
-	"rae_elevator_desc": "Przenosi się o każde piętro",
+	"rae_elevator_desc": "Dodaj szyny windy nad lub pod nią, aby dotrzeć na więcej pięter",
+	"rae_elevator_large": "Duża winda",
+	"rae_elevator_large_desc": "Dodaj szyny windy nad lub pod nią, aby dotrzeć na więcej pięter",
+	"rae_elevator_track": "Szyna windy 4 m",
+	"rae_elevator_track_desc": "Przyczep nad lub pod windą, aby dodać piętro",
+	"rae_elevator_track_2m": "Szyna windy 2 m",
+	"rae_elevator_track_2m_desc": "Przyczep nad lub pod windą, aby dodać piętro",
+	"rae_elevator_track_3m": "Szyna windy 3 m",
+	"rae_elevator_track_3m_desc": "Przyczep nad lub pod windą, aby dodać piętro",
+	"oa_elevator_floor": "Piętro",
+	"oa_elevator_up": "W górę",
+	"oa_elevator_down": "W dół",
+	"oa_elevator_call": "Przywołaj windę",
+	"oa_elevator_top": "Najwyższe piętro",
+	"oa_elevator_bottom": "Najniższe piętro",
+	"oa_elevator_none": "Niepołączona z windą",
 	"rae_elevator_big": "Winda transportowa",
 	"rae_elevator_big_desc": "Przenosi się o każde piętro",
 	
@@ -25,5 +40,10 @@
 	"piece_woodgate_crystal": "Drewniane drzwi z oknem",
 	"piece_woodgate_crystal_desc": "Drewniane drzwi z kryształowym oknem",
 	"rae_hidden_door": "Ukryty właz",
-	"rae_hidden_door_desc": "Drewniany ukryty właz"
+	"rae_hidden_door_desc": "Drewniany ukryty właz",
+	"piece_dvergr_wood_custom": "Żelazne drzwi Dvergrów",
+	"piece_dvergr_wood_custom_desc": "Element w stylu Dvergrów",
+	"oa_elevator_hold": "Przytrzymaj, aby jechać na najwyższe / najniższe piętro",
+	"oa_elevator_going_top": "Jazda na najwyższe piętro",
+	"oa_elevator_going_bottom": "Jazda na najniższe piętro"
 }

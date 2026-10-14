@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Grande cancello di ferro senza palo centrale",
 
 	"rae_elevator_small": "Piccolo ascensore semplice",
-	"rae_elevator_small_desc": "Si sposta di un piano alla volta",
+	"rae_elevator_small_desc": "Aggiungi binari dell'ascensore sopra o sotto per raggiungere più piani",
 	"rae_elevator": "Ascensore semplice",
-	"rae_elevator_desc": "Si sposta di un piano alla volta",
+	"rae_elevator_desc": "Aggiungi binari dell'ascensore sopra o sotto per raggiungere più piani",
+	"rae_elevator_large": "Ascensore grande",
+	"rae_elevator_large_desc": "Aggiungi binari dell'ascensore sopra o sotto per raggiungere più piani",
+	"rae_elevator_track": "Binario dell'ascensore 4 m",
+	"rae_elevator_track_desc": "Aggancialo sopra o sotto un ascensore per aggiungere un piano",
+	"rae_elevator_track_2m": "Binario dell'ascensore 2 m",
+	"rae_elevator_track_2m_desc": "Aggancialo sopra o sotto un ascensore per aggiungere un piano",
+	"rae_elevator_track_3m": "Binario dell'ascensore 3 m",
+	"rae_elevator_track_3m_desc": "Aggancialo sopra o sotto un ascensore per aggiungere un piano",
+	"oa_elevator_floor": "Piano",
+	"oa_elevator_up": "Su",
+	"oa_elevator_down": "Giù",
+	"oa_elevator_call": "Chiama l'ascensore",
+	"oa_elevator_top": "Ultimo piano",
+	"oa_elevator_bottom": "Piano terra",
+	"oa_elevator_none": "Non collegato a un ascensore",
 	"rae_elevator_big": "Ascensore da trasporto",
 	"rae_elevator_big_desc": "Si sposta di un piano alla volta",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Botola in legno nascosta",
 
 	"piece_dvergr_wood_custom": "Porte di ferro Dvergr",
-	"piece_dvergr_wood_custom_desc": "Pezzo in stile Dvergr"
+	"piece_dvergr_wood_custom_desc": "Pezzo in stile Dvergr",
+	"oa_elevator_hold": "Tieni premuto per andare all'ultimo / al primo piano",
+	"oa_elevator_going_top": "Verso l'ultimo piano",
+	"oa_elevator_going_bottom": "Verso il primo piano"
 }

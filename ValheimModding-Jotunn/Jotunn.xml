@@ -6484,7 +6484,7 @@
         <member name="M:Jotunn.Managers.PieceManager.RemovePieceCategory(System.String)">
             <summary>
                 Remove a <see cref="T:Piece.PieceCategory"/> by name.<br />
-                The category id stays registered, this method does nothing.
+                The category id stays registered, only a refresh of the displayed categories is triggered.
             </summary>
             <param name="name">Name of the category.</param>
         </member>
@@ -6568,16 +6568,9 @@
             </summary>
             <param name="self"></param>
         </member>
-        <member name="M:Jotunn.Managers.PieceManager.UpdatePieceTableCategories(PieceTable)">
+        <member name="M:Jotunn.Managers.PieceManager.RefreshCategories">
             <summary>
-                Mirrors every category used by the table into <see cref="F:PieceTable.m_categories"/>.
-                The category tabs are gone, but vanilla still gates SetCategory, NextCategory,
-                PrevCategory and GetSelectedCategory on a non-empty list.
-            </summary>
-        </member>
-        <member name="M:Jotunn.Managers.PieceManager.GetCategoryLabel(Piece.PieceCategory)">
-            <summary>
-                Label for a category without an existing entry, only custom categories have a known token.
+                Updates the piece categories, should be called after setting the m_category field of a piece.
             </summary>
         </member>
         <member name="T:Jotunn.Managers.PrefabManager">

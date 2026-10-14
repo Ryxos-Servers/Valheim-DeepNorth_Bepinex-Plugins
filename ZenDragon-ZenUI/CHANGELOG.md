@@ -1,3 +1,41 @@
+v1.9.3
+- fix: changed Inventory.FindEmptySlot to improve compatibility with other mods.
+- fix: null ref on character creation.
+
+v1.9.2
+- fix: grid alignment issue when the container does not have a piece associated with it.
+
+v1.9.1
+- fix: null ref on the title screen.
+
+v1.9.0
+- rescale the container grid for Grausten Chest and Wardrobe containers so that they do not require a scroll bar.
+- config change: "Enable Slide Animation" was renamed to "No Slide Animation" and is now admin only, it is enabled by default and is required to be enabled for container rescaling to function.
+- recompile for Zen.ModLib v1.14.21
+
+v1.8.12
+- fix: tooltip summaries were blinking back to detail view sometimes when inventories were updated in the background due to misfiring compatibility code introduced for ExtraSlots in v1.8.10
+- recompile for Zen.ModLib v1.14.18
+
+v1.8.11
+- changed the grouping of items to put all Casts into the Resources group and sort them together. 
+- added support for removal wildcards for group assignment: `-*Expample or -Example*`
+- you need to update the config defaults in Crafting Group Assignments to apply the new grouping of Deep North cast items to the Resources group.
+- recompile for Zen.ModLib v1.14.17
+
+v1.8.10
+- compatibility with ExtraSlots tooltips hovering over "lightened" slots or other non-item tooltips introduced by the ExtraSlots mod.
+
+v1.8.9
+- changed InventoryGui.Update JoyButtonY transpiler for compatibility with other mods.  
+- recompile for Zen.ModLib v1.14.9
+
+v1.8.8
+- added Ukrainian translations.
+
+v1.8.7
+- code cleanup and optimization.
+
 v1.8.6
 - improve how tooltip summaries work:
   - live switching between summary and detail views.

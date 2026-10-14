@@ -21,4 +21,9 @@
 	"rae_compost_name": "Prymitywny kompostownik",
 	"rae_compost_add": "Wypełnij odpady",
 	"rae_compost_empty": "Brak odpadów",
+
+	"hud_snappoint_left": "Lewo",
+	"hud_snappoint_right": "Prawo",
+	"hud_snappoint_back": "Tył",
+	"hud_snappoint_forward": "Przód"
 }

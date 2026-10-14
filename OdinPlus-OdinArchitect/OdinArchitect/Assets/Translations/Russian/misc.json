@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Наполните хвостами шейки и сырым мясом, чтобы получить червей",
 	"rae_compost_name": "Примитивный компост",
 	"rae_compost_add": "Добавить отходы",
-	"rae_compost_empty": "Отходов нет"
+	"rae_compost_empty": "Отходов нет",
+
+	"hud_snappoint_left": "Слева",
+	"hud_snappoint_right": "Справа",
+	"hud_snappoint_back": "Сзади",
+	"hud_snappoint_forward": "Спереди"
 }

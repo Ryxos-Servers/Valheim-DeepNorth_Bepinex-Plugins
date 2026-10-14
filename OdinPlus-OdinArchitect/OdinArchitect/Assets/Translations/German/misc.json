@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Fülle ihn mit Necktails und rohem Fleisch, um Würmer zu erhalten",
 	"rae_compost_name": "Primitiver Komposthaufen",
 	"rae_compost_add": "Abfall einfüllen",
-	"rae_compost_empty": "Kein Abfall"
+	"rae_compost_empty": "Kein Abfall",
+
+	"hud_snappoint_left": "Links",
+	"hud_snappoint_right": "Rechts",
+	"hud_snappoint_back": "Hinten",
+	"hud_snappoint_forward": "Vorne"
 }

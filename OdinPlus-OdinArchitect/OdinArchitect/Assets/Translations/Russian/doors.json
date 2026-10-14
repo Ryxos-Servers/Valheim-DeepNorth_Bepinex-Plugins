@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Большие железные ворота без центрального столба",
 
 	"rae_elevator_small": "Маленький простой лифт",
-	"rae_elevator_small_desc": "Двигается на один этаж за раз",
+	"rae_elevator_small_desc": "Добавьте направляющие сверху или снизу, чтобы ездить на больше этажей",
 	"rae_elevator": "Простой лифт",
-	"rae_elevator_desc": "Двигается на один этаж за раз",
+	"rae_elevator_desc": "Добавьте направляющие сверху или снизу, чтобы ездить на больше этажей",
+	"rae_elevator_large": "Большой лифт",
+	"rae_elevator_large_desc": "Добавьте направляющие сверху или снизу, чтобы ездить на больше этажей",
+	"rae_elevator_track": "Направляющая лифта 4 м",
+	"rae_elevator_track_desc": "Прикрепите над или под лифтом, чтобы добавить этаж",
+	"rae_elevator_track_2m": "Направляющая лифта 2 м",
+	"rae_elevator_track_2m_desc": "Прикрепите над или под лифтом, чтобы добавить этаж",
+	"rae_elevator_track_3m": "Направляющая лифта 3 м",
+	"rae_elevator_track_3m_desc": "Прикрепите над или под лифтом, чтобы добавить этаж",
+	"oa_elevator_floor": "Этаж",
+	"oa_elevator_up": "Вверх",
+	"oa_elevator_down": "Вниз",
+	"oa_elevator_call": "Вызвать лифт",
+	"oa_elevator_top": "Верхний этаж",
+	"oa_elevator_bottom": "Нижний этаж",
+	"oa_elevator_none": "Не подключено к лифту",
 	"rae_elevator_big": "Грузовой лифт",
 	"rae_elevator_big_desc": "Двигается на один этаж за раз",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Скрытый деревянный люк",
 
 	"piece_dvergr_wood_custom": "Железные двери Двергр",
-	"piece_dvergr_wood_custom_desc": "Элемент в стиле Двергр"
+	"piece_dvergr_wood_custom_desc": "Элемент в стиле Двергр",
+	"oa_elevator_hold": "Удерживайте, чтобы ехать на верхний / нижний этаж",
+	"oa_elevator_going_top": "Едем на верхний этаж",
+	"oa_elevator_going_bottom": "Едем на нижний этаж"
 }

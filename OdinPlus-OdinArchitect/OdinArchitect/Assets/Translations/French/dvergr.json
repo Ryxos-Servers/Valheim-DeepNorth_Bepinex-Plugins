@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "Élément de toit en cuivre",
 	"copper_roof_ocorner_45_desc": "Élément de toit en cuivre",
 	"copper_roof_top_desc": "Élément de toit en cuivre",
-	"copper_roof_top_45_desc": "Élément de toit en cuivre"
+	"copper_roof_top_45_desc": "Élément de toit en cuivre",
+
+	"stonemarble_tile_wall_1x2": "Mur carrelé en marbre 1x2",
+	"stonemarble_tile_wall_1x2_desc": "Élément de style Dvergr",
+	"stonemarble_tile_wall_2x3": "Mur carrelé en marbre 2x3",
+	"stonemarble_tile_wall_2x3_desc": "Élément de style Dvergr",
+	"stonemarble_tile_wall_2x5": "Mur carrelé en marbre 2x5",
+	"stonemarble_tile_wall_2x5_desc": "Élément de style Dvergr",
+	"dvergrprops_wood_floor_custom_1x1": "Sol Dvergr 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "Élément de style Dvergr"
 }

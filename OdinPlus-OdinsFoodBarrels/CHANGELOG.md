@@ -1,5 +1,38 @@
 ## Updates 
 
+### Version 1.4.0
+- Added Odin's Spice Shelf, a storage shelf for Bog Witch spices with a configurable allowed-items list.
+
+### Version 1.3.9
+- Fixed: Piece layer type.
+
+### Version 1.3.8
+- Fixed: Missing mesh on Guck Barrel.
+
+### Version 1.3.7
+- Fixed: Raspberry Barrel's name now displays correctly in English.
+
+### Version 1.3.6
+- Added Polish localization - thank you Tajfun
+
+### Version 1.3.5
+- Added container configs
+
+### Version 1.3.4
+- Updated localizations
+
+### Version 1.3.3
+- Updated localizations
+
+### Version 1.3.2
+- Added FirConeFrost to seedbag
+
+### Version 1.3.1
+- Added Meat Freezer
+
+### Version 1.3.0
+- Added Barley Flour Sack
+
 ### Version 1.2.9
 - Fixed Russian Localizations, thank you Dare Vita
 

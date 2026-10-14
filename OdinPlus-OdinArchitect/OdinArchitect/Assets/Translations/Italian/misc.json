@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Riempila con code di Neck e carne cruda per ottenere vermi",
 	"rae_compost_name": "Composta primitiva",
 	"rae_compost_add": "Aggiungi rifiuti",
-	"rae_compost_empty": "Nessun rifiuto"
+	"rae_compost_empty": "Nessun rifiuto",
+
+	"hud_snappoint_left": "Sinistra",
+	"hud_snappoint_right": "Destra",
+	"hud_snappoint_back": "Dietro",
+	"hud_snappoint_forward": "Davanti"
 }

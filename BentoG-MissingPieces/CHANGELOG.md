@@ -1,3 +1,7 @@
+## 2.3.2
+
+* Improved sign drawer mocking, signs should now support typing all characters that vanilla signs can support.
+
 ## 2.3.1
 
 * Added build usage tags to all pieces.

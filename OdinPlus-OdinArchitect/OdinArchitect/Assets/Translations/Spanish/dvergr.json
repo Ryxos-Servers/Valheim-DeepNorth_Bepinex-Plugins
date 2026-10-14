@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "Pieza de techo de cobre",
 	"copper_roof_ocorner_45_desc": "Pieza de techo de cobre",
 	"copper_roof_top_desc": "Pieza de techo de cobre",
-	"copper_roof_top_45_desc": "Pieza de techo de cobre"
+	"copper_roof_top_45_desc": "Pieza de techo de cobre",
+
+	"stonemarble_tile_wall_1x2": "Muro de azulejos de mármol 1x2",
+	"stonemarble_tile_wall_1x2_desc": "Pieza de estilo Dvergr",
+	"stonemarble_tile_wall_2x3": "Muro de azulejos de mármol 2x3",
+	"stonemarble_tile_wall_2x3_desc": "Pieza de estilo Dvergr",
+	"stonemarble_tile_wall_2x5": "Muro de azulejos de mármol 2x5",
+	"stonemarble_tile_wall_2x5_desc": "Pieza de estilo Dvergr",
+	"dvergrprops_wood_floor_custom_1x1": "Suelo Dvergr 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "Pieza de estilo Dvergr"
 }

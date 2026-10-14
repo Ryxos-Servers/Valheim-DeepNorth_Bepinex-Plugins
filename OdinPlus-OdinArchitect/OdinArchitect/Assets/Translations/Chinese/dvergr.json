@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "铜质屋顶部件",
 	"copper_roof_ocorner_45_desc": "铜质屋顶部件",
 	"copper_roof_top_desc": "铜质屋顶部件",
-	"copper_roof_top_45_desc": "铜质屋顶部件"
+	"copper_roof_top_45_desc": "铜质屋顶部件",
+
+	"stonemarble_tile_wall_1x2": "大理石瓷砖墙 1x2",
+	"stonemarble_tile_wall_1x2_desc": "矮人风格部件",
+	"stonemarble_tile_wall_2x3": "大理石瓷砖墙 2x3",
+	"stonemarble_tile_wall_2x3_desc": "矮人风格部件",
+	"stonemarble_tile_wall_2x5": "大理石瓷砖墙 2x5",
+	"stonemarble_tile_wall_2x5_desc": "矮人风格部件",
+	"dvergrprops_wood_floor_custom_1x1": "矮人地板 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "矮人风格部件"
 }

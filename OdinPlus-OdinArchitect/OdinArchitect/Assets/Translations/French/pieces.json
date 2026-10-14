@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG Grande fenêtre en bois",
-	"ig_wooden_window_big_desc": "Grande fenêtre en bois faite par IG88V1",
-	"ig_woodeniron_window_big": "IG Grande fenêtre en bois",
-	"ig_woodeniron_window_big_desc": "Grande fenêtre en bois avec éléments en fer faite par IG88V1",
+	"ig_wooden_window_big": "IG Volet en bois",
+	"ig_wooden_window_big_desc": "Volets en bois créés par IG88V1",
+	"ig_woodeniron_window_big": "IG Volet en bois ferré",
+	"ig_woodeniron_window_big_desc": "Volets en bois avec éléments en fer créés par IG88V1",
 
 	"ig_fireplace_mantel_small": "IG Manteau de cheminée",
 	"ig_fireplace_mantel_small_desc": "Petit manteau de cheminée fait par IG88V1",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "Croix en pierre 45",
 	"piece_stonewallcross45_desc": "Élément de faîtage en pierre",
 	"piece_stonewallcross26": "Croix en pierre 26",
-	"piece_stonewallcross26_desc": "Élément de faîtage en pierre"
+	"piece_stonewallcross26_desc": "Élément de faîtage en pierre",
+
+	"stonewall_hardrock_1x2": "Mur en roche dure 1x2",
+	"stonewall_hardrock_1x2_desc": "Mur en pierre alternatif",
+	"stonewall_hardrock_2x2": "Mur en roche dure 2x2",
+	"stonewall_hardrock_2x2_desc": "Mur en pierre alternatif",
+	"stonewall_hardrock_4x3": "Mur en roche dure 4x3",
+	"stonewall_hardrock_4x3_desc": "Mur en pierre alternatif",
+	"rae_woodwall_4_quar": "Mur en bois des marais 1x1",
+	"rae_woodwall_4_quar_desc": "Mur fait de bois des marais",
+	"rae_woodwall_1_1x1": "Mur en rondins 1x1",
+	"rae_woodwall_1_1x1_desc": "Mur fait de rondins",
+	"rae_woodwall_2_1x1": "Mur en rondins 1x1",
+	"rae_woodwall_2_1x1_desc": "Mur fait de rondins",
+	"rae_woodwall_3_1x1": "Mur en bois 1x1",
+	"rae_woodwall_3_1x1_desc": "Mur en bois alternatif",
+	"IG_Hardwood_Floor_1x1": "Sol en bois dur 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "Sol en bois élégant",
+	"IG_Chevron_Floor_1x1": "Sol en bois à chevrons 1x1",
+	"IG_Chevron_Floor_1x1_desc": "Sol en bois élégant"
 }

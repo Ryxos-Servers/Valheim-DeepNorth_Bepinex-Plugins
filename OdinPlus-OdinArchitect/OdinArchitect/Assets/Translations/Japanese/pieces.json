@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG 大きな木製の窓",
-	"ig_wooden_window_big_desc": "IG88V1作の大きな木製の窓",
-	"ig_woodeniron_window_big": "IG 大きな木製の窓",
-	"ig_woodeniron_window_big_desc": "鉄の要素が付いたIG88V1作の大きな木製の窓",
+	"ig_wooden_window_big": "IG 木製の雨戸",
+	"ig_wooden_window_big_desc": "IG88V1 製作の木製の雨戸",
+	"ig_woodeniron_window_big": "IG 鉄付き木製の雨戸",
+	"ig_woodeniron_window_big_desc": "IG88V1 製作の鉄の装飾付き木製の雨戸",
 
 	"ig_fireplace_mantel_small": "IG 暖炉マントル",
 	"ig_fireplace_mantel_small_desc": "IG88V1作の小さな暖炉マントル",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "石の十字 45",
 	"piece_stonewallcross45_desc": "石の棟要素",
 	"piece_stonewallcross26": "石の十字 26",
-	"piece_stonewallcross26_desc": "石の棟要素"
+	"piece_stonewallcross26_desc": "石の棟要素",
+
+	"stonewall_hardrock_1x2": "硬岩の壁 1x2",
+	"stonewall_hardrock_1x2_desc": "代替の石の壁",
+	"stonewall_hardrock_2x2": "硬岩の壁 2x2",
+	"stonewall_hardrock_2x2_desc": "代替の石の壁",
+	"stonewall_hardrock_4x3": "硬岩の壁 4x3",
+	"stonewall_hardrock_4x3_desc": "代替の石の壁",
+	"rae_woodwall_4_quar": "湿地木材の壁 1x1",
+	"rae_woodwall_4_quar_desc": "湿地木材で作られた壁",
+	"rae_woodwall_1_1x1": "丸太の壁 1x1",
+	"rae_woodwall_1_1x1_desc": "丸太で作られた壁",
+	"rae_woodwall_2_1x1": "丸太の壁 1x1",
+	"rae_woodwall_2_1x1_desc": "丸太で作られた壁",
+	"rae_woodwall_3_1x1": "木製の壁 1x1",
+	"rae_woodwall_3_1x1_desc": "代替の木製壁",
+	"IG_Hardwood_Floor_1x1": "硬木の床 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "エレガントな木製床",
+	"IG_Chevron_Floor_1x1": "ヘリンボーンの木製床 1x1",
+	"IG_Chevron_Floor_1x1_desc": "エレガントな木製床"
 }

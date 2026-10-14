@@ -20,5 +20,10 @@
 	"rae_compost_desc": "Remplissez-le de queues de Necks et de viande crue pour obtenir des vers",
 	"rae_compost_name": "Composteur primitif",
 	"rae_compost_add": "Ajouter des déchets",
-	"rae_compost_empty": "Aucun déchet"
+	"rae_compost_empty": "Aucun déchet",
+
+	"hud_snappoint_left": "Gauche",
+	"hud_snappoint_right": "Droite",
+	"hud_snappoint_back": "Arrière",
+	"hud_snappoint_forward": "Avant"
 }

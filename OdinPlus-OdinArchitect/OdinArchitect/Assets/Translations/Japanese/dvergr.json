@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "銅の屋根パーツ",
 	"copper_roof_ocorner_45_desc": "銅の屋根パーツ",
 	"copper_roof_top_desc": "銅の屋根パーツ",
-	"copper_roof_top_45_desc": "銅の屋根パーツ"
+	"copper_roof_top_45_desc": "銅の屋根パーツ",
+
+	"stonemarble_tile_wall_1x2": "大理石タイルの壁 1x2",
+	"stonemarble_tile_wall_1x2_desc": "ドヴェルグ様式のパーツ",
+	"stonemarble_tile_wall_2x3": "大理石タイルの壁 2x3",
+	"stonemarble_tile_wall_2x3_desc": "ドヴェルグ様式のパーツ",
+	"stonemarble_tile_wall_2x5": "大理石タイルの壁 2x5",
+	"stonemarble_tile_wall_2x5_desc": "ドヴェルグ様式のパーツ",
+	"dvergrprops_wood_floor_custom_1x1": "ドヴェルグの床 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "ドヴェルグ様式のパーツ"
 }

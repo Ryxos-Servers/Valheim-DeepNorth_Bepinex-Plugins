@@ -1,8 +1,8 @@
 {
-	"ig_wooden_window_big": "IG 큰 나무 창문",
-	"ig_wooden_window_big_desc": "IG88V1 제작 큰 나무 창문",
-	"ig_woodeniron_window_big": "IG 큰 나무 창문",
-	"ig_woodeniron_window_big_desc": "철제 요소가 있는 IG88V1 제작 큰 나무 창문",
+	"ig_wooden_window_big": "IG 나무 덧문",
+	"ig_wooden_window_big_desc": "IG88V1이 만든 나무 덧문",
+	"ig_woodeniron_window_big": "IG 철 장식 나무 덧문",
+	"ig_woodeniron_window_big_desc": "IG88V1이 만든 철 장식 나무 덧문",
 
 	"ig_fireplace_mantel_small": "IG 벽난로 선반",
 	"ig_fireplace_mantel_small_desc": "IG88V1 제작 작은 벽난로 선반",
@@ -209,5 +209,24 @@
 	"piece_stonewallcross45": "석재 십자 45",
 	"piece_stonewallcross45_desc": "석재 마루 부품",
 	"piece_stonewallcross26": "석재 십자 26",
-	"piece_stonewallcross26_desc": "석재 마루 부품"
+	"piece_stonewallcross26_desc": "석재 마루 부품",
+
+	"stonewall_hardrock_1x2": "경암 벽 1x2",
+	"stonewall_hardrock_1x2_desc": "대체 석재 벽",
+	"stonewall_hardrock_2x2": "경암 벽 2x2",
+	"stonewall_hardrock_2x2_desc": "대체 석재 벽",
+	"stonewall_hardrock_4x3": "경암 벽 4x3",
+	"stonewall_hardrock_4x3_desc": "대체 석재 벽",
+	"rae_woodwall_4_quar": "습지목 벽 1x1",
+	"rae_woodwall_4_quar_desc": "습지목으로 만든 벽",
+	"rae_woodwall_1_1x1": "통나무 벽 1x1",
+	"rae_woodwall_1_1x1_desc": "통나무로 만든 벽",
+	"rae_woodwall_2_1x1": "통나무 벽 1x1",
+	"rae_woodwall_2_1x1_desc": "통나무로 만든 벽",
+	"rae_woodwall_3_1x1": "나무 벽 1x1",
+	"rae_woodwall_3_1x1_desc": "대체 나무 벽",
+	"IG_Hardwood_Floor_1x1": "원목 바닥 1x1",
+	"IG_Hardwood_Floor_1x1_desc": "우아한 나무 바닥",
+	"IG_Chevron_Floor_1x1": "헤링본 나무 바닥 1x1",
+	"IG_Chevron_Floor_1x1_desc": "우아한 나무 바닥"
 }

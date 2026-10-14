@@ -21,4 +21,9 @@
 	"rae_compost_name": "Primitive Compost",
 	"rae_compost_add": "Fill waste",
 	"rae_compost_empty": "No waste",
+
+	"hud_snappoint_left": "Left",
+	"hud_snappoint_right": "Right",
+	"hud_snappoint_back": "Back",
+	"hud_snappoint_forward": "Front"
 }

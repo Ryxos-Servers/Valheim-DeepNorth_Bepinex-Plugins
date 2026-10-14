@@ -1,3 +1,28 @@
+v1.9.6
+- fix: null ref in InventoryGrid.GetHoveredElement
+- minor optimizations
+- recompile for Zen.ModLib v1.14.21
+
+v1.9.5
+- increased config max Sign Search Radius from 25 to 50.
+
+v1.9.4
+- recompile sign icon shader for osx with dedicated asset builds for windows, osx, and linux.
+- recompile for Zen.ModLib v1.14.20
+
+v1.9.3
+- recompile sign icon shader for osx.
+- recompile for Zen.ModLib v1.14.19
+
+v1.9.2
+- fix nullref when building the item name to item cache and the prefab doesn't have an ItemDrop component.
+- recompile for Zen.ModLib v1.14.18
+
+v1.9.1
+- fixed a missing translation string.
+- added translations for Ukrainian.
+- recompile for Zen.ModLib v1.14.10
+
 v1.9.0
 - update for Valheim (Deep North)
 - recompile for Zen.ModLib v1.14.0

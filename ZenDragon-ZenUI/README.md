@@ -19,10 +19,10 @@ Helpful UI additions.
 - Take All button has three states: Take stacks, Take weight, Take all
 - Dropping items drops them in the direction of the camera, not your character's direction.
 - Pressing the "Place Stacks" button in the inventory combines all the stacks in the container.
-- When stacking items into containers, it will now automatically combine existing stacks in the container.
 - When stacking items, it ignores your hotbar.
 - First-person camera.
 - System clock local time displayed in the bottom right corner of the screen (optional).
+- Show all items in the container grid for Grausten Chest and Wardrobe without scrolling.
 
 ### Improved Crafting Panel
 <img alt="Crafting UI: Light" width="300" src="https://github.com/ZenDragonX/ZenMods_Valheim/blob/main/screenshots/ZenUI/crafting.jpg?raw=true">
@@ -86,7 +86,7 @@ Enjoy!
 ## Sample Config File
 
 ```
-## Settings file was created by plugin ZenUI v1.8.1
+## Settings file was created by plugin ZenUI v1.9.0
 ## Plugin GUID: ZenDragon.ZenUI
 
 [Camera]
@@ -123,8 +123,8 @@ LOD Bias = 5
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Weapons = 
@@ -132,8 +132,8 @@ Weapons =
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: Catapult_ammo, BombSiege
 Ammo = Catapult_ammo, BombSiege
@@ -141,8 +141,8 @@ Ammo = Catapult_ammo, BombSiege
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Armor = 
@@ -150,8 +150,8 @@ Armor =
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Shields = 
@@ -159,26 +159,26 @@ Shields =
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
-# Default value: Staff*
-Magic = Staff*
+# Default value: Staff*, -*Uncooked
+Magic = Staff*, -*Uncooked
 
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
-# Default value: Pickaxe*, Scythe, FishingRod, Tankard*, KnifeButcher
-Tools = Pickaxe*, Scythe, FishingRod, Tankard*, KnifeButcher
+# Default value: Pickaxe*, Scythe, FishingRod, Tankard*, KnifeButcher, Shovel
+Tools = Pickaxe*, Scythe, FishingRod, Tankard*, KnifeButcher, Shovel
 
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Equipment = 
@@ -186,17 +186,17 @@ Equipment =
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
-# Default value: FishingBait*
-Resources = FishingBait*
+# Default value: FishingBait*, *Uncooked
+Resources = FishingBait*, *Uncooked
 
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: Feast*
 Food = Feast*
@@ -204,8 +204,8 @@ Food = Feast*
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Trophy = 
@@ -213,8 +213,8 @@ Trophy =
 ## [Admin] Comma separated list of item prefab names explicitly assigned to this group.
 ## Use this to override the default groupings which are based on item type.
 ## The prefix and suffix wildcard * is supported.
-## Explicltly remove an item from a group with: -prefabName
-## Removal wildcards are not supported. Example: -Wood* is not valid.
+## Explicltly remove an item from a group with a - prefix: -prefabName
+## Removal wildcards are also supported, example: -Wood* or -*Wood
 # Setting type: StringList
 # Default value: 
 Misc = 
@@ -313,6 +313,7 @@ Scroll Sensitivity = 1
 [Crafting Panel - Search]
 
 ## Enable the crafting panel search filter text box, does not function without panel enabled.
+## [logout required for changes to take effect]
 # Setting type: Boolean
 # Default value: true
 Enable = true
@@ -355,13 +356,13 @@ Enable Ammo Count = true
 # Default value: false
 Auto Open Skills Panel = false
 
-## Enable the panel slide animation when opening/closing your inventory. (vanilla: true)
-## Disabled by default because it draws faster without the sliding animation.
+## [Admin] Disable the panel slide animation when opening/closing your inventory. (vanilla: false)
+## Disabled by default because it draws faster without the sliding animation, and looks better imo.
 ## On slower hardware the slide animation can appear a bit choppy every time you open/close your inventory.
-## If you have fast hardware you can turn this on and see if you like it.
+## [logout may be required for changes to take effect]
 # Setting type: Boolean
-# Default value: false
-Enable Slide Animation = false
+# Default value: true
+No Slide Animation = true
 
 ## Colored food bars. (vanilla: false)
 ## Tint the background of the food you ate based on the main property of the food: Health = red, stamina = yellow, blue = eitr
@@ -406,6 +407,20 @@ Show Ship Sail Indicator = false
 # Default value: SystemMenu
 # Acceptable values: Never, Always, SystemMenu
 Show System Clock = SystemMenu
+
+## [Admin] Use subtle scrollbars to cleanup the UI on the Build Menu and Containers so that they are more visually pleasing.
+## Nothing major, just a little bit of refinement to make it look better.  No functional changes.
+## [logout required for changes to take effect]
+# Setting type: Boolean
+# Default value: true
+Thin Scroll Bars = true
+
+## [Admin] Rescale the container grid to fit the contents of the Grausten Chest and Wardrobe so that no scrollbar is needed.
+## [No Slide Animation must be true for this to work]
+## [logout required for changes to take effect]
+# Setting type: Boolean
+# Default value: true
+Rescale Container Grid = true
 
 [Inventory]
 
@@ -470,10 +485,10 @@ Show Durability Bar Colors = true
 ## Number of inventory rows that a player starts the game with.
 ## Set to -1 to disable this config. (Vanilla: 3 + hotbar)
 ## There are merchant items you can buy to expand your inventory size through progression.
-## This setting has no effect if the playerkey invrows is already set.
+## This setting has no effect if the player key "invrows" is already set.
 ## You must remove it before login or this config will not work: "removekeyplayer invrows num"
 ## Vanilla also has a console command to adjust size locally: inventorysize
-## Server admin can adjust other player keys via the "relay" command in Zen.ModLib
+## Server admin can adjust other player's keys via the "relay" command in Zen.ModLib
 ## [logout required for changes to take effect]
 # Setting type: Int32
 # Default value: -1

@@ -97,5 +97,14 @@
 	"copper_roof_ocorner_desc": "Copper roof piece",
 	"copper_roof_ocorner_45_desc": "Copper roof piece",
 	"copper_roof_top_desc": "Copper roof piece",
-	"copper_roof_top_45_desc": "Copper roof piece"
+	"copper_roof_top_45_desc": "Copper roof piece",
+
+	"stonemarble_tile_wall_1x2": "Marble tile wall 1x2",
+	"stonemarble_tile_wall_1x2_desc": "Dvergr styled piece",
+	"stonemarble_tile_wall_2x3": "Marble tile wall 2x3",
+	"stonemarble_tile_wall_2x3_desc": "Dvergr styled piece",
+	"stonemarble_tile_wall_2x5": "Marble tile wall 2x5",
+	"stonemarble_tile_wall_2x5_desc": "Dvergr styled piece",
+	"dvergrprops_wood_floor_custom_1x1": "Dvergr floor 1x1",
+	"dvergrprops_wood_floor_custom_1x1_desc": "Dvergr styled piece"
 }

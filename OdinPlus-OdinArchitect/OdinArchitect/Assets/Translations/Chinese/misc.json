@@ -20,5 +20,10 @@
 	"rae_compost_desc": "用脖颈尾巴和生肉填充，以获得蠕虫",
 	"rae_compost_name": "原始堆肥桶",
 	"rae_compost_add": "填充废物",
-	"rae_compost_empty": "没有废物"
+	"rae_compost_empty": "没有废物",
+
+	"hud_snappoint_left": "左",
+	"hud_snappoint_right": "右",
+	"hud_snappoint_back": "后",
+	"hud_snappoint_forward": "前"
 }

@@ -12,9 +12,24 @@
 	"iron_gate_big_desc": "Grand portail en fer sans poteau central",
 
 	"rae_elevator_small": "Petit ascenseur simple",
-	"rae_elevator_small_desc": "Se déplace d'un étage à la fois",
+	"rae_elevator_small_desc": "Ajoutez des rails d'ascenseur au-dessus ou en dessous pour atteindre plus d'étages",
 	"rae_elevator": "Ascenseur simple",
-	"rae_elevator_desc": "Se déplace d'un étage à la fois",
+	"rae_elevator_desc": "Ajoutez des rails d'ascenseur au-dessus ou en dessous pour atteindre plus d'étages",
+	"rae_elevator_large": "Grand ascenseur",
+	"rae_elevator_large_desc": "Ajoutez des rails d'ascenseur au-dessus ou en dessous pour atteindre plus d'étages",
+	"rae_elevator_track": "Rail d'ascenseur 4 m",
+	"rae_elevator_track_desc": "À fixer au-dessus ou en dessous d'un ascenseur pour ajouter un étage",
+	"rae_elevator_track_2m": "Rail d'ascenseur 2 m",
+	"rae_elevator_track_2m_desc": "À fixer au-dessus ou en dessous d'un ascenseur pour ajouter un étage",
+	"rae_elevator_track_3m": "Rail d'ascenseur 3 m",
+	"rae_elevator_track_3m_desc": "À fixer au-dessus ou en dessous d'un ascenseur pour ajouter un étage",
+	"oa_elevator_floor": "Étage",
+	"oa_elevator_up": "Monter",
+	"oa_elevator_down": "Descendre",
+	"oa_elevator_call": "Appeler l'ascenseur",
+	"oa_elevator_top": "Dernier étage",
+	"oa_elevator_bottom": "Rez-de-chaussée",
+	"oa_elevator_none": "Relié à aucun ascenseur",
 	"rae_elevator_big": "Ascenseur de transport",
 	"rae_elevator_big_desc": "Se déplace d'un étage à la fois",
 
@@ -28,5 +43,8 @@
 	"rae_hidden_door_desc": "Trappe en bois cachée",
 
 	"piece_dvergr_wood_custom": "Portes en fer Dvergr",
-	"piece_dvergr_wood_custom_desc": "Élément de style Dvergr"
+	"piece_dvergr_wood_custom_desc": "Élément de style Dvergr",
+	"oa_elevator_hold": "Maintenir pour aller au dernier / premier étage",
+	"oa_elevator_going_top": "Vers le dernier étage",
+	"oa_elevator_going_bottom": "Vers le premier étage"
 }

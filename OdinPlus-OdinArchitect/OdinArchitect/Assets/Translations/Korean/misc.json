@@ -20,5 +20,10 @@
 	"rae_compost_desc": "넥의 꼬리와 생고기를 넣어 벌레를 얻으세요",
 	"rae_compost_name": "원시 퇴비함",
 	"rae_compost_add": "쓰레기 추가",
-	"rae_compost_empty": "쓰레기가 없습니다"
+	"rae_compost_empty": "쓰레기가 없습니다",
+
+	"hud_snappoint_left": "왼쪽",
+	"hud_snappoint_right": "오른쪽",
+	"hud_snappoint_back": "뒤",
+	"hud_snappoint_forward": "앞"
 }

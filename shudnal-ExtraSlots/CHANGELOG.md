@@ -1,3 +1,36 @@
+# 1.2.19
+* Added **Quick bars** at the bottom of the game's **Hotbar** radial menu. It opens food, ammo and up to six quick slots.
+* The radial menu shows empty food and ammo slots but hides empty quick slots. The bottom quick-slot group is centered and ordered counterclockwise.
+* The **Quick bars** radial menu remains available when extra HUD hotbars are hidden or disabled.
+* Fixed unintended hotbar item use when resizing the PlantEasily grid with a gamepad. This affected players with all extra hotbars hidden or disabled.
+* Removed support and settings for the deprecated ValheimRadial mod.
+
+# 1.2.18
+* Fixed extra hotbar errors with PortablePals item overlays. Improved compatibility with other mods that add overlays to item icons.
+
+# 1.2.17
+* Added separate **Hide hotbar** settings for quick, ammo and food hotbars. Hidden hotbars keep their hotkeys active.
+* Fixed some errors when updating extra hotbar icons.
+* Limited repeated hotbar error messages. A failed update no longer stops the other hotbars from updating.
+
+# 1.2.16
+* Upgraded items return to their original extra slots when those slots are free.
+* ExtraSlots no longer restores items destroyed during upgrades or equips upgraded items automatically.
+* Fixed a startup error with mods that change crafting.
+
+# 1.2.15
+* Fixed automatic tombstone recovery being blocked by custom-slot items even when all contents could fit.
+* Improved carry-weight checks during tombstone recovery. Utility items that cannot be equipped together no longer block recovery when their carry-weight bonuses are not needed.
+* Fixed unintended hotbar selection while using menus with a gamepad.
+* Fixed extra hotbar shortcut labels briefly showing vanilla slot numbers after changing the input layout.
+
+# 1.2.14
+* fixed quick-slot hotbars disappearing during auto pickup with AdventureBackpacks and other inventory capacity checks
+* fixed occupied extra slots being reported as free during nested inventory capacity checks
+
+# 1.2.13
+* fixed Mouse3 and Mouse4 in keyboard shortcut combinations
+
 # 1.2.12
 * fixed backup recovery being blocked when one item prefab is unavailable
 * unavailable backup items are preserved for later recovery without restoring already recovered items again

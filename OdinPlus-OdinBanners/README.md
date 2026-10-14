@@ -94,6 +94,12 @@ For Questions or Comments find Gravebear in the OdinPlus Discord:
 
 # Changelog
 
+### 1.1.14
+- Updated comfort groups of banners to share the same group as vanilla banners.
+
+### 1.1.13
+- Updated piece manager
+
 ### 1.1.12
 - Updated for valheim 1.0
 
